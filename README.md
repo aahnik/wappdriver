@@ -23,7 +23,7 @@ bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
 ```
 ![image](wapp_driver_scrnsht.png)
 
-# DETAILS:
+**DETAILS:**
 
     * name="wapp-driver"
     * version="0.0.2"
