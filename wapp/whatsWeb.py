@@ -1,4 +1,4 @@
-from .util import convey, log, updateCDIP
+from .util import convey
 from .var import _var
 try:
     from selenium import webdriver
@@ -9,7 +9,7 @@ try:
     from selenium.webdriver.common.keys import Keys
 except Exception as error:
     message = " Dependancy Package selenium  not found. You can install it by \n\t pip3 install selenium"
-    log(error, message)
+
     convey(error, message)
     quit()
 
@@ -29,9 +29,8 @@ class Wapp():
         self.timeout = timeout
 
         if self.load_chrome_driver(session):
-            log("successfully loaded chrome driver")
             if self.load_main_screen():
-                log("successfully loaded whatsapp web main screen")
+                print("yo")
             else:
                 self.driver.quit()
         else:
@@ -50,15 +49,11 @@ class Wapp():
                 message = f"""Chrome Driver could not be successfuly loaded ... Tried {tried} times
                 Make sure that you have latest version of Chrome and Chrome Driver 
 
-                If you have NOT updated the  Chrome Driver Installation Path please Press ENTER
-
-                The program will ask for the path and do your job !! :-) Relax !
+                If you have NOT updated the  Chrome Driver Installation Path please  do so
 
                 """
-                log(message)
+
                 convey(error, message)
-                if input("Enter y to update Chrome Driver Path ") == 'y':
-                    updateCDIP()
 
         return False
 
@@ -71,7 +66,7 @@ class Wapp():
         except Exception as error:
             message = "Could not load main screen of WhatsApp Web because of some errors, make sure to Scan QR"
             convey(error, message)
-            log(message)
+
             return False
 
     # selecting a person after searching contacts
@@ -94,7 +89,6 @@ class Wapp():
             message = f"""{name} not loaded, MAY BE NOT IN YOUR CONTACTS ...
                 If you are sure {name} is in your contacts, Try checking internet connection """
             convey(error, message)
-            log(error, message)
 
             search_box.send_keys((Keys.BACKSPACE)*len(name))
             # clearing the search bar by backspace, so that searching the next person does'nt have any issue
