@@ -4,7 +4,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
-    name="wapp",
+    name="whats_sender",
     version="0.0.1",
     license='MIT',
     author="Aahnik Daw",
@@ -21,4 +21,3 @@ setuptools.setup(
     ],
     python_requires='>=3.8',
 )
-
