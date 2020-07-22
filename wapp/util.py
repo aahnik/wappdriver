@@ -1,7 +1,3 @@
-from datetime import datetime
-
-
-
 def convey(error, message):
     print(f"\n {message} \n")
     print("For Help Contact Aahnik Daw, the author...")

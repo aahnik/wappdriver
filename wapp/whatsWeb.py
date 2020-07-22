@@ -23,7 +23,7 @@ class Wapp():
     personLoaded = _var['personLoaded']
     mBox = _var['mBox']
 
-    def __init__(self, session='default', timeout=100):
+    def __init__(self, session='wappDefaultSession', timeout=100):
 
         # the webdriver waits for an element to be detected on screen on until timeout
         self.timeout = timeout
@@ -94,11 +94,7 @@ class Wapp():
             # clearing the search bar by backspace, so that searching the next person does'nt have any issue
             return False
 
-    def send_message(self, to, msg='', **kwargs):
-
-        # pics = kwargs['pics']
-        # docs = kwargs['docs']
-        # try:
+    def send_message(self, to, msg=''):
 
         self.load_selected_person(to)
 
@@ -111,6 +107,3 @@ class Wapp():
             msg_box.send_keys(Keys.SHIFT + Keys.ENTER)  # go to next line
 
         msg_box.send_keys(Keys.ENTER)  # send message
-
-        # except Exception as error:
-        #     convey(error, "Some thing went wrong ")
