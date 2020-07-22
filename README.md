@@ -16,10 +16,12 @@ pip3 install wapp-driver
 **How to use ??**
 
 ```python
-import wapp_driver as wa
+import WappDriver as wa
 bot = wa.WappDriver()
-bot.send_message(to='Friend',msg='hi <3')
+bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
+# the recipients name must be saved in your contacts ...
 ```
+![image](wapp_driver_scrnsht.png)
 
 # DETAILS:
 
