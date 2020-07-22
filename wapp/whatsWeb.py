@@ -1,5 +1,5 @@
-from util import convey, log, updateCDIP
-
+from .util import convey, log, updateCDIP
+from .var import _var
 try:
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
@@ -12,18 +12,6 @@ except Exception as error:
     log(error, message)
     convey(error, message)
     quit()
-
-
-try:
-    import yaml
-except Exception as error:
-    message = " Dependancy Package pyyaml not found. You can install it by \n\t pip3 install pyyaml"
-    log(error, message)
-    convey(error, message)
-    quit()
-
-with open('wapp/var.yaml', 'r') as var_file:
-    _var = yaml.full_load(var_file)
 
 
 class Wapp():
