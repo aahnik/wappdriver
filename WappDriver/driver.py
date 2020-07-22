@@ -14,7 +14,7 @@ except Exception as error:
     quit()
 
 
-class WhatsAppWeb():
+class WappDriver():
 
     chrome_driver_path = _var['chrome_driver_path']
     whatsapp_web_url = _var['whatsapp_web_url']
@@ -42,7 +42,7 @@ class WhatsAppWeb():
                 chrome_options = Options()
                 chrome_options.add_argument(f'--user-data-dir={session}')
                 self.driver = webdriver.Chrome(
-                    options=chrome_options, executable_path=Wapp.chrome_driver_path)
+                    options=chrome_options, executable_path=WappDriver.chrome_driver_path)
                 return True
             except Exception as error:
                 tried += 1
@@ -61,7 +61,7 @@ class WhatsAppWeb():
         try:
             self.driver.get(_var['whatsapp_web_url'])
             WebDriverWait(self.driver, self.timeout).until(
-                expCond.presence_of_element_located((By.CSS_SELECTOR, Wapp.mainScreenLOaded)))
+                expCond.presence_of_element_located((By.CSS_SELECTOR, WappDriver.mainScreenLOaded)))
             return True
         except Exception as error:
             message = "Could not load main screen of WhatsApp Web because of some errors, make sure to Scan QR"
@@ -73,14 +73,14 @@ class WhatsAppWeb():
     def load_selected_person(self, name):
 
         search_box = self.driver.find_element_by_css_selector(
-            Wapp.searchSelector)
+            WappDriver.searchSelector)
         # we will send the name to the input key box
 
         search_box.send_keys(name+Keys.ENTER)
 
         try:
             # checking whether new person is loaded or not
-            personLoaded = Wapp.personLoaded.replace("{name}", name)
+            personLoaded = WappDriver.personLoaded.replace("{name}", name)
             WebDriverWait(self.driver, self.timeout).until(expCond.presence_of_element_located(
                 (By.XPATH, personLoaded)))
             return True
@@ -99,7 +99,7 @@ class WhatsAppWeb():
         self.load_selected_person(to)
 
         msg_box = WebDriverWait(self.driver, self.timeout).until(
-            expCond.presence_of_element_located((By.XPATH, Wapp.mBox)))
+            expCond.presence_of_element_located((By.XPATH, WappDriver.mBox)))
         lines = msg.split('\n')
 
         for line in lines:

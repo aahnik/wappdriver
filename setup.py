@@ -4,7 +4,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
-    name="whats_sender",
+    name="WappDriver",
     version="0.0.1",
     license='MIT',
     author="Aahnik Daw",
