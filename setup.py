@@ -9,10 +9,10 @@ setuptools.setup(
     license='MIT',
     author="Aahnik Daw",
     author_email="aahnikdaw@gmail.com",
-    description="A package that automates WhatsApp Web ",
+    description="A package that automates sending messages through WhatsApp Web ",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/aahnik/wapp",
+    url="https://github.com/aahnik/wapp-driver",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
