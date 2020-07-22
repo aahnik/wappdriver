@@ -14,7 +14,7 @@ except Exception as error:
     quit()
 
 
-class Wapp():
+class WhatsAppWeb():
 
     chrome_driver_path = _var['chrome_driver_path']
     whatsapp_web_url = _var['whatsapp_web_url']

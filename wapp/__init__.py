@@ -1,1 +1,1 @@
-from .whatsWeb import Wapp
+from .whatsWeb import WhatsAppWeb
