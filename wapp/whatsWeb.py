@@ -35,18 +35,19 @@ class Wapp():
     personLoaded = _var['personLoaded']
     mBox = _var['mBox']
 
-    def __init__(self, session='default'):
+    def __init__(self, session='default', timeout=100):
+
+        # the webdriver waits for an element to be detected on screen on until timeout
+        self.timeout = timeout
 
         if self.load_chrome_driver(session):
             log("successfully loaded chrome driver")
             if self.load_main_screen():
                 log("successfully loaded whatsapp web main screen")
             else:
-                return False
+                self.driver.quit()
         else:
-            return False
-
-        return True
+            self.driver.quit()
 
     def load_chrome_driver(self, session, tried=0):
         while tried <= 3:
@@ -58,17 +59,25 @@ class Wapp():
                 return True
             except Exception as error:
                 tried += 1
-                log(
-                    f"Chrome Driver could not be successfuly loaded ... Tried {tried} times")
-                # updateCDIP()
-                convey(error,"You may need to update Chrome")
+                message = f"""Chrome Driver could not be successfuly loaded ... Tried {tried} times
+                Make sure that you have latest version of Chrome and Chrome Driver 
+
+                If you have NOT updated the  Chrome Driver Installation Path please Press ENTER
+
+                The program will ask for the path and do your job !! :-) Relax !
+
+                """
+                log(message)
+                convey(error, message)
+                if input("Enter y to update Chrome Driver Path ") == 'y':
+                    updateCDIP()
 
         return False
 
-    def load_main_screen(self, wait=100):
+    def load_main_screen(self):
         try:
             self.driver.get(_var['whatsapp_web_url'])
-            WebDriverWait(self.driver, wait).until(
+            WebDriverWait(self.driver, self.timeout).until(
                 expCond.presence_of_element_located((By.CSS_SELECTOR, Wapp.mainScreenLOaded)))
             return True
         except Exception as error:
@@ -105,21 +114,21 @@ class Wapp():
 
     def send_message(self, to, msg='', **kwargs):
 
-        pics = kwargs['pics']
-        docs = kwargs['docs']
-        try:
+        # pics = kwargs['pics']
+        # docs = kwargs['docs']
+        # try:
 
-            self.load_selected_person(to)
+        self.load_selected_person(to)
 
-            msg_box = WebDriverWait(self.driver, self.timeout).until(
-                expCond.presence_of_element_located(By.XPATH, Wapp.mBox))
-            line = msg.split('\n')
+        msg_box = WebDriverWait(self.driver, self.timeout).until(
+            expCond.presence_of_element_located((By.XPATH, Wapp.mBox)))
+        lines = msg.split('\n')
 
-            for line in msg:
-                msg_box.send_keys(line)  # write a line
-                msg_box.send_keys(Keys.SHIFT, Keys.ENTER)  # go to next line
+        for line in lines:
+            msg_box.send_keys(line)  # write a line
+            msg_box.send_keys(Keys.SHIFT + Keys.ENTER)  # go to next line
 
-            msg_box.send_keys(Keys.ENTER)  # send message
+        msg_box.send_keys(Keys.ENTER)  # send message
 
-        except:
-            print("some thing went wrong ")
+        # except Exception as error:
+        #     convey(error, "Some thing went wrong ")

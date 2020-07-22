@@ -8,7 +8,7 @@ def convey(error, message):
     print("Email: aahnikdaw@gmail.com \n")
     print("\t\tPress ENTER to skip")
 
-    if input("Type in 'detail' + press ENTER to see Exceptions caught.") == 'detail' or "'detail'":
+    if input("Enter d to see details about Exceptions caught.\n") == 'd':
         print(f'\n{error}\n')
 
 
@@ -19,7 +19,7 @@ def updateCDIP():  # Chrome Driver Installation Path
 
     with open('wapp/var.yaml', 'r') as var_file:
         _var = yaml.full_load(var_file)
-        
+
     with open('wapp/var.yaml', 'w') as var_file:
         new = {'chrome_driver_path': f'{path}'}
         _var.update(new)
