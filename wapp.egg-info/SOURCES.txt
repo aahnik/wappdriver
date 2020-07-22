@@ -1,7 +1,0 @@
-README.md
-setup.py
-wapp/__init__.py
-wapp.egg-info/PKG-INFO
-wapp.egg-info/SOURCES.txt
-wapp.egg-info/dependency_links.txt
-wapp.egg-info/top_level.txt

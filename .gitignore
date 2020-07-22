@@ -1,0 +1,6 @@
+/default
+/build
+/dist
+/wapp/__pycache__
+/wapp.egg-info
+logs.txt

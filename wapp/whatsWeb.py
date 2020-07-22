@@ -1,6 +1,4 @@
-
-from selenium.webdriver.common import keys
-from .util import convey, log, updateCDIP
+from util import convey, log, updateCDIP
 
 try:
     from selenium import webdriver
@@ -24,7 +22,7 @@ except Exception as error:
     convey(error, message)
     quit()
 
-with open('var.yaml', 'r') as var_file:
+with open('wapp/var.yaml', 'r') as var_file:
     _var = yaml.full_load(var_file)
 
 
@@ -61,15 +59,16 @@ class Wapp():
             except Exception as error:
                 tried += 1
                 log(
-                    f"Chrome Driver could not be successfuly loaded... Tried {tried} times")
-                updateCDIP()
+                    f"Chrome Driver could not be successfuly loaded ... Tried {tried} times")
+                # updateCDIP()
+                convey(error,"You may need to update Chrome")
 
         return False
 
     def load_main_screen(self, wait=100):
         try:
             self.driver.get(_var['whatsapp_web_url'])
-            WebDriverWait(self.browser, wait).until(
+            WebDriverWait(self.driver, wait).until(
                 expCond.presence_of_element_located((By.CSS_SELECTOR, Wapp.mainScreenLOaded)))
             return True
         except Exception as error:
@@ -81,7 +80,7 @@ class Wapp():
     # selecting a person after searching contacts
     def load_selected_person(self, name):
 
-        search_box = self.browser.find_element_by_css_selector(
+        search_box = self.driver.find_element_by_css_selector(
             Wapp.searchSelector)
         # we will send the name to the input key box
 
