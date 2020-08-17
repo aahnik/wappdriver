@@ -5,8 +5,9 @@ echo -e "\t https://gist.github.com/aahnik/5e473000fb3ac24ef0251a52c5f45473#file
 echo -e  "You can ctrl + click (cmd on mac) on the url or copy and paste it in your browser \n\n "
 echo -e "Make sure to execute this script from the root directory of the project,"
 echo -e "i.e the same directory which contains setup.py \n "
+echo -e "run outside any virtual environment  \n\n"
 
-read -p "Press ENTER to continue "
+read -p "Press ENTER to continue  "
 
 rm -r *.egg-info build dist 
 python3 -m pip install --user --upgrade setuptools wheel
