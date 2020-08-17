@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="wapp-driver",
-    version="0.0.3",
+    version="0.0.4",
     license='MIT',
     author="Aahnik Daw",
     author_email="aahnikdaw@gmail.com",
