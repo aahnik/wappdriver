@@ -25,7 +25,7 @@ bot = wa.WappDriver()
 bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
 # the recipients name must be saved in your contacts ...
 ```
-![image](wapp_driver_scrnsht.png)
+![image](https://github.com/aahnik/wapp-driver/blob/master/wapp_driver_scrnsht.png?raw=true)
 
 **DETAILS:**
 
