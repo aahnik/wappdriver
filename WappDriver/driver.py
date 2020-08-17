@@ -30,7 +30,7 @@ class WappDriver():
 
         if self.load_chrome_driver(session):
             if self.load_main_screen():
-                print("yo")
+                print("Yo!! sucessfully loaded WhatsApp")
             else:
                 self.driver.quit()
         else:
