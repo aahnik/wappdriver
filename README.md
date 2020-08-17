@@ -25,18 +25,18 @@ bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
 
 **DETAILS:**
 
-    * name="wapp-driver"
-    * version="0.0.2"
-    * license='MIT'
-    * author="Aahnik Daw"
-    * author_email="aahnikdaw@gmail.com"
-    * description="A package that automates sending messages through WhatsApp Web "
+* name: `wapp-driver`
+* version : `0.0.2`
+* license: `MIT`
+* author: `Aahnik Daw`
 
-    * url="https://github.com/aahnik/wapp-driver"
+* description: `A package that automatessending messages through WhatsApp Web` 
 
-    * classifiers=
-        "Programming Language :: Python :: 3"
-        "License :: OSI Approved :: MIT License"
-        "Operating System :: OS Independent"
-    
-    * python_requires='>=3.8'
+* url `https://github.com/aahnik/wapp-driver`
+
+* classifiers
+    - Programming Language :: `Python :: 3`
+    - License :: `OSI Approved :: MIT License`
+    - Operating System :: `OS Independent`
+
+* python_requires: `>=3.8`
