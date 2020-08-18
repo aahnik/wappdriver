@@ -15,7 +15,7 @@ setuptools.setup(
     url="https://github.com/aahnik/wapp-driver",
     install_requires=['selenium', 'pyyaml', 'requests'],
     packages=setuptools.find_packages(),
-    package_data={'wapp-driver': ['data/*']},
+    package_data={'wappdriver': ['data/*']},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
