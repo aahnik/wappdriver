@@ -53,11 +53,12 @@ class WappDriver():
                 message = f"""Chrome Driver could not be successfuly loaded ... Tried {tried} times
                 Make sure that you have latest version of Chrome and Chrome Driver 
 
-                If you have NOT updated the  Chrome Driver Installation Path please  do so
+                CHROME DRIVER INSTALLATION PATH IS INVALID !!
 
                 """
 
                 convey(error, message)
+                up.update_cdp()
 
         return False
 
