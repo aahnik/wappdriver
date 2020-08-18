@@ -56,7 +56,6 @@ class WappDriver():
                 CHROME DRIVER INSTALLATION PATH IS INVALID !!
 
                 """
-
                 convey(error, message)
                 up.update_cdp()
 
