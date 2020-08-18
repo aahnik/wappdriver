@@ -1,12 +1,14 @@
 # WappDriver
 _Send WhatsApp messages programmatically, using only 3 lines of code_
 
+✅ tests passed successfully
+
 **It's very simple to use**
 
 ```python
 import wappdriver as wa
 bot = wa.WappDriver()
-bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
+bot.send_message(to='aahnik',msg='Hi ! sent by a bot :-p ')
 # the recipients name must be saved in your contacts ...
 ```
 ![wapp_driver_scrnsht](https://user-images.githubusercontent.com/66209958/90502857-2879a600-e16c-11ea-8f7f-7bbf2a993a13.png)
