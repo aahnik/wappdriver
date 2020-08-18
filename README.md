@@ -2,7 +2,7 @@
 _Send WhatsApp messages programmatically, using only 3 lines of code._
 
 
-A python package that helps you automate sending messages through WhatsApp Web 😎
+**A python package that helps you automate sending messages through WhatsApp Web 😎**
 
 
 ✅ tests passed successfully
