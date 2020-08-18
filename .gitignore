@@ -3,5 +3,4 @@
 /build
 venv
 .vscode
-pypi.sh
 __pycache__
