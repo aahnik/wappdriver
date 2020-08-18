@@ -13,7 +13,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/aahnik/wapp-driver",
-    install_requires=['selenium'],
+    install_requires=['selenium','pyyaml'],
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
