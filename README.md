@@ -1,4 +1,5 @@
 # WappDriver
+_Send WhatsApp messages programmatically, using only 3 lines of code_
 
 **It's very simple to use**
 
@@ -8,7 +9,8 @@ bot = wa.WappDriver()
 bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
 # the recipients name must be saved in your contacts ...
 ```
-![image](https://github.com/aahnik/wapp-driver/blob/master/wapp_driver_scrnsht.png?raw=true)
+![wapp_driver_scrnsht](https://user-images.githubusercontent.com/66209958/90502857-2879a600-e16c-11ea-8f7f-7bbf2a993a13.png)
+
 
 **Requirements:**
 
@@ -26,20 +28,4 @@ bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
 pip3 install wappdriver
 ```
 
-**DETAILS:**
-
-* name: `wappdriver`
-* version : `0.0.7`
-* license: `MIT`
-* author: `Aahnik Daw`
-
-* description: `A package that automatessending messages through WhatsApp Web` 
-
-* [url](https://github.com/aahnik/wappdriver)
-
-* classifiers
-    - Programming Language :: `Python :: 3`
-    - License :: `OSI Approved :: MIT License`
-    - Operating System :: `OS Independent`
-
-* python_requires: `>=3.8`
+[PyPI](https://pypi.org/project/wappdriver/)

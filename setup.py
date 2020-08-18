@@ -5,14 +5,14 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="wappdriver",
-    version="0.0.7",
+    version="0.0.8",
     license='MIT',
     author="Aahnik Daw",
     author_email="aahnikdaw@gmail.com",
     description="A package that automates sending messages through WhatsApp Web ",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/aahnik/wapp-driver",
+    url="https://github.com/aahnik/wappdriver",
     install_requires=['selenium', 'pyyaml', 'requests'],
     packages=setuptools.find_packages(),
     package_data={'wappdriver': ['data/*']},
