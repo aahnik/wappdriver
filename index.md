@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+# WappDriver
+_Send WhatsApp messages programmatically, using only 3 lines of code_
 
-You can use the [editor on GitHub](https://github.com/aahnik/wappdriver/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+✅ tests passed successfully
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**It's very simple to use**
 
-### Markdown
+```python
+import wappdriver as wa
+bot = wa.WappDriver()
+bot.send_message(to='aahnik',msg='Hi ! sent by a bot :-p ')
+# the recipients name must be saved in your contacts ...
+```
+![wapp_driver_scrnsht](https://user-images.githubusercontent.com/66209958/90502857-2879a600-e16c-11ea-8f7f-7bbf2a993a13.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+**Requirements:**
 
-# Header 1
-## Header 2
-### Header 3
+1. [Python3](https://www.python.org/)
+2. [pip3](https://www.python.org/)
+3. [Chrome Browser](https://www.google.com/chrome/) 
+4. [Chrome Driver](https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/)
 
-- Bulleted
-- List
+![whatspp](https://user-images.githubusercontent.com/66209958/90409877-5953cf80-e0c7-11ea-8700-d4549735fc10.png)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+**How to install ??**
 
-[Link](url) and ![Image](src)
+```
+pip3 install wappdriver
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/aahnik/wappdriver/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[PyPI](https://pypi.org/project/wappdriver/)
