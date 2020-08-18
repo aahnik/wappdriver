@@ -35,7 +35,7 @@ pip3 install wapp-driver
 
 * description: `A package that automatessending messages through WhatsApp Web` 
 
-* url `https://github.com/aahnik/wapp-driver`
+* [url](https://github.com/aahnik/wapp-driver)
 
 * classifiers
     - Programming Language :: `Python :: 3`
