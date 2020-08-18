@@ -23,19 +23,19 @@ bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
 **How to install ??**
 
 ```
-pip3 install wapp-driver
+pip3 install wappdriver
 ```
 
 **DETAILS:**
 
-* name: `wapp-driver`
-* version : `0.0.5`
+* name: `wappdriver`
+* version : `0.0.7`
 * license: `MIT`
 * author: `Aahnik Daw`
 
 * description: `A package that automatessending messages through WhatsApp Web` 
 
-* [url](https://github.com/aahnik/wapp-driver)
+* [url](https://github.com/aahnik/wappdriver)
 
 * classifiers
     - Programming Language :: `Python :: 3`
