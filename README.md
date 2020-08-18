@@ -1,5 +1,15 @@
 # WappDriver
 
+**It's very simple to use**
+
+```python
+import wappdriver as wa
+bot = wa.WappDriver()
+bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
+# the recipients name must be saved in your contacts ...
+```
+![image](https://github.com/aahnik/wapp-driver/blob/master/wapp_driver_scrnsht.png?raw=true)
+
 **Requirements:**
 
 1. Python 3.8 or above
@@ -10,27 +20,16 @@
 ![whatspp](https://user-images.githubusercontent.com/66209958/90409877-5953cf80-e0c7-11ea-8700-d4549735fc10.png)
 
 
-
 **How to install ??**
 
 ```
 pip3 install wapp-driver
 ```
 
-**How to use ??**
-
-```python
-import WappDriver as wa
-bot = wa.WappDriver()
-bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
-# the recipients name must be saved in your contacts ...
-```
-![image](https://github.com/aahnik/wapp-driver/blob/master/wapp_driver_scrnsht.png?raw=true)
-
 **DETAILS:**
 
 * name: `wapp-driver`
-* version : `0.0.2`
+* version : `0.0.5`
 * license: `MIT`
 * author: `Aahnik Daw`
 
