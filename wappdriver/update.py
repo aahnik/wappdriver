@@ -10,7 +10,7 @@ URL = f'https://gist.githubusercontent.com/aahnik/{token}/'
 remote_varVer = f'{URL}wapp-driver-var-ver'
 remote_var = f'{URL}wapp-driver-var.yml'
 
-P = 'wapp-driver'
+P = 'wappdriver'
 
 var = pkg_resources.resource_filename(P, 'data/var.yml')
 chrome_driver_path = pkg_resources.resource_filename(
