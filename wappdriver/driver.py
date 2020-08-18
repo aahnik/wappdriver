@@ -46,7 +46,7 @@ class WappDriver():
                 chrome_options = Options()
                 chrome_options.add_argument(f'--user-data-dir={session}')
                 self.driver = webdriver.Chrome(
-                    options=chrome_options, executable_path=WappDriver.chrome_driver_path)
+                    options=chrome_options, executable_path=self.chrome_driver_path)
                 return True
             except Exception as error:
                 tried += 1

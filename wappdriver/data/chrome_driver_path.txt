@@ -1,1 +1,1 @@
-x-special/nautilus-clipboard
+/home/aahnik/Downloads/Applications/chromedriver
