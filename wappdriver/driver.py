@@ -85,9 +85,9 @@ class WappDriver():
 
         try:
             # checking whether new person is loaded or not
-            personLoaded = WappDriver.personLoaded.replace("{name}", name)
+            personLoaded = self.personLoaded.replace("{name}", name)
             WebDriverWait(self.driver, self.timeout).until(expCond.presence_of_element_located(
-                (By.XPATH, self.personLoaded)))
+                (By.XPATH, personLoaded)))
             return True
 
         except Exception as error:
