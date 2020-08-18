@@ -1,1 +1,4 @@
-1.0
+0.0
+# do not touch file 
+# for use by program for saving version data 
+# this is required for auto-update operation of var.yml
