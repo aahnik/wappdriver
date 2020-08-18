@@ -1,5 +1,6 @@
 # [API for WhatsApp Web Automation](https://aahnik.github.io/wappdriver/)
 _Send WhatsApp messages programmatically, using only 3 lines of code_
+
 A python package that helps you automate sending messages through WhatsApp Web 😎
 
 ✅ tests passed successfully
