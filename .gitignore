@@ -1,5 +1,5 @@
 /dist
-/wapp_driver.egg-info
+/wappdriver.egg-info
 /build
 venv
 .vscode
