@@ -16,7 +16,7 @@ class WappDriver():
     def __init__(self, session='wappDefaultSession', timeout=100):
 
         if up.local_varVer_val == 0.0:
-            first_time_set_up()
+            first_time_set_up(up)
 
         self.chrome_driver_path = open(up.chrome_driver_path).readline()
         with open(up.var) as file:
