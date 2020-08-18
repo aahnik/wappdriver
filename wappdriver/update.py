@@ -15,7 +15,7 @@ P = 'wappdriver'
 var = pkg_resources.resource_filename(P, 'data/var.yml')
 chrome_driver_path = pkg_resources.resource_filename(
     P, 'data/chrome_driver_path.txt')
-varVer = pkg_resources.resource_filename(P, 'data/varVer')
+varVer = pkg_resources.resource_filename(P, 'data/varVer.txt')
 
 local_varVer_val = float(open(varVer).readline())
 
