@@ -1,36 +1,40 @@
-from .util import convey
-from .var import _var
-try:
-    from selenium import webdriver
-    from selenium.webdriver.chrome.options import Options
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support import expected_conditions as expCond
-    from selenium.webdriver.common.keys import Keys
-except Exception as error:
-    message = " Dependancy Package selenium  not found. You can install it by \n\t pip3 install selenium"
+from .util import first_time_set_up, convey
+from . import update as up
 
-    convey(error, message)
-    quit()
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as expCond
+from selenium.webdriver.common.keys import Keys
+
+import yaml
 
 
 class WappDriver():
 
-    chrome_driver_path = _var['chrome_driver_path']
-    whatsapp_web_url = _var['whatsapp_web_url']
-    mainScreenLOaded = _var['mainScreenLOaded']
-    searchSelector = _var['searchSelector']
-    personLoaded = _var['personLoaded']
-    mBox = _var['mBox']
-
     def __init__(self, session='wappDefaultSession', timeout=100):
 
+        if up.local_varVer_val == 0.0:
+            first_time_set_up()
+
+        self.chrome_driver_path = open(up.chrome_driver_path).readline()
+        with open(up.var) as file:
+            _var = yaml.full_load(file)
+
+        self.whatsapp_web_url = _var['whatsapp_web_url']
+        self.mainScreenLOaded = _var['mainScreenLOaded']
+        self.searchSelector = _var['searchSelector']
+        self.personLoaded = _var['personLoaded']
+        self.mBox = _var['mBox']
+
         # the webdriver waits for an element to be detected on screen on until timeout
+
         self.timeout = timeout
 
         if self.load_chrome_driver(session):
             if self.load_main_screen():
-                print("Yo!! sucessfully loaded WhatsApp")
+                print("Yo!! sucessfully loaded WhatsApp Web")
             else:
                 self.driver.quit()
         else:
@@ -59,9 +63,9 @@ class WappDriver():
 
     def load_main_screen(self):
         try:
-            self.driver.get(_var['whatsapp_web_url'])
+            self.driver.get(self.whatsapp_web_url)
             WebDriverWait(self.driver, self.timeout).until(
-                expCond.presence_of_element_located((By.CSS_SELECTOR, WappDriver.mainScreenLOaded)))
+                expCond.presence_of_element_located((By.CSS_SELECTOR, self.mainScreenLOaded)))
             return True
         except Exception as error:
             message = "Could not load main screen of WhatsApp Web because of some errors, make sure to Scan QR"
@@ -73,16 +77,16 @@ class WappDriver():
     def load_selected_person(self, name):
 
         search_box = self.driver.find_element_by_css_selector(
-            WappDriver.searchSelector)
-        # we will send the name to the input key box
+            self.searchSelector)
 
+        # we will send the name to the input key box
         search_box.send_keys(name+Keys.ENTER)
 
         try:
             # checking whether new person is loaded or not
             personLoaded = WappDriver.personLoaded.replace("{name}", name)
             WebDriverWait(self.driver, self.timeout).until(expCond.presence_of_element_located(
-                (By.XPATH, personLoaded)))
+                (By.XPATH, self.personLoaded)))
             return True
 
         except Exception as error:
@@ -99,7 +103,7 @@ class WappDriver():
         self.load_selected_person(to)
 
         msg_box = WebDriverWait(self.driver, self.timeout).until(
-            expCond.presence_of_element_located((By.XPATH, WappDriver.mBox)))
+            expCond.presence_of_element_located((By.XPATH, self.mBox)))
         lines = msg.split('\n')
 
         for line in lines:
