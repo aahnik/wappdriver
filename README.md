@@ -12,10 +12,10 @@ bot.send_message(to='Friend',msg='Hi ! sent by a bot :-p ')
 
 **Requirements:**
 
-1. Python 3.8 or above
-2. pip3
-3. Chrome Browser (latest version)
-4. Chrome Driver (latest version) [click here to download](https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/)
+1. [Python3](https://www.python.org/)
+2. [pip3](https://www.python.org/)
+3. [Chrome Browser](https://www.google.com/chrome/) 
+4. [Chrome Driver](https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/)
 
 ![whatspp](https://user-images.githubusercontent.com/66209958/90409877-5953cf80-e0c7-11ea-8700-d4549735fc10.png)
 
