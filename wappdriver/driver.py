@@ -50,11 +50,9 @@ class WappDriver():
                 return True
             except Exception as error:
                 tried += 1
-                message = f"""Chrome Driver could not be successfuly loaded ... Tried {tried} times
-                Make sure that you have latest version of Chrome and Chrome Driver 
-
+                message = f"""Chrome Driver could not be successfuly loaded 
+                Make sure that you have latest and matching versions of Chrome and Chrome Driver 
                 CHROME DRIVER INSTALLATION PATH IS INVALID !!
-
                 """
                 convey(error, message)
                 up.update_cdp()
