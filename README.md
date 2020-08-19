@@ -40,3 +40,7 @@ pip3 install wappdriver
 ```
 
 [PyPI](https://pypi.org/project/wappdriver/)
+
+**Special Thanks to @VISWESWARAN1998**
+I learned a lot from his [repo](https://github.com/aahnik/Simple-Yet-Hackable-WhatsApp-api) and had initially started working on it.
+But as my PRs were not accepted as my needs were different, I created a seperate project totally independent from that repo.
