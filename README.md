@@ -6,6 +6,7 @@ _Send WhatsApp messages programmatically, using only 3 lines of code._
 
 
 ✅ tests passed successfully
+[![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
 
 ![whatspp](https://user-images.githubusercontent.com/66209958/90409877-5953cf80-e0c7-11ea-8700-d4549735fc10.png)
 
