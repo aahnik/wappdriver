@@ -1,14 +1,14 @@
 # [API for WhatsApp Web Automation](https://aahnik.github.io/wappdriver/)
-_Send WhatsApp messages programmatically, using only 3 lines of code._
+_Send WhatsApp messages programmatically, using only 3 lines of code._ [![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)]()
 
 
 **A python package that helps you automate sending messages through WhatsApp Web 😎**
 
+[![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
 
 
 
 
-[![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)]()
 
 
 **It's very simple to use**
@@ -69,4 +69,4 @@ I learned a lot from his [repo](https://github.com/aahnik/Simple-Yet-Hackable-Wh
 But as my PRs were not accepted as my needs were different, I created a seperate project totally independent from that repo.
 
 ---
-[![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
+
