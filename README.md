@@ -1,4 +1,6 @@
-# API for WhatsApp Web Automation [![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)](https://aahnik.github.io/wappdriver/)
+# API for WhatsApp Web Automation 
+[![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)](https://aahnik.github.io/wappdriver/)
+
 _Send WhatsApp messages programmatically, using only 3 lines of code._ 
 
 
@@ -27,7 +29,9 @@ bot.send_message(to='aahnik',msg='Hi ! sent by a bot :-p ')
 ```
 pip3 install wappdriver
 ```
-[PyPI](https://pypi.org/project/wappdriver/) [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)]() 
+[PyPI](https://pypi.org/project/wappdriver/) 
+
+[![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)]() 
 
 
 ---
