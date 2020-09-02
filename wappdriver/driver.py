@@ -25,7 +25,6 @@ class WappDriver():
         self.whatsapp_web_url = _var['whatsapp_web_url']
         self.mainScreenLOaded = _var['mainScreenLOaded']
         self.searchSelector = _var['searchSelector']
-        self.personLoaded = _var['personLoaded']
         self.mBox = _var['mBox']
 
         # the webdriver waits for an element to be detected on screen on until timeout
@@ -81,17 +80,17 @@ class WappDriver():
         search_box.send_keys(name)
 
         try:
-            # checking whether new person is loaded or not
-            personLoaded = self.personLoaded.replace("{name}", name)
             person = WebDriverWait(self.driver, self.timeout).until(expCond.presence_of_element_located(
-                (By.XPATH, personLoaded)))
-
+                (By.XPATH, f'//*[@title="{name}"]')))
             person.click()
             return True
 
         except Exception as error:
             message = f"""{name} not loaded, MAY BE NOT IN YOUR CONTACTS , 
-                If you are sure {name} is in your contacts, Try checking internet connection """
+                If you are sure {name} is in your contacts, Try checking internet connection
+                
+               OR  May be some other problem ...  """
+
             convey(error, message)
 
             search_box.send_keys((Keys.BACKSPACE)*len(name))
