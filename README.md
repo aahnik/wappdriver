@@ -6,8 +6,10 @@ _Send WhatsApp messages programmatically, using only 3 lines of code._
 
 
 
-[![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
+
+
 [![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)]()
+
 
 **It's very simple to use**
 
@@ -31,6 +33,7 @@ pip3 install wappdriver
 ---
 
 
+
 ## WARNING  ⚠️
 WhatsApp does not allow you to login into the same account from multiple chrome tabs.
 So **make sure to close any chrome tab which has WhatsApp Web open**, before executing the following  line when your session cookies(data for automatic login, without requiring you to scan QR code multiple times) are saved in your current directory.
@@ -45,9 +48,10 @@ You will be required to scan the QR Code for the first time only, thereafter the
 
 **Requirements:**
 
-1. [Python3](https://www.python.org/) and [pip3](https://www.python.org/)
-2. [Chrome Browser](https://www.google.com/chrome/) 
-3. [Chrome Driver](https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
+- [Chrome Browser](https://www.google.com/chrome/) 
+- [Chrome Driver](https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/)
 
 Make sure to have matching versions of Chrome Browser and Chrome Driver.
 I recommend to use the latest version of both, for the best performance
@@ -56,8 +60,7 @@ I recommend to use the latest version of both, for the best performance
 
 
 
-[PyPI](https://pypi.org/project/wappdriver/)
-
+[PyPI](https://pypi.org/project/wappdriver/) [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)]() 
 ---
 
 
@@ -66,4 +69,4 @@ I learned a lot from his [repo](https://github.com/aahnik/Simple-Yet-Hackable-Wh
 But as my PRs were not accepted as my needs were different, I created a seperate project totally independent from that repo.
 
 ---
-
+[![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
