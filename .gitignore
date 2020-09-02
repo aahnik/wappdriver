@@ -5,3 +5,4 @@ venv
 .vscode
 __pycache__
 wappDefaultSession
+pypi.sh
