@@ -7,7 +7,7 @@ _Send WhatsApp messages programmatically, using only 3 lines of code._
 
 
 [![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
-
+[![Generic badge](https://img.shields.io/badge/tests-passing-<COLOR>.svg)]()
 
 **It's very simple to use**
 
