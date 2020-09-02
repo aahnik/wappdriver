@@ -14,3 +14,4 @@ def convey(error, message):
     print(f"\n {message} \n")
     print(f'\n{error}\n')
     print("\n For help visit aahnik.github.io/wappdriver ")
+

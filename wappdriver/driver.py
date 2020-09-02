@@ -78,17 +78,19 @@ class WappDriver():
             self.searchSelector)
 
         # we will send the name to the input key box
-        search_box.send_keys(name+Keys.ENTER)
+        search_box.send_keys(name)
 
         try:
             # checking whether new person is loaded or not
             personLoaded = self.personLoaded.replace("{name}", name)
-            WebDriverWait(self.driver, self.timeout).until(expCond.presence_of_element_located(
+            person = WebDriverWait(self.driver, self.timeout).until(expCond.presence_of_element_located(
                 (By.XPATH, personLoaded)))
+
+            person.click()
             return True
 
         except Exception as error:
-            message = f"""{name} not loaded, MAY BE NOT IN YOUR CONTACTS ...
+            message = f"""{name} not loaded, MAY BE NOT IN YOUR CONTACTS , 
                 If you are sure {name} is in your contacts, Try checking internet connection """
             convey(error, message)
 
@@ -98,14 +100,14 @@ class WappDriver():
 
     def send_message(self, to, msg=''):
 
-        self.load_selected_person(to)
+        if self.load_selected_person(to):
 
-        msg_box = WebDriverWait(self.driver, self.timeout).until(
-            expCond.presence_of_element_located((By.XPATH, self.mBox)))
-        lines = msg.split('\n')
+            msg_box = WebDriverWait(self.driver, self.timeout).until(
+                expCond.presence_of_element_located((By.XPATH, self.mBox)))
+            lines = msg.split('\n')
 
-        for line in lines:
-            msg_box.send_keys(line)  # write a line
-            msg_box.send_keys(Keys.SHIFT + Keys.ENTER)  # go to next line
+            for line in lines:
+                msg_box.send_keys(line)  # write a line
+                msg_box.send_keys(Keys.SHIFT + Keys.ENTER)  # go to next line
 
-        msg_box.send_keys(Keys.ENTER)  # send message
+            msg_box.send_keys(Keys.ENTER)  # send message
