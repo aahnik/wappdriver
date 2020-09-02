@@ -50,6 +50,7 @@ You will be required to scan the QR Code for the first time only, thereafter the
 3. [Chrome Driver](https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/)
 
 Make sure to have matching versions of Chrome Browser and Chrome Driver.
+I recommend to use the latest version of both, for the best performance
 
 ----
 
