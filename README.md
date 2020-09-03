@@ -72,4 +72,4 @@ I learned a lot from his [repo](https://github.com/aahnik/Simple-Yet-Hackable-Wh
 But as my PRs were not accepted as my needs were different, I created a seperate project totally independent from that repo.
 
 
-For Help you can email me at [meet.aahnik@gmail.com](mailto:meet.aahnik@gmail.com) or chat on [Telegram](https://t.me/AahnikDaw)
+For _help_ you can **email me** at [meet.aahnik@gmail.com](mailto:meet.aahnik@gmail.com) or **chat** on [Telegram](https://t.me/AahnikDaw).You can expect a reply within 48 hours.
