@@ -31,7 +31,7 @@ pip3 install wappdriver
 ```
 [PyPI](https://pypi.org/project/wappdriver/) 
 
-[![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)]() 
+[![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE) 
 
 
 ---
