@@ -5,7 +5,7 @@
 [![Generic badge](https://img.shields.io/badge/send_documents-no-RED.svg)](https://aahnik.github.io/wappdriver/)
 [![Generic badge](https://img.shields.io/badge/use_emojis-few-YELLOW.svg)](https://aahnik.github.io/wappdriver/)
 [![Generic badge](https://img.shields.io/badge/fast-yes-LIGHT_GREEN.svg)](https://aahnik.github.io/wappdriver/)
-[![Generic badge](https://img.shields.io/badge/reliable-yes-GREEN.svg)](https://aahnik.github.io/wappdriver/)
+[![Generic badge](https://img.shields.io/badge/reliable-yes-DARK_GREEN.svg)](https://aahnik.github.io/wappdriver/)
 
 _Send WhatsApp messages programmatically, using only 3 lines of code._ 
 
