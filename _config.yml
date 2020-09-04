@@ -3,7 +3,6 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-theme: jekyll-theme-minimal
 include:
   - CONTRIBUTING.md
   - README.md
