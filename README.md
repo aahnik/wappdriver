@@ -62,7 +62,7 @@ I recommend to use the latest version of both, for the best performance
 
 ----
 
-
+**Want to contribute ?** Look at [Code of Conduct](/CODE_OF_CONDUCT.MD)
 
 
 
