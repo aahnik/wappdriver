@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.2.4",
     license='MIT',
     author="Aahnik Daw",
-    author_email="aahnikdaw@gmail.com",
+    author_email="meet.aahnik@gmail.com",
     description="A package that automates sending messages through WhatsApp Web ",
     long_description=long_description,
     long_description_content_type="text/markdown",
