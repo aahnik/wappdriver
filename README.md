@@ -1,4 +1,5 @@
 # API for WhatsApp Web Automation 
+
 [![Generic badge](https://img.shields.io/badge/send_text-yes-GREEN.svg)](https://aahnik.github.io/wappdriver/)
 [![Generic badge](https://img.shields.io/badge/send_images-no-RED.svg)](https://aahnik.github.io/wappdriver/)
 [![Generic badge](https://img.shields.io/badge/send_videos-no-RED.svg)](https://aahnik.github.io/wappdriver/)
@@ -6,13 +7,12 @@
 [![Generic badge](https://img.shields.io/badge/use_emojis-few-YELLOW.svg)](https://aahnik.github.io/wappdriver/)
 [![Generic badge](https://img.shields.io/badge/speed-medium-ORANGE.svg)](https://aahnik.github.io/wappdriver/)
 
-
 _Send WhatsApp messages programmatically, using only 3 lines of code._ 
 
+**A python package that helps you automate sending messages through WhatsApp Web 😎**
 
-### A python package that helps you automate sending messages through WhatsApp Web 😎
-
-[![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/aahnik/wappdriver/graphs/commit-activity) [![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
+[![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/aahnik/wappdriver/graphs/commit-activity) 
+[![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
 [![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver) 
 
 
@@ -38,6 +38,7 @@ pip3 install wappdriver
 
 
 ### WARNING  ⚠️
+
 WhatsApp does not allow you to login into the same account from multiple chrome tabs.
 So **make sure to close any chrome tab which has WhatsApp Web open**, before executing the following  line when your session cookies(data for automatic login, without requiring you to scan QR code multiple times) are saved in your current directory.
 
@@ -47,7 +48,6 @@ Not doing so may lead to errors or the program may hang.
 
 You will be required to scan the QR Code for the first time only, thereafter the data saved within the `wappDefaultSession` sub-directory will be used for automatic login. You can delete this folder to delete all cookies. 
 
----
 
 ### Requirements
 
@@ -59,14 +59,10 @@ You will be required to scan the QR Code for the first time only, thereafter the
 Make sure to have matching versions of Chrome Browser and Chrome Driver.
 I recommend to use the latest version of both, for the best performance
 
-----
+
 
 ### Tests
-Tests are important for any application.
-
-Jacob Kaplan-Moss said "Code without tests is broken by design".
-
-And this statement can't be more true.
+Tests are very important for any application. Jacob Kaplan-Moss said "Code without tests is broken by design". And this statement can't be more true.
 
 So we have multiple tests to check whether this application is _working as expected_. But these tests need certain _user input_ to run such as names of people saved in your WhatsApp contacts. ( To avoid spamming, this application *allows sending messages only to your WhatsApp contacts* ).
 
@@ -74,9 +70,7 @@ These tests __could not be automatically run__ on server via Travis CI or GitHub
 
 __I run the tests on a regular basis and manually update the feature badges__ at the top of this README, to indicate whether that particular feature is successfully working or not. 
 
-If you find that any of the features is not working as expected, _feel free to create an issue_. 
-
-Nonetheless, you could easily clone this repo and run the tests locally after configuring the variables in `testConfig.yml` file inside `tests` directory. To learn how to run tests [click here](). 
+If you find that any of the features is not working as expected, _feel free to create an issue_. Nonetheless, you could easily *clone this repo* and **run the tests locally** after configuring the variables in `testConfig.yml` file inside `tests` directory. To learn how to run tests [click here](). 
 
 
 
