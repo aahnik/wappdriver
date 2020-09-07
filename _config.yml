@@ -9,7 +9,9 @@ include:
 #   - LICENSE.md
 #   - COPYING.md
   - CODE_OF_CONDUCT.md
+  - SECURITY.md
 #   - CONTRIBUTING.md
 #   - ISSUE_TEMPLATE.md
 #   - PULL_REQUEST_TEMPLATE.md
+
 theme: jekyll-theme-minimal
