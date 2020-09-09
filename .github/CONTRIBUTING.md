@@ -11,6 +11,8 @@ It will help us to understand the chages better.
 You can **email me** at [meet.aahnik@gmail.com](mailto:meet.aahnik@gmail.com) or
 **chat** on [Telegram](https://t.me/AahnikDaw).You can expect a reply within 48 hours.
 
+## Basic Steps and Guidelines
+
 - After discussion, start working on the planned changes by forking the project. 
 
 - Please create a separate branch for each issue that you're working on. Do not make changes to the existing branches.
@@ -23,12 +25,12 @@ You can **email me** at [meet.aahnik@gmail.com](mailto:meet.aahnik@gmail.com) or
 - Document your code thoroughly.
 - Make sure all the existing tests pass.
 
-You are recommended to read these additional guidelines about Pull Requests :
+## You are recommended to read these additional guidelines about Pull Requests 
 1. [The (written) unwritten guide to pull requests](https://www.atlassian.com/blog/git/written-unwritten-guide-pull-requests) 
 2. [How to write the perfect pull request](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
 3. [Open Source Pull Request Guidelines](https://opensource.creativecommons.org/contributing-code/pr-guidelines/)
 
 ## When you submit a pull request, you are subject to the terms and conditions mentioned in my [CLA](https://aahnik.github.io/aahnik/CLA.html)
 
-After testing your Pull Request, we will let you know within an week. Patience from your side is expected. 
+_After testing your Pull Request, we will let you know within an week. Patience from your side is expected_. 
 
