@@ -25,7 +25,6 @@ You can **email me** at [meet.aahnik@gmail.com](mailto:meet.aahnik@gmail.com) or
 
 You are recommended to read these additional guidelines about Pull Requests :
 1. [The (written) unwritten guide to pull requests](https://www.atlassian.com/blog/git/written-unwritten-guide-pull-requests) 
-Once you are done, submit a Pull Request. 
 2. [How to write the perfect pull request](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
 3. [Open Source Pull Request Guidelines](https://opensource.creativecommons.org/contributing-code/pr-guidelines/)
 
