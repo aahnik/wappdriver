@@ -1,0 +1,38 @@
+# PLease read the Documentation regarding testing, before attempting to test
+# this is a yaml file, so no need to enclose strings by double/single quotes 
+
+# please make sure to change the values of the parameters before testing
+
+absolute_WhatsApp_Session_Folder_Path: 
+# if not logged in, QR code will be displayed
+
+
+saved_contact: aahnik 
+# case sensitive
+
+
+unsaved_contact: fakeNobody 
+# name that is not saved 
+# this is required for checking whether the program successfully raises 
+# wappdriver error for UnknownContact
+
+
+# note: 
+# the media at the paths you provide below, will be send to the saved_contact specified above
+
+
+absolute_ImagePath: 
+# the absolute path to any image on your computer
+
+
+absolute_VideoPath:
+# the absolute path to any Video on your computer
+
+
+absolute_GIFPath:
+# the absolute path to any GIF on your computer
+
+
+absolute_PDFPath:
+# the absolute path to any PDF on your computer
+
