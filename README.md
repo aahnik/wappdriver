@@ -75,7 +75,7 @@ If you find that any of the features is not working as expected, _feel free to c
 
 
 ### Want to contribute ? 
-Look at [Code of Conduct](/CODE_OF_CONDUCT.md)
+Please look at [Code of Conduct](.github/CODE_OF_CONDUCT.md) and [Contributing Guidelines](.github/CONTRIBUTING.md)
 
 
 
