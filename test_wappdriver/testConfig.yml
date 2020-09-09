@@ -21,18 +21,17 @@ unsaved_contact: fakeNobody
 # the media at the paths you provide below, will be send to the saved_contact specified above
 
 
-absolute_ImagePath: 
+absolute_ImagePath: path/to/
 # the absolute path to any image on your computer
 
 
-absolute_VideoPath:
+absolute_VideoPath: path/to/
 # the absolute path to any Video on your computer
 
 
-absolute_GIFPath:
+absolute_GIFPath: path/to/
 # the absolute path to any GIF on your computer
 
 
-absolute_PDFPath:
+absolute_PDFPath: path/to/
 # the absolute path to any PDF on your computer
-
