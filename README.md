@@ -75,7 +75,7 @@ If you find that any of the features is not working as expected, _feel free to c
 
 
 ### Want to contribute ? 
-Please look at [Code of Conduct](.github/CODE_OF_CONDUCT.md) and [Contributing Guidelines](.github/CONTRIBUTING.md)
+Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-)
 
 
 
