@@ -31,5 +31,5 @@ Once you are done, submit a Pull Request.
 
 ## When you submit a pull request, you are subject to the terms and conditions mentioned in my [CLA](https://aahnik.github.io/aahnik/CLA.html)
 
-After testing your Pull Request, 
+After testing your Pull Request, we will let you know within an week. Patience from your side is expected. 
 
