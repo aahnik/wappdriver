@@ -1,5 +1,7 @@
 # API for WhatsApp Web Automation 
 
+Wondering how to send WhatsApp messages using Python using only few lines of code? You have come to the right place!
+
 [![Generic badge](https://img.shields.io/badge/send_text-yes-GREEN.svg)](https://aahnik.github.io/wappdriver/)
 [![Generic badge](https://img.shields.io/badge/send_images-no-RED.svg)](https://aahnik.github.io/wappdriver/)
 [![Generic badge](https://img.shields.io/badge/send_videos-no-RED.svg)](https://aahnik.github.io/wappdriver/)
@@ -7,7 +9,7 @@
 [![Generic badge](https://img.shields.io/badge/use_emojis-few-YELLOW.svg)](https://aahnik.github.io/wappdriver/)
 [![Generic badge](https://img.shields.io/badge/speed-medium-ORANGE.svg)](https://aahnik.github.io/wappdriver/)
 
-_Send WhatsApp messages programmatically, using only 3 lines of code._ 
+_`wappdriver` enables you to send WhatsApp messages programmatically, using only 3 lines of code._ 
 
 **A python package that helps you automate sending messages through WhatsApp Web 😎**
 
