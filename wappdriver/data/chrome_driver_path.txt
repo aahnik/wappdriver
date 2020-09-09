@@ -5,4 +5,5 @@ this file is used to store package data
 Chrome Driver Path will be saved here after user species path for the first time
 
 The value can be modified by making a function call
-TODO: fill instructions
+
+Read Documentation for more details

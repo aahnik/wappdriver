@@ -22,7 +22,7 @@ local_varVer_val = float(open(varVer).readline())
 
 def update_cdp():
     # cdp stands for chrome_driver_path
-    path = input("Paste the absoulte path of Chrome Driver: \n")
+    path = input('Paste the absoulte path of Chrome Driver: \n')
     with open(chrome_driver_path, 'w') as f:
         f.write(path)
 
@@ -32,6 +32,6 @@ def fetch_vars():
     if latest_varVer > local_varVer_val:
         open(var, 'w').write(requests.get(url=remote_var).text)
         open(varVer, 'w').write(str(latest_varVer))
-        return("updated sucessfully")
+        return('updated sucessfully')
     else:
-        return("already the latest version")
+        return('already the latest version')
