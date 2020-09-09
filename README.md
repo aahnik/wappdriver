@@ -72,7 +72,7 @@ These tests __could not be automatically run__ on server via Travis CI or GitHub
 
 __I run the tests on a regular basis and manually update the feature badges__ at the top of this README, to indicate whether that particular feature is successfully working or not. 
 
-If you find that any of the features is not working as expected, _feel free to create an issue_. Nonetheless, you could easily *clone this repo* and **run the tests locally** after configuring the variables in `testConfig.yml` file inside `tests` directory. To learn how to run tests [click here](). 
+If you find that any of the features is not working as expected, _feel free to create an issue_. Nonetheless, you could easily *clone this repo* and **run the tests locally** after configuring the variables in `testConfig.yml` file inside `test_wappdriver` directory. To learn how to run tests [click here](). 
 
 
 
