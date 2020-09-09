@@ -1,6 +1,6 @@
 # How to contribute to `wappdriver`
 
-# 👋 It's great to see you here !
+ **👋 It's great to see you here !**
 
 Thanks a lot for thinking to contribute.
 Read and follow the contributing guidelines and code of conduct for the project.
