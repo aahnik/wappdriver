@@ -4,14 +4,9 @@ relative_links:
   enabled: true
   collections: true
 include:
-  - .github/CONTRIBUTING.md
   -  README.md
-  - .github/CODE_OF_CONDUCT.md
-  - .github/SECURITY.md
-  - .github/ISSUE_TEMPLATE/bug_report.md
-  - .github/ISSUE_TEMPLATE/custom.md
-  - .github/ISSUE_TEMPLATE/feature_request.md
-  - .github/pull_request_template.md
+  - docs/
+
 
 
 theme: jekyll-theme-minimal

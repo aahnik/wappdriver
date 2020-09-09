@@ -1,4 +1,5 @@
-# this module provides functions to  make the data files dynamic
+'''This module update.py provides functions to  make the data files dynamic.
+'''
 
 import pkg_resources
 import requests
@@ -13,18 +14,29 @@ remote_var = f'{URL}wapp-driver-var.yml'
 P = 'wappdriver'
 
 var = pkg_resources.resource_filename(P, 'data/var.yml')
-chrome_driver_path = pkg_resources.resource_filename(
+
+chrome_driver_path_file = pkg_resources.resource_filename(
     P, 'data/chrome_driver_path.txt')
+
+
 varVer = pkg_resources.resource_filename(P, 'data/varVer.txt')
 
 local_varVer_val = float(open(varVer).readline())
 
 
+def set_chrome_driver_path(path):
+    '''Method to set the chrome driver path, applies to your current virtual environment only
+    Agumemts: path ( the value of path should be the absolute path to the 
+    installation of Chrome Driver executable)
+    '''
+    with open(chrome_driver_path_file, 'w') as f:
+        f.write(path)
+
+
 def update_cdp():
     # cdp stands for chrome_driver_path
     path = input('Paste the absoulte path of Chrome Driver: \n')
-    with open(chrome_driver_path, 'w') as f:
-        f.write(path)
+    set_chrome_driver_path(path)
 
 
 def fetch_vars():
