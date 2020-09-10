@@ -61,22 +61,18 @@ You will be required to scan the QR Code for the first time only, thereafter the
 Make sure to have matching versions of Chrome Browser and Chrome Driver.
 I recommend to use the latest version of both, for the best performance
 
+### Documentation
 
+[Read](https://aahnik.github.io/wappdriver/docs/Documentation.html) the full Documentation.
 
 ### Tests
-Tests are very important for any application. Jacob Kaplan-Moss said "Code without tests is broken by design". And this statement can't be more true.
 
-So we have multiple tests to check whether this application is _working as expected_. But these tests need certain _user input_ to run such as names of people saved in your WhatsApp contacts. ( To avoid spamming, this application *allows sending messages only to your WhatsApp contacts* ).
-
-These tests __could not be automatically run__ on server via Travis CI or GitHub Actions due to certain constraints due to the nature of WhatsApp and this application. [Know Why ?](https://github.com/aahnik/wappdriver/wiki/Testing-:-Why-not-fully-automated-%3F)
-
-__I run the tests on a regular basis and manually update the feature badges__ at the top of this README, to indicate whether that particular feature is successfully working or not. 
-
-If you find that any of the features is not working as expected, _feel free to create an issue_. Nonetheless, you could easily *clone this repo* and **run the tests locally** after configuring the variables in `testConfig.yml` file inside `test_wappdriver` directory. To learn how to run tests [click here](). 
+[Learn more](https://aahnik.github.io/wappdriver/docs/Tests.html) about testing.
 
 
 
 ### Want to contribute ? 
+
 Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-)
 
 
