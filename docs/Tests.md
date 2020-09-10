@@ -1,8 +1,17 @@
 # Testing 
 
+
 Tests are very important for any application. Jacob Kaplan-Moss said "Code without tests is broken by design". And this statement can't be more true.
 
-So we have multiple tests to check whether this application is _working as expected_. But these tests need certain _user input_ to run such as names of people saved in your WhatsApp contacts. ( To avoid spamming, this application *allows sending messages only to your WhatsApp contacts* ).
+## TOC 
+
+1. Introdution
+2. Testing : Why not fully automated ?
+3. How to run Tests locally on your machine ?
+---
+
+## Introduction
+We have multiple tests to check whether this application is _working as expected_. But these tests need certain _user input_ to run such as names of people saved in your WhatsApp contacts. ( To avoid spamming, this application *allows sending messages only to your WhatsApp contacts* ).
 
 __I run the tests on a regular basis and manually update the feature badges__ at the top of this README, to indicate whether that particular feature is successfully working or not. 
 
