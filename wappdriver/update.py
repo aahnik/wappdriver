@@ -44,6 +44,11 @@ def fetch_vars():
     if latest_varVer > local_varVer_val:
         open(var, 'w').write(requests.get(url=remote_var).text)
         open(varVer, 'w').write(str(latest_varVer))
-        return('updated sucessfully')
+        message = 'updated to latest version'
     else:
-        return('already the latest version')
+        message = 'already the latest version'
+    
+    return message
+        
+
+    
