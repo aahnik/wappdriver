@@ -3,11 +3,7 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-include:
-  -  README.md
-  - docs/
+includes:
   - .github/
-
-
 
 theme: jekyll-theme-minimal
