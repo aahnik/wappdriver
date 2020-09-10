@@ -13,7 +13,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/aahnik/wappdriver",
-    install_requires=['selenium', 'pyyaml', 'requests'],
+    install_requires=['selenium', 'pyyaml', 'requests', 'pyfiglet'],
     packages=setuptools.find_packages(),
     package_data={'wappdriver': ['data/*']},
     classifiers=[

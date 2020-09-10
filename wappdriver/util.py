@@ -1,5 +1,4 @@
 from . import update
-from . import driver
 from pyfiglet import Figlet
 
 
@@ -10,15 +9,6 @@ def first_time_set_up():
     print(f.renderText('wappdriver'))
 
     update.update_cdp()
-
-    try:
-        chrome_driver_path = open(
-            update.chrome_driver_path_file, 'r').readline()
-        driver.webdriver.chrome(executable_path=chrome_driver_path)
-
-    except Exception as error:
-        message = "Chrome Driver could not be successfully loaded, may be path incorrect"
-        convey(error, message)
 
 
 def convey(error, message):
