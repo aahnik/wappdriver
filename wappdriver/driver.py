@@ -1,11 +1,11 @@
-'''This module driver.py contains the WappDriver class, which is responsible for driving the core 
+'''This module driver.py contains the WappDriver class, which is responsible for driving the core
 features of the application.
 You have to create an instance of the WappDriver class, to do any meaningful activity such as
 sending a text message or media(Image/GIF/Video) or PDF document
 '''
 
 from .util import first_time_set_up, convey
-from .update import chrome_driver_path, local_varVer_val, var, update_cdp
+from .update import chrome_driver_path_file, local_varVer_val, var, update_cdp
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -22,14 +22,15 @@ class WappDriver():
     It interacts with the webdriver to send messages
     '''
 
-    def __init__(self, session='wappDefaultSession', timeout=100):
+    def __init__(self, session='wappdriver_session', timeout=100):
 
         if local_varVer_val == 0.0:
             first_time_set_up()
 
-        self.chrome_driver_path = open(chrome_driver_path).readline()
+        self.chrome_driver_path = open(chrome_driver_path_file).readline()
+
         with open(var) as file:
-            _var = yaml.full_load(file)
+                _var = yaml.full_load(file)
 
         self.whatsapp_web_url = _var['whatsapp_web_url']
         self.mainScreenLoaded = _var['mainScreenLoaded']
@@ -48,7 +49,7 @@ class WappDriver():
         else:
             self.driver.quit()
 
-    def load_chrome_driver(self, session, tried=0):
+    def load_chrome_driver(self, session, ):
 
         try:
             chrome_options = Options()
@@ -145,11 +146,11 @@ class WappDriver():
         if self.load_person(to):
             pass
 
-    def send_file(self,to,path):
+    def send_file(self, to, path):
         '''Method to send any kind of file to a contact.
         Supports: ALl formats
         Requires two arguments: to and path
-    
+
         Example Use :
         bot.send_file(to='contact',path='path/to/file')
         or
@@ -159,9 +160,8 @@ class WappDriver():
         Not giving the caption is allowed
         '''
 
-    def send_contact(self,to,contact):
+    def send_contact(self, to, contact):
         pass
 
-    def send_url(self,to,url):
+    def send_url(self, to, url):
         pass
-    

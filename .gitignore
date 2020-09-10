@@ -4,5 +4,5 @@
 venv
 .vscode
 __pycache__
-wappDefaultSession
-pypi.sh
+wappdriver_session
+run_test.sh
