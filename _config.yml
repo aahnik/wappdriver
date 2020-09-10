@@ -3,7 +3,4 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-includes:
-  - .github/
-
 theme: jekyll-theme-minimal
