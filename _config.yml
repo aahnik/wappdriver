@@ -6,6 +6,7 @@ relative_links:
 include:
   -  README.md
   - docs/
+  - .github/
 
 
 
