@@ -1,14 +1,13 @@
 # Testing 
 
-
-Tests are very important for any application. Jacob Kaplan-Moss said "Code without tests is broken by design". And this statement can't be more true.
-
-## TOC 
-
 1. Introdution
 2. Testing : Why not fully automated ?
 3. How to run Tests locally on your machine ?
+
+
+Tests are very important for any application. Jacob Kaplan-Moss said "Code without tests is broken by design". And this statement can't be more true.
 ---
+
 
 ## Introduction
 We have multiple tests to check whether this application is _working as expected_. But these tests need certain _user input_ to run such as names of people saved in your WhatsApp contacts. ( To avoid spamming, this application *allows sending messages only to your WhatsApp contacts* ).
