@@ -1,11 +1,17 @@
 import setuptools
+import re
 
 with open("README.md", "r") as f:
     long_description = f.read()
 
+version = re.search(
+    '^__version__\s*=\s*"(.*)"',
+    open('wappdriver/__init__.py', 'r').read(),
+    re.M).group(1)
+
 setuptools.setup(
     name="wappdriver",
-    version="0.3.0",
+    version=version,
     license='MIT',
     author="Aahnik Daw",
     author_email="meet.aahnik@gmail.com",
@@ -15,7 +21,6 @@ setuptools.setup(
     url="https://github.com/aahnik/wappdriver",
     install_requires=['selenium', 'pyyaml', 'requests', 'pyfiglet'],
     packages=setuptools.find_packages(),
-    package_data={'wappdriver': ['data/*']},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
