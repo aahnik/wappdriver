@@ -20,6 +20,11 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/aahnik/wappdriver",
     install_requires=['selenium', 'pyyaml', 'requests', 'pyfiglet'],
+    include_package_data=True,
+    zip_safe=False,
+    entry_points={
+        'console_scripts': ['wappdriver=wappdriver.command_line:main'],
+    },
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -5,7 +5,7 @@ sending a text message or media(Image/GIF/Video) or PDF document
 '''
 
 import os
-from .util import first_time_set_up, convey
+# from .util import first_time_set_up, convey
 # from .update import chrome_driver_path_file, local_varVer_val, var, update_cdp
 
 from selenium import webdriver
