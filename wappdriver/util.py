@@ -1,9 +1,9 @@
-from . import update
+from .data import update
 from pyfiglet import Figlet
 
 
 def first_time_set_up():
-    update.fetch_vars()
+    update.update_vars()
 
     f = Figlet(font='big')
     print(f.renderText('wappdriver'))

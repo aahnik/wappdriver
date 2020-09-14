@@ -4,8 +4,9 @@ You have to create an instance of the WappDriver class, to do any meaningful act
 sending a text message or media(Image/GIF/Video) or PDF document
 '''
 
+import os
 from .util import first_time_set_up, convey
-from .update import chrome_driver_path_file, local_varVer_val, var, update_cdp
+# from .update import chrome_driver_path_file, local_varVer_val, var, update_cdp
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -22,7 +23,8 @@ class WappDriver():
     It interacts with the webdriver to send messages
     '''
 
-    def __init__(self, session='wappdriver_session', timeout=100):
+    def __init__(self, session='default', timeout=50):
+        # log in 
 
         if local_varVer_val == 0.0:
             first_time_set_up()
@@ -50,12 +52,16 @@ class WappDriver():
             self.driver.quit()
 
     def load_chrome_driver(self, session, ):
+        session_path = os.path.expanduser(f'~/.wappdriver/sessions/{session}')
 
         try:
             chrome_options = Options()
-            chrome_options.add_argument(f'--user-data-dir={session}')
+            chrome_options.add_argument(f'--user-data-dir={session_path}')
+
             self.driver = webdriver.Chrome(
-                options=chrome_options, executable_path=self.chrome_driver_path)
+                options=chrome_options, 
+                executable_path=self.chrome_driver_path)
+
             return True
 
         except Exception as error:
@@ -71,6 +77,7 @@ class WappDriver():
     def load_main_screen(self):
         try:
             self.driver.get(self.whatsapp_web_url)
+
             WebDriverWait(self.driver, self.timeout).until(
                 expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self.mainScreenLoaded)))
             return True
@@ -82,6 +89,7 @@ class WappDriver():
 
     # selecting a person after searching contacts
     def load_person(self, name):
+        
         search_box = self.driver.find_element_by_css_selector(
             self.searchSelector)
 
