@@ -67,12 +67,12 @@ def get_chrome_driver_path():
         set_chrome_driver_path()
 
 
-def set_local_vars(vars):
+def set_local_vars(in_vars):
     '''
     Takes a string and writes that into `var.yml` inside `.wappdriver` 
     '''
     with open(var_file, 'w+') as f:
-        f.write(vars)
+        f.write(in_vars)
 
 
 def get_local_vars():
