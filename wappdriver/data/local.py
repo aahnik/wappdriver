@@ -59,7 +59,8 @@ def get_chrome_driver_path():
     '''
     try:
         with open(cdp_file, 'r') as f:
-            return f.readline()
+            path = f.readline().strip()
+            return path
     except Exception as e:
         print('Could not Read Chrome Driver Path')
         print(f'Some Error Occured {e}')
