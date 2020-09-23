@@ -123,7 +123,7 @@ def update_vars():
         return True
 
     except Exception as e:
-        f'Could not update data from Internet. Check your internet connection \n {e}'
+        print(f'Could not update data from Internet. Check your internet connection \n {e}')
 
 
 def ensure():
