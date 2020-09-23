@@ -9,6 +9,7 @@ This module can be used by any other module except `local` from `data` subpackag
 from .data import local
 import logging
 
+local.ensure() # to prevent errors and first time setup
 
 logging.basicConfig(format='\n########################################\n\n%(asctime)s - %(message)s',
                     filename=local.log_file)
@@ -19,8 +20,8 @@ class WappDriverError(Exception):
     Exception raised for errors in functioning of WappDriver.
 
     Attributes:
-    internal - - actual exceptions which are being abstracted away from end user
-    err  - -  what went wrong
+    internal - - actual exceptions and full traceback which are being abstracted away from end user
+    problem  - -  what could have went wrong according to the developer
     message -- custom message explainng what could have caused the error and how to resolve it
 
     ----------
