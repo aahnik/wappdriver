@@ -1,20 +1,12 @@
 '''This module update.py provides functions to  make the data files dynamic.
+The values of the selectors are updated from the internet, first time when the user runs wappdriver
+
+Updates can be performed manually by calling `update_vars()`
 '''
 
 from . import local, remote
 
 
-def update_cdp(path=None):
-    '''cdp stands for chrome_driver_path
-    Method to set the chrome driver path, applies to your current virtual environment only
-    Optional Agumemts: path ( the value of path should be the absolute path to the 
-    installation of Chrome Driver executable)
-
-    If path is not passed while calling the function, it will be taken from user input
-    '''
-    if not path:
-        path = input('Paste the absoulte path of Chrome Driver Executable: \n')
-    local.set_cdp(path)
 
 
 def update_vars():
