@@ -4,7 +4,9 @@ Tests are very important for any application.
 Jacob Kaplan-Moss said 
 > "Code without tests is broken by design". 
 
-* TOC {:toc}
+- [Testing](#testing)
+  - [Introduction](#introduction)
+  - [Testing : Why not fully automated ?](#testing--why-not-fully-automated-)
 
 
 ---
@@ -32,7 +34,6 @@ These tests could not be automatically run on server via Travis CI or GitHub Act
 
 
 
-## How to run Tests locally on your machine ?
 
 To Do : add instructions
 
