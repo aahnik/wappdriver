@@ -12,7 +12,7 @@ def bot():
 
 
 def test_text(bot):
-    assert bot.send_message(to='aahnik', msg='success') == True
+    assert bot.send_message(to='aahnik', msg='success')
 
 
 def test_media():
