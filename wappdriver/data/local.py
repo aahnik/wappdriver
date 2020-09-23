@@ -6,12 +6,11 @@ The values of the selectors are updated from the internet, first time when the u
 Updates can be performed manually by calling `update_vars()`
 '''
 
-from . import  remote
+from . import remote
 import os
 import yaml
 from datetime import datetime
 from .. import __version__
-
 
 
 dir = os.path.expanduser('~/.wappdriver')
@@ -23,10 +22,7 @@ var_file = os.path.join(dir, 'var.yml')
 version_file = os.path.join(dir, 'ver.txt')
 
 
-
-            
-
-def set_chrome_driver_path(path=None):
+def set_chrome_driver_path(path=''):
     '''
     Writes the absolute path of installation of Chrome Driver Executable
     in `chrome_driver_path.txt` file in `.wappdriver` directory 
@@ -40,14 +36,14 @@ def set_chrome_driver_path(path=None):
     Validation of `path` and whether correct version is installed or not 
     are done by `test_browser` module of the `tests` package
     '''
-    if not path:
-        while path != '':
-            path = input('''
-            -------------------------------------------------------------
-            Paste the absolute path of the installation of Chrome Driver
-            You have to enter this only once
-            -------------------------------------------------------------
-            ''').strip()
+
+    while path == '':
+        path = input('''
+        -------------------------------------------------------------
+        Paste the absolute path of the installation of Chrome Driver
+        You have to enter this only once
+        -------------------------------------------------------------
+        ''').strip()
 
     with open(cdp_file, 'w+') as f:
         f.write(path)
@@ -73,7 +69,7 @@ def set_vars(vars):
     '''
     Takes a string and writes that into `var.yml` inside `.wappdriver` 
     '''
-    with open(var_file,'w+') as f:
+    with open(var_file, 'w+') as f:
         f.write(vars)
 
 
@@ -81,16 +77,15 @@ def get_vars():
     ''' 
     Returns the vars dictionary
     '''
-    with open(var_file,'r') as f:
+    with open(var_file, 'r') as f:
         return yaml.full_load(f)
-
 
 
 def set_version(ver):
     '''
     Takes a string and writes that into `ver.txt` inside `.wappdriver` 
     '''
-    with  open(version_file,'w+') as f:
+    with open(version_file, 'w+') as f:
         f.write(ver)
 
 
@@ -98,9 +93,9 @@ def get_ver():
     ''' 
     Returns the value of version of `var.yml` inside `.wappdriver`, as a float
     '''
-    with open(version_file,'r') as f:
+    with open(version_file, 'r') as f:
         return float(f.readline())
-        
+
 
 def update_vars():
     ''' Checks for updates in var.yml, if availaible, updates the local data
@@ -112,7 +107,7 @@ def update_vars():
     If failed
     - returns False
     - raises and catches WappDriver Error, and prints it. 
-    
+
     '''
 
     local_version = get_ver()
@@ -121,7 +116,7 @@ def update_vars():
     try:
         if remote_version > local_version:
             set_vars(remote.vars())
-            set_version(remote_version)
+            set_version(str(remote_version))
 
         return True
 
@@ -152,11 +147,10 @@ def ensure():
         set_chrome_driver_path()
 
     if not os.path.exists(version_file):
-        with open(version_file, 'w+') as f:
-            f.write('0')
+        set_version('0')
 
     if not os.path.exists(var_file):
         update_vars()
 
-ensure() 
 
+ensure()
