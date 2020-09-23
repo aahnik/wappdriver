@@ -3,7 +3,8 @@ features of the application.
 You have to create an instance of the WappDriver class, to do any meaningful activity such as
 sending a text message or media(Image/GIF/Video) or PDF document
 '''
-from . import error # when error is imported local is ensured
+from wappdriver.error import WappDriverError
+from . import error  # when error is imported local is ensured
 from .data import local
 
 import os
@@ -13,8 +14,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
-
-
 
 
 class WappDriver():
@@ -41,30 +40,27 @@ class WappDriver():
                 print("Yo!! sucessfully loaded WhatsApp Web")
             else:
                 self.driver.quit()
-        else:
-            self.driver.quit()
 
-    def load_chrome_driver(self, session, ):
-        session_path = os.path.join(local.sessions_dir,session)
+    def load_chrome_driver(self, session):
+        session_path = os.path.join(local.sessions_dir, session)
 
         try:
             chrome_options = Options()
             chrome_options.add_argument(f'--user-data-dir={session_path}')
 
             self.driver = webdriver.Chrome(
-                options=chrome_options, 
-                executable_path=self.chrome_driver_path)
+                options=chrome_options, executable_path=self.chrome_driver_path)
 
             return True
 
-        except Exception as error:
-            message = f'''Chrome Driver could not be successfuly loaded
-                Make sure that you have latest and matching versions of Chrome and Chrome Driver
-                CHROME DRIVER INSTALLATION PATH IS INVALID !!
-                '''
-            
-
-        return False
+        except Exception as internal:
+            try:
+                raise WappDriverError(internal,
+                                      problem='Chrome Driver could not be successfuly loaded',
+                                      message='Make sure to have correct version of Chrome and Chrome Driver')
+            except Exception as err:
+                print(err)
+                return False
 
     def load_main_screen(self):
         try:
@@ -74,14 +70,19 @@ class WappDriver():
                 expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self.mainScreenLoaded)))
             return True
 
-        except Exception as error:
-            message = 'Could not load main screen of WhatsApp Web because of some errors, make sure to Scan QR'
-            
-            return False
+        except Exception as internal:
+            try:
+                raise WappDriverError(internal,
+                                      problem='WhatsApp main screen could not be successfuly loaded',
+                                      message='Make sure to have correct version of Chrome and Chrome Driver')
+            except Exception as err:
+                print(err)
+                return False
 
     # selecting a person after searching contacts
+
     def load_person(self, name):
-        
+
         search_box = self.driver.find_element_by_css_selector(
             self.searchSelector)
 
@@ -99,8 +100,6 @@ class WappDriver():
                 If you are sure {name} is in your contacts, Try checking internet connection
                 
                OR  May be some other problem ...  '''
-
-            
 
             search_box.send_keys((Keys.BACKSPACE)*len(name))
             # clearing the search bar by backspace, so that searching the next person does'nt have any issue
@@ -127,6 +126,8 @@ class WappDriver():
                 msg_box.send_keys(Keys.SHIFT + Keys.ENTER)  # go to next line
 
             msg_box.send_keys(Keys.ENTER)  # send message
+
+            return True
 
     def send_media(self, to, path, caption=None):
         '''Method to send a media object to a contact.
