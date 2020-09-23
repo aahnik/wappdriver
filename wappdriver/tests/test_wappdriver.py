@@ -1,4 +1,16 @@
-def test_faltu():
-    # print("testing dfaltu")
-    # hola ti bu
-    assert 0 == 1
+'''
+Tests the core features of WappDriver
+'''
+
+def test_text():
+    pass
+
+def test_media():
+    pass
+
+def test_url():
+    pass
+
+def test_contact():
+    pass
+
