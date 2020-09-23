@@ -1,11 +1,12 @@
 # Testing 
 
-1. Introdution
-2. Testing : Why not fully automated ?
-3. How to run Tests locally on your machine ?
+Tests are very important for any application. 
+Jacob Kaplan-Moss said 
+> "Code without tests is broken by design". 
+
+* TOC {:toc}
 
 
-Tests are very important for any application. Jacob Kaplan-Moss said "Code without tests is broken by design". And this statement can't be more true.
 ---
 
 
