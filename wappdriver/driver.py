@@ -25,7 +25,7 @@ class WappDriver():
 
         self.chrome_driver_path = local.get_chrome_driver_path()
 
-        _var = local.get_vars()
+        _var = local.get_local_vars()
 
         self.whatsapp_web_url = _var['whatsapp_web_url']
         self.mainScreenLoaded = _var['mainScreenLoaded']
