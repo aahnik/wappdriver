@@ -21,6 +21,7 @@ var_file = os.path.join(dir, 'var.yml')
 
 version_file = os.path.join(dir, 'ver.txt')
 
+sessions_dir = os.path.join(dir,'sessions')
 
 def set_chrome_driver_path(path=''):
     '''
@@ -126,7 +127,7 @@ def update_vars():
 
 def ensure():
     '''
-    Executed whenever local is imported, to ensure the required local files exists.
+    Executed whenever local is imported, please run `ensure()` to ensure the required local files exists.
     If those files do not exist, ensures the creation of them with proper initial values.
     '''
 
@@ -152,5 +153,5 @@ def ensure():
     if not os.path.exists(var_file):
         update_vars()
 
-
-ensure()
+    if not os.path.exists(sessions_dir):
+        os.mkdir(sessions_dir)
