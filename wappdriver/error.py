@@ -1,6 +1,9 @@
 ''' 
 This module error.py defines custom Wappdriver Exception. 
 WappDriver Excpetion helps in abstracting internal exception details from the end user
+---
+
+This module can be used by any other module except `local` from `data` subpackage
 '''
 
 from .data import local
@@ -61,6 +64,7 @@ class WappDriverError(Exception):
 
         {self.message}
 
+        Please make sure to use the latest version of wappdriver
         For Help Visit https://aahnik.github.io/wappdriver/docs/help.html
         -----------------------------------------------------------------------------------\n
         '''
