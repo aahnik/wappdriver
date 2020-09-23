@@ -3,11 +3,10 @@ features of the application.
 You have to create an instance of the WappDriver class, to do any meaningful activity such as
 sending a text message or media(Image/GIF/Video) or PDF document
 '''
+from . import error # when error is imported local is ensured
+from .data import local
 
 import os
-# from .util import first_time_set_up, convey
-# from .update import chrome_driver_path_file, local_varVer_val, var, update_cdp
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
@@ -15,7 +14,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 
-import yaml
+
 
 
 class WappDriver():
@@ -24,15 +23,10 @@ class WappDriver():
     '''
 
     def __init__(self, session='default', timeout=50):
-        # log in 
 
-        if local_varVer_val == 0.0:
-            first_time_set_up()
+        self.chrome_driver_path = local.get_chrome_driver_path()
 
-        self.chrome_driver_path = open(chrome_driver_path_file).readline()
-
-        with open(var) as file:
-                _var = yaml.full_load(file)
+        _var = local.get_vars()
 
         self.whatsapp_web_url = _var['whatsapp_web_url']
         self.mainScreenLoaded = _var['mainScreenLoaded']
@@ -40,7 +34,6 @@ class WappDriver():
         self.mBox = _var['mBox']
 
         # the webdriver waits for an element to be detected on screen on until timeout
-
         self.timeout = timeout
 
         if self.load_chrome_driver(session):
@@ -52,7 +45,7 @@ class WappDriver():
             self.driver.quit()
 
     def load_chrome_driver(self, session, ):
-        session_path = os.path.expanduser(f'~/.wappdriver/sessions/{session}')
+        session_path = os.path.join(local.sessions_dir,session)
 
         try:
             chrome_options = Options()
@@ -69,8 +62,7 @@ class WappDriver():
                 Make sure that you have latest and matching versions of Chrome and Chrome Driver
                 CHROME DRIVER INSTALLATION PATH IS INVALID !!
                 '''
-            convey(error, message)
-            update_cdp()
+            
 
         return False
 
@@ -84,7 +76,7 @@ class WappDriver():
 
         except Exception as error:
             message = 'Could not load main screen of WhatsApp Web because of some errors, make sure to Scan QR'
-            convey(error, message)
+            
             return False
 
     # selecting a person after searching contacts
@@ -108,7 +100,7 @@ class WappDriver():
                 
                OR  May be some other problem ...  '''
 
-            convey(error, message)
+            
 
             search_box.send_keys((Keys.BACKSPACE)*len(name))
             # clearing the search bar by backspace, so that searching the next person does'nt have any issue
