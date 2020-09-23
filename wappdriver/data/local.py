@@ -67,7 +67,7 @@ def get_chrome_driver_path():
         set_chrome_driver_path()
 
 
-def set_vars(vars):
+def set_local_vars(vars):
     '''
     Takes a string and writes that into `var.yml` inside `.wappdriver` 
     '''
@@ -75,7 +75,7 @@ def set_vars(vars):
         f.write(vars)
 
 
-def get_vars():
+def get_local_vars():
     ''' 
     Returns the vars dictionary
     '''
@@ -83,7 +83,7 @@ def get_vars():
         return yaml.full_load(f)
 
 
-def set_version(ver):
+def set_local_ver(ver):
     '''
     Takes a string and writes that into `ver.txt` inside `.wappdriver` 
     '''
@@ -91,7 +91,7 @@ def set_version(ver):
         f.write(ver)
 
 
-def get_ver():
+def get_local_ver():
     ''' 
     Returns the value of version of `var.yml` inside `.wappdriver`, as a float
     '''
@@ -112,13 +112,13 @@ def update_vars():
 
     '''
 
-    local_version = get_ver()
+    local_version = get_local_ver()
     remote_version = remote.version()
 
     try:
         if remote_version > local_version:
-            set_vars(remote.vars())
-            set_version(str(remote_version))
+            set_local_vars(remote.fetch_vars())
+            set_local_ver(str(remote_version))
 
         return True
 
@@ -149,7 +149,7 @@ def ensure():
         set_chrome_driver_path()
 
     if not os.path.exists(version_file):
-        set_version('0')
+        set_local_ver('0')
 
     if not os.path.exists(var_file):
         update_vars()

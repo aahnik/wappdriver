@@ -15,7 +15,7 @@ def version():
     return float(requests.get(url=version_url).text)
 
 
-def vars():
+def fetch_vars():
     '''
     Returns the content of remote vars as a string
     '''
