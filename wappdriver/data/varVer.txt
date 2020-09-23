@@ -1,4 +1,0 @@
-0
-The first line must be zero initially
-Dont tamper.
-To be used by program only
