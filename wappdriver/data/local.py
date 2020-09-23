@@ -1,26 +1,30 @@
-'''This module local.py provides access to local data. It can read and write local data'''
+'''This module local.py provides access to local data. It can read and write local data
+---
+This module also provides functions to  make the data files dynamic.
+The values of the selectors are updated from the internet, first time when the user runs wappdriver
+---
+Updates can be performed manually by calling `update_vars()`
+'''
+
+from . import  remote
 import os
+import yaml
 from datetime import datetime
 from .. import __version__
 
 
+
 dir = os.path.expanduser('~/.wappdriver')
+
 log_file = os.path.join(dir, 'log_file.txt')
 cdp_file = os.path.join(dir, 'cdp.txt')
+var_file = os.path.join(dir, 'var.yml')
 
-if not os.path.exists(dir):
-    os.mkdir(dir)
+version_file = os.path.join(dir, 'ver.txt')
 
-if not os.path.exists(log_file):
-    with open(log_file, 'w+') as f:
-        f.write(f'''
-        --------------------------
-        Log File Created
-        {datetime.now()}
-        wappdriver : {__version__}
-        ---------------------------\n
-        ''')
 
+
+            
 
 def set_chrome_driver_path(path=None):
     '''
@@ -57,6 +61,102 @@ def get_chrome_driver_path():
     If error arises, calls `set_chrome_driver_path()`
     '''
     try:
-        with open(cdp_file,'r') as f:
-            
+        with open(cdp_file, 'r') as f:
+            return f.readline()
+    except Exception as e:
+        print('Could not Read Chrome Driver Path')
+        print(f'Some Error Occured {e}')
+        set_chrome_driver_path()
+
+
+def set_vars(vars):
+    '''
+    Takes a string and writes that into `var.yml` inside `.wappdriver` 
+    '''
+    with open(var_file,'w+') as f:
+        f.write(vars)
+
+
+def get_vars():
+    ''' 
+    Returns the vars dictionary
+    '''
+    with open(var_file,'r') as f:
+        return yaml.full_load(f)
+
+
+
+def set_version(ver):
+    '''
+    Takes a string and writes that into `ver.txt` inside `.wappdriver` 
+    '''
+    with  open(version_file,'w+') as f:
+        f.write(ver)
+
+
+def get_ver():
+    ''' 
+    Returns the value of version of `var.yml` inside `.wappdriver`, as a float
+    '''
+    with open(version_file,'r') as f:
+        return float(f.readline())
+        
+
+def update_vars():
+    ''' Checks for updates in var.yml, if availaible, updates the local data
+    Usually takes a few seconds to run, calling this function 
+    at the beginning of your script ensures that the values of xpath and css selectors used 
+    for automation are up to date with the latest version of WhatsApp Web.
+
+    Returns True on success
+    If failed
+    - returns False
+    - raises and catches WappDriver Error, and prints it. 
+    
+    '''
+
+    local_version = get_ver()
+    remote_version = remote.version()
+
+    try:
+        if remote_version > local_version:
+            set_vars(remote.vars())
+            set_version(remote_version)
+
+        return True
+
+    except Exception as e:
+        f'Could not update data from Internet. Check your internet connection \n {e}'
+
+
+def ensure():
+    '''
+    Executed whenever local is imported, to ensure the required local files exists.
+    If those files do not exist, ensures the creation of them with proper initial values.
+    '''
+
+    if not os.path.exists(dir):
+        os.mkdir(dir)
+
+    if not os.path.exists(log_file):
+        with open(log_file, 'w+') as f:
+            f.write(f'''
+            --------------------------
+            Log File Created
+            {datetime.now()}
+            wappdriver : {__version__}
+            ---------------------------\n
+            ''')
+
+    if not os.path.exists(cdp_file):
+        set_chrome_driver_path()
+
+    if not os.path.exists(version_file):
+        with open(version_file, 'w+') as f:
+            f.write('0')
+
+    if not os.path.exists(var_file):
+        update_vars()
+
+ensure() 
 
