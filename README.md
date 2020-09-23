@@ -2,7 +2,7 @@
 
 Wondering how to send WhatsApp messages using Python using only few lines of code? You have come to the right place!
 
-[![Tests](https://img.shields.io/badge/tests-passing-green)]()
+[![Tests](https://img.shields.io/badge/tests-passing-green)](https://aahnik.github.io/wappdriver/docs/Tests.html)
 
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only 3 lines of code._ 
