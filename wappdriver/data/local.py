@@ -13,15 +13,15 @@ from datetime import datetime
 from .. import __version__
 
 
-dir = os.path.expanduser('~/.wappdriver')
+wapp_dir = os.path.expanduser('~/.wappdriver')
 
-log_file = os.path.join(dir, 'log_file.txt')
-cdp_file = os.path.join(dir, 'cdp.txt')
-var_file = os.path.join(dir, 'var.yml')
+log_file = os.path.join(wapp_dir, 'log_file.txt')
+cdp_file = os.path.join(wapp_dir, 'cdp.txt')
+var_file = os.path.join(wapp_dir, 'var.yml')
 
-version_file = os.path.join(dir, 'ver.txt')
+version_file = os.path.join(wapp_dir, 'ver.txt')
 
-sessions_dir = os.path.join(dir,'sessions')
+sessions_dir = os.path.join(wapp_dir,'sessions')
 
 def set_chrome_driver_path(path=''):
     '''
@@ -132,8 +132,8 @@ def ensure():
     If those files do not exist, ensures the creation of them with proper initial values.
     '''
 
-    if not os.path.exists(dir):
-        os.mkdir(dir)
+    if not os.path.exists(wapp_dir):
+        os.mkdir(wapp_dir)
 
     if not os.path.exists(log_file):
         with open(log_file, 'w+') as f:
