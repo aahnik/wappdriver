@@ -41,25 +41,24 @@ pip3 install wappdriver
 
 ### WARNING  ⚠️
 
-WhatsApp does not allow you to login into the same account from multiple chrome tabs.
-So **make sure to close any chrome tab which has WhatsApp Web open**, before executing the following  line when your session cookies(data for automatic login, without requiring you to scan QR code multiple times) are saved in your current directory.
+- WhatsApp does not allow you to login into the same account from multiple chrome tabs.
+So **make sure to close any chrome tab which has WhatsApp Web open**. Not doing so will lead to errors.
+- Your phone which is having that WhatsApp account, must stay connected to internet for WhatsApp Web to work
 
-`bot = wa.WappDriver()`
 
-Not doing so may lead to errors or the program may hang. 
-
-You will be required to scan the QR Code for the first time only, thereafter the data saved within the `wappDefaultSession` sub-directory will be used for automatic login. You can delete this folder to delete all cookies. 
 
 
 ### Requirements
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
-- [Chrome Browser](https://www.google.com/chrome/) 
+- **[Chrome Browser](https://www.google.com/chrome/)**
 - [Chrome Driver](https://chromedriver.storage.googleapis.com/index.html?path=84.0.4147.30/)
 
 Make sure to have matching versions of Chrome Browser and Chrome Driver.
-I recommend to use the latest version of both, for the best performance
+I recommend to use the latest version of both, for the best performance.
+
+`WappDriver does not support other Browsers. Please use Chrome for a smooth experience`
 
 ### Documentation
 
