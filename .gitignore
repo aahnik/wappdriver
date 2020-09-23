@@ -4,5 +4,4 @@
 venv
 .vscode
 __pycache__
-wappdriver_session
-run_test.sh
+run.py
