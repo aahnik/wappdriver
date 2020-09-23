@@ -1,3 +1,3 @@
-remote-theme: aahnik/pages-themes-dinky
+# remote-theme: aahnik/pages-themes-dinky
 markdown: kramdown
 theme: jekyll-theme-dinky
