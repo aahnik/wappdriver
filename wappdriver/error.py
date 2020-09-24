@@ -33,7 +33,7 @@ class WappDriverError(Exception):
 
     ---
     - The `problem` and current time will be the heading of any particular log
-    - message` is shown to the user.
+    - `internal` is not shown to the user, but logged.
 
     ---
     Raising an WappDriverError automatically logs the entire internal error messages with timestamps.
@@ -51,7 +51,7 @@ class WappDriverError(Exception):
     def __str__(self):
         return f'''
         ------------------------------------------------------------------------------------
-        WappDriver Error Occured
+        WappDriver Error : {self.problem}
 
         {self.message}
 
@@ -80,7 +80,7 @@ def handle_errors(problem, message):
     #### After being decorated, the vulnerable function will return `True` or `False` to the caller
 
     - `True` will be returned in case of no error
-    - If an error is caught it will be handled and the `message` will be shown to the user.
+    - If an error is caught it will be handled and beautified message will be displayed to user
         - The internal details of the Exception and full traceback will be logged.
         - `False` will be returned to the caller.
 

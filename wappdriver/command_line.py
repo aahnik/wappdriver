@@ -1,6 +1,13 @@
 from . import __version__
 import argparse
-from pyfiglet import Figlet
+
+try:
+    from pyfiglet import Figlet
+except:
+    print('''Could not find pyfiglet
+            Run 
+                pip install pyfiglet
+        ''')
 
 
 

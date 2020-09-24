@@ -1,19 +1,26 @@
-'''This module driver.py contains the WappDriver class, which is responsible for driving the core
-features of the application.
+'''This module driver.py contains the WappDriver class, which is responsible for driving the core features of the application.
 You have to create an instance of the WappDriver class, to do any meaningful activity such as
 sending a text message or media(Image/GIF/Video) or PDF document
 '''
-from wappdriver.error import WappDriverError
-from . import error  # when error is imported local is ensured
+
+from .error import handle_errors
 from .data import local
 
 import os
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.common.keys import Keys
+
+try:
+    from selenium import webdriver
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support import expected_conditions
+    from selenium.webdriver.common.keys import Keys
+
+except:
+    print('''Could not find Selenium
+            Run
+                pip install selenium
+        ''')
 
 
 class WappDriver():
@@ -41,69 +48,40 @@ class WappDriver():
             else:
                 self.driver.quit()
 
+    @handle_errors(problem='Chrome Driver could not be successfuly loaded',
+                   message='Make sure to have correct version of Chrome and Chrome Driver')
     def load_chrome_driver(self, session):
         session_path = os.path.join(local.sessions_dir, session)
+        chrome_options = Options()
+        chrome_options.add_argument(f'--user-data-dir={session_path}')
+        self.driver = webdriver.Chrome(
+            options=chrome_options, executable_path=self.chrome_driver_path)
 
-        try:
-            chrome_options = Options()
-            chrome_options.add_argument(f'--user-data-dir={session_path}')
-
-            self.driver = webdriver.Chrome(
-                options=chrome_options, executable_path=self.chrome_driver_path)
-
-            return True
-
-        except Exception as internal:
-            try:
-                raise WappDriverError(internal,
-                                      problem='Chrome Driver could not be successfuly loaded',
-                                      message='Make sure to have correct version of Chrome and Chrome Driver')
-            except Exception as err:
-                print(err)
-                return False
-
+    @handle_errors(problem='WhatsApp main screen could not be successfuly loaded',
+                   message='Make sure to have correct version of Chrome and Chrome Driver')
     def load_main_screen(self):
-        try:
-            self.driver.get(self.whatsapp_web_url)
+        self.driver.get(self.whatsapp_web_url)
+        WebDriverWait(self.driver, self.timeout).until(
+            expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self.mainScreenLoaded)))
 
-            WebDriverWait(self.driver, self.timeout).until(
-                expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self.mainScreenLoaded)))
-            return True
-
-        except Exception as internal:
-            try:
-                raise WappDriverError(internal,
-                                      problem='WhatsApp main screen could not be successfuly loaded',
-                                      message='Make sure to have correct version of Chrome and Chrome Driver')
-            except Exception as err:
-                print(err)
-                return False
-
-    # selecting a person after searching contacts
-
-    def load_person(self, name):
-
+    def search_person(self, name):
         search_box = self.driver.find_element_by_css_selector(
             self.searchSelector)
-
-        # we will send the name to the input key box
         search_box.send_keys(name)
 
-        try:
+    def load_person(self, name):
+        if self.search_person(name):
             person = WebDriverWait(self.driver, self.timeout).until(expected_conditions.presence_of_element_located(
                 (By.XPATH, f'//*[@title="{name}"]')))
             person.click()
-            return True
 
-        except Exception as error:
-            message = f'''{name} not loaded, MAY BE NOT IN YOUR CONTACTS , 
-                If you are sure {name} is in your contacts, Try checking internet connection
-                
-               OR  May be some other problem ...  '''
+            # message = f'''{name} not loaded, MAY BE NOT IN YOUR CONTACTS ,
+            #     If you are sure {name} is in your contacts, Try checking internet connection
 
-            search_box.send_keys((Keys.BACKSPACE)*len(name))
-            # clearing the search bar by backspace, so that searching the next person does'nt have any issue
-            return False
+            #    OR  May be some other problem ...  '''
+
+    def unsearch_person(self, name)
+    search_box.send_keys((Keys.BACKSPACE)*len(name))
 
     def send_message(self, to, msg):
         '''Method to send a text message to a contact.
@@ -136,9 +114,11 @@ class WappDriver():
         Optional argument: caption
 
         Example Use :
+        ```python
         bot.send_media(to='contact',path='path/to/media',caption='wow')
-        or
+        # or
         bot.send_media('contact','path/to/media','wow')
+        ```
         where bot is an object of WappDriver class
 
         Not giving the caption is allowed
@@ -153,9 +133,11 @@ class WappDriver():
         Requires two arguments: to and path
 
         Example Use :
+        ```python
         bot.send_file(to='contact',path='path/to/file')
-        or
+        # or
         bot.send_file('contact','path/to/file')
+        ```
         where bot is an object of WappDriver class
 
         Not giving the caption is allowed
