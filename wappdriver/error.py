@@ -3,7 +3,8 @@ This module error.py defines custom Wappdriver Exception.
 WappDriver Excpetion helps in abstracting internal exception details from the end user
 ---
 
-This module can be used by any other module except `local` from `data` subpackage.
+`local` and `remote` modules from `data` subpackage, should not import `error` in order to 
+prevent cyclic import
 
 When you import this module or any function from this module, local is ensured 😊
 '''
