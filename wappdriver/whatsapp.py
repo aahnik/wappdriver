@@ -35,11 +35,10 @@ def category(arg):
 class WhatsApp():
     '''
     Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It's very simple to use. 
-    
-    Visit https://aahnik.github.io/wappdriver to read the documentation
-    
-    '''
 
+    Visit https://aahnik.github.io/wappdriver to read the documentation
+
+    '''
 
     def __init__(self, timeout=50, session='default'):
         self.timeout = timeout
@@ -87,7 +86,7 @@ class WhatsApp():
                         self.wappdriver.send_text(arg)
                     else:
                         self.wappdriver.send_file(arg, category(arg))
-                        size_mb = os.stat.st_size(arg)*1e-6
+                        size_mb = os.stat(arg).st_size*1e-6
                         time.sleep((self.timeout/10)*size_mb)
                     progress.update(1)
 
