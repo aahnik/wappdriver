@@ -3,7 +3,7 @@ import argparse
 
 try:
     from pyfiglet import Figlet
-except:
+except Exception:
     print('''Could not find pyfiglet
             Run 
                 pip install pyfiglet

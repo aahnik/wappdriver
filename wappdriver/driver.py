@@ -18,8 +18,8 @@ try:
     from selenium.webdriver.support import expected_conditions
     from selenium.webdriver.common.keys import Keys
 
-except:
-    print('''Could not find Selenium
+except Exception:
+    print(f'''Could not find Selenium
             Run
                 pip install selenium
         ''')
