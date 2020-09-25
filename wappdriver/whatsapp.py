@@ -28,8 +28,8 @@ def category(arg):
         else:
             print('Files of more than 16 MB are not allowed in WhatsApp')
             quit()
-    else:
-        return 'text'
+    
+    return 'text'
 
 
 class WhatsApp():
