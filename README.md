@@ -13,7 +13,7 @@ _`wappdriver` enables you to send WhatsApp messages programmatically, using only
 **A python package that helps you automate sending messages through WhatsApp Web 😎**
 
 ### *🌟🌟 New*
-WappDriver now supports sending **images** , **videos**, **documents** and other file types... *[learn usage]()*
+WappDriver now supports sending **images** , **videos**, **documents** and other file types... *[learn usage](https://aahnik.github.io/wappdriver/docs/Documentation.html)*
 
  
 ### It's very simple to use
