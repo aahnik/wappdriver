@@ -10,7 +10,7 @@ from datetime import datetime
 from .data_error import handle_dependancy
 from . import remote
 import os
-import tqdm
+from tqdm import tqdm
 
 
 @handle_dependancy
