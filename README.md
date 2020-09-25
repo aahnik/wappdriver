@@ -3,33 +3,30 @@
 Wondering how to send WhatsApp messages using Python using only few lines of code? You have come to the right place!
 
 [![Tests](https://img.shields.io/badge/tests-passing-green)](https://aahnik.github.io/wappdriver/docs/Tests.html)
+[![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/aahnik/wappdriver/graphs/commit-activity) 
+[![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
+[![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
 
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only 3 lines of code._ 
 
 **A python package that helps you automate sending messages through WhatsApp Web 😎**
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/aahnik/wappdriver/graphs/commit-activity) 
-[![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
-[![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver) 
+### *🌟🌟 New*
+WappDriver now supports sending **images** , **videos**, **documents** and other file types... *[learn usage](https://aahnik.github.io/wappdriver/docs/Documentation.html)*
 
-
+ 
 ### It's very simple to use
 
-```python
-import wappdriver as wa
-bot = wa.WappDriver()
-bot.send_message(to='aahnik',msg='Hi ! sent by a bot :-p ')
-# the recipients name must be saved in your contacts ...
-
-```
-![wapp_driver_scrnsht](https://user-images.githubusercontent.com/66209958/90502857-2879a600-e16c-11ea-8f7f-7bbf2a993a13.png)
+![using wappdriver](docs/images/wappdriver.png).
 
 ### How to install ??
 
 ```
-pip3 install wappdriver
+pip install wappdriver
 ```
+For Mac and Linux, you may need to use `pip3`.
+
 [PyPI](https://pypi.org/project/wappdriver/) 
 
 [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE) 
@@ -40,8 +37,6 @@ pip3 install wappdriver
 - WhatsApp does not allow you to login into the same account from multiple chrome tabs.
 So **make sure to close any chrome tab which has WhatsApp Web open**. Not doing so will lead to errors.
 - Your phone which is having that WhatsApp account, must stay connected to internet for WhatsApp Web to work
-
-
 
 
 ### Requirements
@@ -58,23 +53,16 @@ I recommend to use the latest version of both, for the best performance.
 
 ### Documentation
 
-[Read](https://aahnik.github.io/wappdriver/docs/Documentation.html) the full Documentation.
-
-### Tests
-
-[Learn more](https://aahnik.github.io/wappdriver/docs/Tests.html) about testing.
-
+[Read](https://aahnik.github.io/wappdriver/docs/Documentation.html) the full Documentation to know about all the features.
 
 
 ### Want to contribute ? 
 
 Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-)
 
+Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.](https://aahnik.github.io/wappdriver/docs/For_Developers.html)
 
 
-
-### Special Thanks to @VISWESWARAN1998
-I learned a lot from his [repo](https://github.com/aahnik/Simple-Yet-Hackable-WhatsApp-api) and had initially started working on it. In future, due to certain requirements, I created a seperate repo, with a different working all together.
 
 ### Help
 

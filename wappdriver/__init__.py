@@ -1,6 +1,8 @@
-__version__ = "0.3.2"
+__version__ = "0.5.0.beta"
 
-from .driver import WappDriver
+# from .context import Wapp
 from .data.local import set_chrome_driver_path, update_vars
-
+from .error import handle_errors
+from .driver import WappDriver
+from .whatsapp import category,WhatsApp
 # AAHNIK 2020

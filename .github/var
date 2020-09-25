@@ -1,5 +1,10 @@
-whatsapp_web_url: https://web.whatsapp.com/
-mBox: /html/body/div/div/div/div[4]/div/footer/div[1]/div[2]/div/div[2]
-mainScreenLoaded: ._3FRCZ
-searchSelector: .cBxw- > div:nth-child(2)
+whatsapp_web_url: 'https://web.whatsapp.com/'
+messageBox: '/html/body/div/div/div/div[4]/div/footer/div[1]/div[2]/div/div[2]'
+mainScreenLoaded: '._3FRCZ'
+searchSelector: '.cBxw- > div:nth-child(2)'
+person: '//*[@title="name"]'
+attach: '//span[@data-icon="clip"]'
+send: '//span[@data-icon="send"]'
+media: '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"][@type="file"]'
+file: '//input[@accept="*"]'
 # Aahnik 2020

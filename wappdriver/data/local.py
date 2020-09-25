@@ -5,12 +5,17 @@ The values of the selectors are updated from the internet, first time when the u
 ---
 Updates can be performed manually by calling `update_vars()`
 '''
-
+from .. import __version__
+from datetime import datetime
+from .data_error import handle_dependancy
 from . import remote
 import os
-import yaml
-from datetime import datetime
-from .. import __version__
+
+
+@handle_dependancy
+def yml():
+    import yaml
+    return yaml
 
 
 wapp_dir = os.path.expanduser('~/.wappdriver')
@@ -21,7 +26,8 @@ var_file = os.path.join(wapp_dir, 'var.yml')
 
 version_file = os.path.join(wapp_dir, 'ver.txt')
 
-sessions_dir = os.path.join(wapp_dir,'sessions')
+sessions_dir = os.path.join(wapp_dir, 'sessions')
+
 
 def set_chrome_driver_path(path=''):
     '''
@@ -80,7 +86,7 @@ def get_local_vars():
     Returns the vars dictionary
     '''
     with open(var_file, 'r') as f:
-        return yaml.full_load(f)
+        return yml().full_load(f)
 
 
 def set_local_ver(ver):
@@ -123,7 +129,8 @@ def update_vars():
         return True
 
     except Exception as e:
-        print(f'Could not update data from Internet. Check your internet connection \n {e}')
+        print(
+            f'Could not update data from Internet. Check your internet connection \n {e}')
 
 
 def ensure():
