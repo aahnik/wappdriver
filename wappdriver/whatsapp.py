@@ -28,11 +28,18 @@ def category(arg):
         else:
             print('Files of more than 16 MB are not allowed in WhatsApp')
             quit()
-    
+
     return 'text'
 
 
 class WhatsApp():
+    '''
+    Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It's very simple to use. 
+    
+    Visit https://aahnik.github.io/wappdriver to read the documentation
+    
+    '''
+
 
     def __init__(self, timeout=50, session='default'):
         self.timeout = timeout
@@ -50,6 +57,29 @@ class WhatsApp():
         self.wappdriver.driver.close()
 
     def send(self, to, *args):
+        '''
+        Use this method to send messages to your friends on WhatsApp
+        ---
+
+        Example Use:
+        ```python
+        with WhatsApp() as bot:
+            bot.send('recipient','hi sent by a bot','/home/pics/image.png')
+        ```
+        The first argument you need to pass is the recipient's name which must be saved in your phone.
+
+        After that you can pass as many string arguments you want for message. 
+        The string can be:
+        - a text message or 
+        - the file path if you want to send a image, video, GIF, documents etc.
+        - you can send multiple files, just pass them as arguments
+        - You must use Absolute File Paths
+
+        `wappdriver` will automatically detect whether a string is a message or a file path.
+
+        For more details visit : https://aahnik.github.io/wappdriver
+        '''
+
         if self.wappdriver.load_person(to):
             with tqdm(total=len(args)) as progress:
                 for arg in args:
@@ -62,6 +92,6 @@ class WhatsApp():
                     progress.update(1)
 
     def __exit__(self, exception_type, exception_value, traceback):
-        time.sleep(30)
+        time.sleep(5)
         print('Closing WhatsApp')
         self.wappdriver.driver.close()

@@ -10,6 +10,7 @@ from datetime import datetime
 from .data_error import handle_dependancy
 from . import remote
 import os
+import tqdm
 
 
 @handle_dependancy
@@ -123,9 +124,9 @@ def update_vars():
 
     try:
         if remote_version > local_version:
+            print('\nFetching data ...\n')
             set_local_vars(remote.fetch_vars())
             set_local_ver(str(remote_version))
-
         return True
 
     except Exception as e:
@@ -138,28 +139,31 @@ def ensure():
     Executed whenever local is imported, please run `ensure()` to ensure the required local files exists.
     If those files do not exist, ensures the creation of them with proper initial values.
     '''
-
-    if not os.path.exists(wapp_dir):
-        os.mkdir(wapp_dir)
-
-    if not os.path.exists(log_file):
-        with open(log_file, 'w+') as f:
-            f.write(f'''
-            --------------------------
-            Log File Created
-            {datetime.now()}
-            wappdriver : {__version__}
-            ---------------------------\n
-            ''')
-
-    if not os.path.exists(cdp_file):
-        set_chrome_driver_path()
-
-    if not os.path.exists(version_file):
-        set_local_ver('0')
-
-    if not os.path.exists(var_file):
-        update_vars()
-
-    if not os.path.exists(sessions_dir):
-        os.mkdir(sessions_dir)
+    with tqdm(total=6) as progress:
+        print('\nSetting up local files\n')
+        if not os.path.exists(wapp_dir):
+            os.mkdir(wapp_dir)
+        progress.update(1)
+        if not os.path.exists(log_file):
+            with open(log_file, 'w+') as f:
+                f.write(f'''
+                --------------------------
+                Log File Created
+                {datetime.now()}
+                wappdriver : {__version__}
+                ---------------------------\n
+                ''')
+        progress.update(1)
+        if not os.path.exists(cdp_file):
+            set_chrome_driver_path()
+        progress.update(1)
+        if not os.path.exists(version_file):
+            set_local_ver('0')
+        progress.update(1)
+        if not os.path.exists(var_file):
+            update_vars()
+        progress.update(1)
+        if not os.path.exists(sessions_dir):
+            os.mkdir(sessions_dir)
+        progress.update(1)
+        print('\n')
