@@ -139,8 +139,8 @@ def ensure():
     Executed whenever local is imported, please run `ensure()` to ensure the required local files exists.
     If those files do not exist, ensures the creation of them with proper initial values.
     '''
+    print('\nSetting up local files\n')
     with tqdm(total=6) as progress:
-        print('\nSetting up local files\n')
         if not os.path.exists(wapp_dir):
             os.mkdir(wapp_dir)
         progress.update(1)
