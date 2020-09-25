@@ -18,7 +18,7 @@ WappDriver now supports sending **images** , **videos**, **documents** and other
  
 ### It's very simple to use
 
-![using wappdriver](docs/images/wappdriver.png).
+![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png).
 
 ### How to install ??
 
