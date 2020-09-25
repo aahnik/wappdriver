@@ -1,4 +1,4 @@
-__version__ = "0.5.2"
+__version__ = "0.5.3"
 
 # from .context import Wapp
 from .data.local import set_chrome_driver_path, update_vars
