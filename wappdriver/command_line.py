@@ -10,14 +10,16 @@ except:
         ''')
 
 
-
 def main():
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
-    print(f'wappdriver: {__version__}')
+    print(f'''
+    wappdriver: {__version__} 
+    Command Line App is not availaible. 
+    Please Update wappdriver
+    ''')
     f = Figlet(font='big')
     print(f.renderText('wappdriver'))
-
 
 
 if __name__ == "__main__":
