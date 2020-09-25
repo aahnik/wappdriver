@@ -20,7 +20,9 @@ After you `pip install wappdriver`, you can directly run your code.
 
 ## Sending Images, Videos, Documents and other Files
 
-With `wappdriver` its easy to do all these. Simply pass the path of the image or video or document file to the `send` method. You must use absoulte file paths.
+With `wappdriver` its easy to do all these. Simply pass the path of the image or video or document file to the `send` method. 
+- You must use absoulte file paths.
+- File path must not have any space 
 You can send any file type that WhatsApp supports.
 > WhatsApp does not support files over 16 MB
 
