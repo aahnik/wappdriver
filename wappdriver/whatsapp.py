@@ -64,3 +64,4 @@ class WhatsApp():
     def __exit__(self, exception_type, exception_value, traceback):
         time.sleep(30)
         print('Closing WhatsApp')
+        self.wappdriver.driver.close()
