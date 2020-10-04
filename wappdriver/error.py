@@ -20,7 +20,9 @@ logging.basicConfig(format='\n########################################\n\n%(asct
 
 class WappDriverError(Exception):
     '''
-    Exception raised for errors in functioning of WappDriver.
+    Custom Exception Class
+
+    WappDriverError is to be raised for errors in functioning of WappDriver.
 
     ---
     ### Attributes

@@ -19,7 +19,7 @@ def yml():
     return yaml
 
 
-wapp_dir = os.path.expanduser('~/.wappdriver')
+wapp_dir = os.path.expanduser('~/wappdriver')
 
 log_file = os.path.join(wapp_dir, 'log_file.txt')
 cdp_file = os.path.join(wapp_dir, 'cdp.txt')
@@ -70,7 +70,7 @@ def get_chrome_driver_path():
             return path
     except Exception as e:
         print('Could not Read Chrome Driver Path')
-        print(f'Some Error Occured {e}')
+        print(f'some error occured {e}')
         set_chrome_driver_path()
 
 
@@ -143,7 +143,11 @@ def ensure():
     with tqdm(total=6) as progress:
         if not os.path.exists(wapp_dir):
             os.mkdir(wapp_dir)
+            print("\n\n A folder called `wappdriver` has been created in your home directory. \n \t\t # Please DO NOT DELETE it \n\n WappDriver stores your google chrome session cookies, dynamic data and log files in this directory.")
+            input('\n Press [ENTER] to continue ')
+
         progress.update(1)
+
         if not os.path.exists(log_file):
             with open(log_file, 'w+') as f:
                 f.write(f'''
@@ -153,17 +157,25 @@ def ensure():
                 wappdriver : {__version__}
                 ---------------------------\n
                 ''')
+
         progress.update(1)
+
         if not os.path.exists(cdp_file):
             set_chrome_driver_path()
+
         progress.update(1)
+
         if not os.path.exists(version_file):
             set_local_ver('0')
+
         progress.update(1)
         if not os.path.exists(var_file):
             update_vars()
+
         progress.update(1)
+
         if not os.path.exists(sessions_dir):
             os.mkdir(sessions_dir)
+
         progress.update(1)
         print('\n')
