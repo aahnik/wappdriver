@@ -1,12 +1,26 @@
-# API for WhatsApp Web Automation 
+<div align="center">
 
-Wondering how to send WhatsApp messages using Python using only few lines of code? You have come to the right place!
+![image](https://user-images.githubusercontent.com/66209958/95024996-2760f180-06a4-11eb-8b98-d62c2d1bb26b.png)
+
+ </div>
+
+<h1 align="center">wappdriver</h1>
+
+
+<p align="center">API for WhatsApp Web Automation</p>
+
+<div align="center">
 
 [![Tests](https://img.shields.io/badge/tests-passing-green)](https://aahnik.github.io/wappdriver/docs/Tests.html)
 [![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/aahnik/wappdriver/graphs/commit-activity) 
 [![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
 [![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
 
+ </div>
+
+---
+
+Wondering how to send WhatsApp messages using Python using only few lines of code? **You have come to the right place!**
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only 3 lines of code._ 
 
@@ -64,13 +78,16 @@ Please read the explanation of the detailed working of `wappdriver` from the [De
 
 
 
-### Help
+### Help 
 
-For _help_ you can **email me** at [meet.aahnik@gmail.com](mailto:meet.aahnik@gmail.com) or **chat** on [Telegram](https://t.me/AahnikDaw).You can expect a reply within 48 hours.
+Read the [Help Page](/docs/help.md)
 
-### Social
+For furthur assistance you can ask ![image](https://user-images.githubusercontent.com/66209958/95024578-81ac8300-06a1-11eb-8f56-d4a552135bfd.png) a question  in  **issues** 
 
-<center>
+---
+
+
+<div align="center">
 
 <a href = "https://medium.com/@aahnikdaw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/medium.png?raw=true" alt = "medium" > </a >
 <a href = "https://www.facebook.com/aahnik.daw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/facebook.png?raw=true" alt = "facebook" > </a >
@@ -82,5 +99,4 @@ For _help_ you can **email me** at [meet.aahnik@gmail.com](mailto:meet.aahnik@gm
 <a href = "https://stackoverflow.com/users/13523305/aahnik-daw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/stackOverflow.png?raw=true" alt = "stackOverflow" > </a >
 <a href = "https://dev.to/aahnik" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/dev.png?raw=true" alt = "dev" > </a >
 
-
-</center>
+ </div>

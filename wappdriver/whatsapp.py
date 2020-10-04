@@ -35,8 +35,18 @@ def category(arg):
 class WhatsApp():
     '''
     Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It's very simple to use. 
+     
+    You are advised to use the context manager.
 
-    Visit https://aahnik.github.io/wappdriver to read the documentation
+    Example:
+    ```python
+    with WhatsApp() as bot:
+        bot.send('aahnik',  # name of recipient
+             'hi send by a bot',  # message
+                )
+    ```
+
+    Visit https://aahnik.github.io/wappdriver for more details
 
     '''
 
@@ -57,14 +67,39 @@ class WhatsApp():
 
     def send(self, to, *args):
         '''
-        Use this method to send messages to your friends on WhatsApp
+        Pass name of recipient as first argument and after that you can pass as many message arguments as you wish. 
+
+        - The name of recipient must be saved in your contacts.
+        - Each message argument must be a string. 
+        - If you want to send a file, pass the absolute path of the file to the function.
+        
         ---
 
         Example Use:
+
         ```python
         with WhatsApp() as bot:
-            bot.send('recipient','hi sent by a bot','/home/pics/image.png')
+            bot.send('aahnik',  # name of recipient
+
+                    'hi send by a bot',  # message
+
+                    # absolute path of an image on computer
+                    '/home/aahnik/image.png',  
+
+                    # absolute path of a video on computer
+                    '/home/aahnik/video.mp4',  
+
+                    # absolute path of pdf on computer
+                    '/home/aahnik/django.pdf'  
+                    )
         ```
+        Note: 
+        - In Windows absolute paths looks like: 
+            `C:\Users\mathew\img.png`
+
+        - While in Linux or Mac they look like:
+            `/home/aahnik/img.png`
+
         The first argument you need to pass is the recipient's name which must be saved in your phone.
 
         After that you can pass as many string arguments you want for message. 
