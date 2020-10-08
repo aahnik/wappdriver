@@ -63,10 +63,10 @@ class WhatsApp():
                 if self.wappdriver.load_main_screen():
                     progress.update(4)
                     return self
-        self.wappdriver.driver.close()
+        quit()
 
     def send(self, to, *args):
-        '''
+        r'''
         Pass name of recipient as first argument and after that you can pass as many message arguments as you wish. 
 
         - The name of recipient must be saved in your contacts.
@@ -81,17 +81,17 @@ class WhatsApp():
         with WhatsApp() as bot:
             bot.send('aahnik',  # name of recipient
 
-                    'hi send by a bot',  # message
+                'hi send by a bot',  # message
 
-                    # absolute path of an image on computer
-                    '/home/aahnik/image.png',  
+                # absolute path of an image on computer
+                '/home/aahnik/image.png',  
 
-                    # absolute path of a video on computer
-                    '/home/aahnik/video.mp4',  
+                # absolute path of a video on computer
+                '/home/aahnik/video.mp4',  
 
-                    # absolute path of pdf on computer
-                    '/home/aahnik/django.pdf'  
-                    )
+                # absolute path of pdf on computer
+                '/home/aahnik/django.pdf'  )
+
         ```
         Note: 
         - In Windows absolute paths looks like: 
