@@ -28,7 +28,7 @@ If you wish to just use wappdriver, read the [Usage Guide](https://aahnik.github
 
 '''
 
-__version__ = "0.5.6"
+__version__ = "0.6.0"
 
 # from .context import Wapp
 from .data.local import set_chrome_driver_path, update_vars
