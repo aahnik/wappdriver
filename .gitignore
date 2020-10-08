@@ -5,3 +5,4 @@ venv
 .vscode
 __pycache__
 run.py
+s.html

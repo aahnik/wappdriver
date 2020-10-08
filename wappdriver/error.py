@@ -12,7 +12,7 @@ import functools
 from .data import local
 import logging
 
-local.ensure()  # to prevent errors and first time setup
+
 
 logging.basicConfig(format='\n########################################\n\n%(asctime)s - %(message)s',
                     filename=local.log_file)
@@ -20,7 +20,9 @@ logging.basicConfig(format='\n########################################\n\n%(asct
 
 class WappDriverError(Exception):
     '''
-    Exception raised for errors in functioning of WappDriver.
+    Custom Exception Class
+
+    WappDriverError is to be raised for errors in functioning of WappDriver.
 
     ---
     ### Attributes
@@ -66,6 +68,7 @@ def handle_errors(problem, message):
     ---
     Example use 
     ```python
+    
     # Note: when displayed, message is prefixed with the words `Make sure to have:` 
     @handle_errors(problem='this not done',message='that')
     def vulnerable_function(arg):
