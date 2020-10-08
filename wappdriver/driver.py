@@ -3,9 +3,9 @@ You have to create an instance of the WappDriver class, to do any meaningful act
 sending a text message or media(Image/GIF/Video) or PDF document
 '''
 
-from selenium.webdriver.common import keys
+
 from .error import handle_errors
-from .data.local import get_chrome_driver_path, get_local_vars, sessions_dir
+from .data.local import get_chrome_driver_path, get_local_vars, sessions_dir,ensure
 
 import time
 import os
@@ -31,6 +31,7 @@ class WappDriver():
     '''
 
     def __init__(self, timeout):
+        ensure()
         self.chrome_driver_path = get_chrome_driver_path()
         self._var = get_local_vars()
         self.timeout = timeout
