@@ -11,6 +11,7 @@ This is a detailed usage documentation for using `wappdriver`. [README](https://
       - [Sending a Simple Message](#sending-a-simple-message)
       - [Messages with bold, italics and strike-through](#messages-with-bold-italics-and-strike-through)
       - [Sending Emojis](#sending-emojis)
+      - [Sending to Multiple People](#sending-to-multiple-people)
   - [Sending files](#sending-files)
       - [Images, Videos and Documents](#images-videos-and-documents)
       - [Sending Multiple Files](#sending-multiple-files)
@@ -55,6 +56,19 @@ Here are some commonly used emojis
 
 🙄 😂 😫 🤔 🔥  😌 😍 🤣 ❤️ 😭 😂 🙏 💕 💜 👉
 
+#### Sending to Multiple People
+
+You can easily send a message to multiple people
+
+```python
+from wappdriver import WhatsApp
+
+recipients = ['friend','mom','dad', 'boss', 'client']
+
+with WhatsApp() as bot:
+    for person in recipients:
+        bot.send(person, f'hi {person} send by a bot')
+```
 
 ## Sending files
 #### Images, Videos and Documents
