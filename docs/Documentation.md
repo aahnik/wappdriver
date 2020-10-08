@@ -1,15 +1,8 @@
 # Usage Documentation
 
-<div align="center"> 
+[Readme](../README.md) | [Docs](Documentation.md) | [Concepts](concepts.md) | [Developer Guide](For_Developers.md) | [Help](help.md) 
 
-![image](https://user-images.githubusercontent.com/66209958/95024659-39419500-06a2-11eb-968d-49df41212918.png)
-
-[Readme](/README.md) | [Docs](/docs/Documentation.md) | [Concepts](/docs/concepts.md) | [Developer Guide](/docs/For_Developers.md) | [Help](/docs/help.md) 
-
-</div>
-
-This is a detailed documentation for using `wappdriver`. [README](https://aahnik.github.io/wappdriver) for introduction. 
-
+This is a detailed usage documentation for using `wappdriver`. [README](https://aahnik.github.io/wappdriver) for introduction. 
 
 
 - [Usage Documentation](#usage-documentation)
@@ -116,4 +109,4 @@ The string can be:
 
 ---
 
-**If you are a developer and want to contribute code, read [Developer Guide](/docs/For_Developers.md)**
+**If you are a developer and want to contribute code, read [Developer Guide](dev/wappdriver/index.html)**

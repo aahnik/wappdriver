@@ -1,43 +1,31 @@
-# wappdriver
+wappdriver
 
 API for WhatsApp Web Automation
 
-
-Wondering how to send WhatsApp messages using Python using only few lines of code? **You have come to the right place!**
 
 
 [![Tests](https://img.shields.io/badge/tests-passing-green)](https://aahnik.github.io/wappdriver/docs/Tests.html)
 [![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/aahnik/wappdriver/graphs/commit-activity)
 [![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
 [![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
-
-
+[![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
 ---
 
-
-🌟🌟  WappDriver now supports sending **images** , **videos**, **documents** and other file types... _[learn usage](https://aahnik.github.io/wappdriver/docs/Documentation.html)_
-
-### It's very simple to use
-
-![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png).
+Wondering how to send WhatsApp messages using Python using only few lines of code? **You have come to the right place!**
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only 3 lines of code._
 
 **A python package that helps you automate sending messages through WhatsApp Web 😎**
 
+### _🌟🌟 New_
 
-### How to install ??
+WappDriver now supports sending **images** , **videos**, **documents** and other file types... _[learn usage](https://aahnik.github.io/wappdriver/docs/Documentation.html)_
 
-```
-pip install wappdriver
-```
+### It's very simple to use
 
-For Mac and Linux, you may need to use `pip3`.
+![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png).
 
-[PyPI](https://pypi.org/project/wappdriver/)
-
-[![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
 ### WARNING ⚠️
 
@@ -74,17 +62,3 @@ Read the [Help Page](/docs/help.md)
 For furthur assistance you can ask ![image](https://user-images.githubusercontent.com/66209958/95024578-81ac8300-06a1-11eb-8f56-d4a552135bfd.png) a question in **issues**
 
 ---
-
-<div align="center">
-
-<a href = "https://medium.com/@aahnikdaw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/medium.png?raw=true" alt = "medium" > </a >
-<a href = "https://www.facebook.com/aahnik.daw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/facebook.png?raw=true" alt = "facebook" > </a >
-<a href = "https://www.linkedin.com/in/aahnik-daw-067a011b3/" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/linkedin.png?raw=true" alt = "linkedin" > </a >
-<a href = "https://t.me/AahniKDaw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/telegram.png?raw=true" alt = "telegram" > </a >
-<a href = "https://twitter.com/AahnikD" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/twitter.png?raw=true" alt = "twitter" > </a >
-<a href = "https://www.quora.com/profile/Aahnik-Daw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/quora.png?raw=true" alt = "quora" > </a >
-<a href = "https://www.youtube.com/channel/UCcEbN0d8iLTB6ZWBE_IDugg" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/youtube.png?raw=true" alt = "youtube" > </a >
-<a href = "https://stackoverflow.com/users/13523305/aahnik-daw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/stackOverflow.png?raw=true" alt = "stackOverflow" > </a >
-<a href = "https://dev.to/aahnik" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/dev.png?raw=true" alt = "dev" > </a >
-
- </div>
