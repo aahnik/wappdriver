@@ -11,7 +11,7 @@ Learn usage (https://aahnik.github.io/wappdriver/docs/Documentation.html)
 
 '''
 
-__version__ = "0.5.4"
+__version__ = "0.5.6"
 
 # from .context import Wapp
 from .data.local import set_chrome_driver_path, update_vars
