@@ -57,9 +57,24 @@ I recommend to use the latest stable release of both, for the best performance.
 
 `WappDriver does not support other Browsers. Please use Chrome for a smooth experience`
 
-### Documentation
+### Documentation & Why `wappdriver`?
+
+- fast and reliable
+- whatsapp's website structure may change, the selectors can be updated over internet dynamically, without changing code. 
+- chrome Driver path setting is hassle free 
+- actively maintained
+- fast support, if you need help
+- send messages with **bold**, _italics_, or ~~strike through~~
+- send emojis 😃
+- send images, videos and gifs
+- send documents and files
+- can set custom timeout, so that runs properly in old computers or with slow internet connection
+- more features to be added
 
 [Read](https://aahnik.github.io/wappdriver/docs/Documentation.html) the full Documentation to know about all the features.
+
+
+
 
 ### Want to contribute ?
 

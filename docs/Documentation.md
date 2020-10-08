@@ -7,11 +7,17 @@ This is a detailed usage documentation for using `wappdriver`. [README](https://
 
 - [Usage Documentation](#usage-documentation)
   - [First time Setup](#first-time-setup)
-  - [Sending a Simple Message](#sending-a-simple-message)
-  - [Images, Videos and Documents](#images-videos-and-documents)
-  - [Sending Multiple Files](#sending-multiple-files)
-  - [Messages with Files](#messages-with-files)
-  - [Lazy/Exhausted bot](#lazyexhausted-bot)
+  - [Sending Messages](#sending-messages)
+      - [Sending a Simple Message](#sending-a-simple-message)
+      - [Messages with bold, italics and strike-through](#messages-with-bold-italics-and-strike-through)
+      - [Sending Emojis](#sending-emojis)
+  - [Sending files](#sending-files)
+      - [Images, Videos and Documents](#images-videos-and-documents)
+      - [Sending Multiple Files](#sending-multiple-files)
+      - [Messages with Files](#messages-with-files)
+  - [Tired bot](#tired-bot)
+  - [Update Variables](#update-variables)
+  - [Set Chrome Driver Path](#set-chrome-driver-path)
   - [In Brief](#in-brief)
 
 ## First time Setup
@@ -22,13 +28,36 @@ After you `pip install wappdriver`, you can directly run your code.
 - You will be prompted to enter the installation path of Chrome Driver Executable (only once). Just copy and paste the correct path there. 
 - When you load WhatsApp for the first time, you have to scan the QR Code that will be displayed on your computer from your phone, to login into WhatsApp Web
 
-## Sending a Simple Message
+## Sending Messages
+#### Sending a Simple Message
 
 The code snippet below is enough to show you how.
 
 ![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png).
 
-## Images, Videos and Documents
+#### Messages with bold, italics and strike-through
+
+To send formatted text, use the same techniques you use while typing on your smartphone. 
+Simply enclose the words with special characters as shown
+```
+*bold*
+_italics_
+-strike-
+```
+![Screenshot from 2020-10-08 21-02-54](https://user-images.githubusercontent.com/66209958/95480607-b2463280-09a9-11eb-8bc6-b3fd2a9bbaac.png)
+
+
+#### Sending Emojis 
+
+To send an emoji simply copy it from internet and paste it in your message string.
+
+Here are some commonly used emojis
+
+🙄 😂 😫 🤔 🔥  😌 😍 🤣 ❤️ 😭 😂 🙏 💕 💜 👉
+
+
+## Sending files
+#### Images, Videos and Documents
 
 With `wappdriver` its easy to do all these. Simply pass the path of the image or video or document file to the `send` method. 
 - You must use absoulte file paths.
@@ -45,7 +74,7 @@ You can send any file type that WhatsApp supports.
 
 ![sending an image](images/sending_media.png)
 
-## Sending Multiple Files 
+#### Sending Multiple Files 
 
 You can easily pass as many arguments to `send` method of `WhatsApp` class you wish.
 **Just remember that the first argument must be the name of the recipient.**
@@ -53,7 +82,7 @@ You can easily pass as many arguments to `send` method of `WhatsApp` class you w
 ![sending multiple files](images/sending_multiple_files.png)
 
 
-## Messages with Files
+#### Messages with Files
 
 Hmm! `wappdriver` is extremely smart. It can detect whether a string is a message or a file path. So you can do this as shown below. Dont hesitate to use a multiline line string for a long message. 
 
@@ -61,9 +90,49 @@ Hmm! `wappdriver` is extremely smart. It can detect whether a string is a messag
 
 The messages will be send in exactly that order.
 
-## Lazy/Exhausted bot
+## Tired bot
 
-todo 
+If your computer or internet is very slow, you may face timeout exceptions, or messages not being sent properly. In this case we call our bot exhausted or tired.
+ 
+You can solve this by overriding the default timeout value.This can be done by passing an optional argument to the `WhatsApp` context manager.
+
+```python
+from wappdriver import WhatsApp
+
+with WhatsApp(timeout=100) as bot:
+    bot.send('aahnik',  'Exhausted ?')
+```
+The default value of timeout is 50s ( when you dont pass the argument)
+
+If bot is exhausted, increase timeout.
+
+
+
+## Update Variables 
+
+When you run `wappdriver` for the first time, the values of selectors is fetched from the internet.
+
+If you want to update them
+```python
+from wappdriver import update_vars
+update_vars()
+```
+If any new updates are availaible, they will be downloaded.
+
+
+## Set Chrome Driver Path
+
+When you will use `wappdriver` for the first time, it will ask you to input the path of Chrome Driver Executable in your system.
+
+You can set the path programmatically 
+```python
+from wappdriver import set_chrome_driver_path
+path = '/home/aahnik/Downloads/chrome_driver' 
+set_chrome_driver_path(path)
+```
+
+**Replace the value of variable `path` with the path of chrome driver in your system.**
+
 
 
 ## In Brief
