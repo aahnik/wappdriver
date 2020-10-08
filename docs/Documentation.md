@@ -1,4 +1,4 @@
-# Documentation
+# Usage Documentation
 
 <div align="center"> 
 
@@ -12,12 +12,13 @@ This is a detailed documentation for using `wappdriver`. [README](https://aahnik
 
 
 
-- [Documentation](#documentation)
+- [Usage Documentation](#usage-documentation)
   - [First time Setup](#first-time-setup)
   - [Sending a Simple Message](#sending-a-simple-message)
   - [Images, Videos and Documents](#images-videos-and-documents)
   - [Sending Multiple Files](#sending-multiple-files)
   - [Messages with Files](#messages-with-files)
+  - [Lazy/Exhausted bot](#lazyexhausted-bot)
   - [In Brief](#in-brief)
 
 ## First time Setup
@@ -66,6 +67,11 @@ Hmm! `wappdriver` is extremely smart. It can detect whether a string is a messag
 ![files and messages](images/files_and_messages.png)
 
 The messages will be send in exactly that order.
+
+## Lazy/Exhausted bot
+
+todo 
+
 
 ## In Brief
 
