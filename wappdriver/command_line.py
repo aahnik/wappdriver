@@ -11,6 +11,9 @@ except Exception:
 
 
 def main():
+    '''
+    The command line parser for 
+    '''
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
     print(f'''
@@ -26,7 +29,10 @@ def main():
     f = Figlet(font='big')
     print(f.renderText('wappdriver'))
 
+
 def wa():
-    
+    pass
+
+
 if __name__ == "__main__":
     main()

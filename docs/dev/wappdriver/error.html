@@ -48,9 +48,6 @@ import functools
 from .data import local
 import logging
 
-logging.basicConfig(format=&#39;\n########################################\n\n%(asctime)s - %(message)s&#39;,
-                    filename=local.log_file)
-
 
 class WappDriverError(Exception):
     &#39;&#39;&#39;
@@ -80,6 +77,9 @@ class WappDriverError(Exception):
         self.problem = problem
         self.message = message
         super().__init__(self.message)
+
+        logging.basicConfig(format=&#39;\n########################################\n\n%(asctime)s - %(message)s&#39;,
+                            filename=local.log_file)
 
         logging.exception(f&#39;&#39;&#39;\n{problem}\n\n{internal}&#39;&#39;&#39;)
 
@@ -304,6 +304,9 @@ what could have went wrong according to the developer </p>
         self.problem = problem
         self.message = message
         super().__init__(self.message)
+
+        logging.basicConfig(format=&#39;\n########################################\n\n%(asctime)s - %(message)s&#39;,
+                            filename=local.log_file)
 
         logging.exception(f&#39;&#39;&#39;\n{problem}\n\n{internal}&#39;&#39;&#39;)
 

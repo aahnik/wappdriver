@@ -39,15 +39,27 @@ except Exception:
 
 
 def main():
+    &#39;&#39;&#39;
+    The command line parser for 
+    &#39;&#39;&#39;
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
     print(f&#39;&#39;&#39;
     wappdriver: {__version__} 
-    Command Line App is not availaible. 
-    Please Update wappdriver
+
+    wappdriver is `wa` on command line
+
+    To know usage : wa --usage
+
+    For help : wa --help
+
     &#39;&#39;&#39;)
     f = Figlet(font=&#39;big&#39;)
     print(f.renderText(&#39;wappdriver&#39;))
+
+
+def wa():
+    pass
 
 
 if __name__ == &#34;__main__&#34;:
@@ -65,21 +77,42 @@ if __name__ == &#34;__main__&#34;:
 <span>def <span class="ident">main</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>The command line parser for</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def main():
+    &#39;&#39;&#39;
+    The command line parser for 
+    &#39;&#39;&#39;
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
     print(f&#39;&#39;&#39;
     wappdriver: {__version__} 
-    Command Line App is not availaible. 
-    Please Update wappdriver
+
+    wappdriver is `wa` on command line
+
+    To know usage : wa --usage
+
+    For help : wa --help
+
     &#39;&#39;&#39;)
     f = Figlet(font=&#39;big&#39;)
     print(f.renderText(&#39;wappdriver&#39;))</code></pre>
+</details>
+</dd>
+<dt id="wappdriver.command_line.wa"><code class="name flex">
+<span>def <span class="ident">wa</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def wa():
+    pass</code></pre>
 </details>
 </dd>
 </dl>
@@ -101,6 +134,7 @@ if __name__ == &#34;__main__&#34;:
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
 <li><code><a title="wappdriver.command_line.main" href="#wappdriver.command_line.main">main</a></code></li>
+<li><code><a title="wappdriver.command_line.wa" href="#wappdriver.command_line.wa">wa</a></code></li>
 </ul>
 </li>
 </ul>
