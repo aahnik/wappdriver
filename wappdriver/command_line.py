@@ -31,7 +31,13 @@ def main():
 
 
 def wa():
-    pass
+    parser = argparse.ArgumentParser()
+    parser.add_argument('send',
+                        help=''' 
+
+                        '''
+                        )
+    args = parser.parse_args()
 
 
 if __name__ == "__main__":
