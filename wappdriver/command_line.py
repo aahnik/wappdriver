@@ -15,12 +15,18 @@ def main():
     args = parser.parse_args()
     print(f'''
     wappdriver: {__version__} 
-    Command Line App is not availaible. 
-    Please Update wappdriver
+
+    wappdriver is `wa` on command line
+
+    To know usage : wa --usage
+
+    For help : wa --help
+
     ''')
     f = Figlet(font='big')
     print(f.renderText('wappdriver'))
 
-
+def wa():
+    
 if __name__ == "__main__":
     main()

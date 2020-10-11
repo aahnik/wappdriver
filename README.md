@@ -88,6 +88,10 @@ Read the [Help Page](/docs/help.md)
 
 For furthur assistance you can ask ![image](https://user-images.githubusercontent.com/66209958/95024578-81ac8300-06a1-11eb-8f56-d4a552135bfd.png) a question in **issues**
 
+### Disclaimer
+
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk.
+
 ---
 
 <div align="center">
