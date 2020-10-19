@@ -15,7 +15,7 @@ pdocs:
 mkdocs:
 	@echo mkdocs
 	cp README.md docs/index.md
-	mkdocs build  -d /tmp/wappdriver/
+	mkdocs build  -c -d /tmp/wappdriver
 	rm docs/index.md
 
 site: pdocs mkdocs
