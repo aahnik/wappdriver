@@ -1,6 +1,4 @@
 # Getting Help
 
-[Readme](../README.md) | [Docs](Documentation.md) | [Concepts](concepts.md) | [Developer Guide](For_Developers.md) | [Help](help.md) 
 
-- [Getting Help](#getting-help)
-
+For furthur assistance you can ask ![image](https://user-images.githubusercontent.com/66209958/95024578-81ac8300-06a1-11eb-8f56-d4a552135bfd.png) a question in **issues**

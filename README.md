@@ -80,7 +80,7 @@ I recommend to use the latest stable release of both, for the best performance.
 
 Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-)
 
-Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.](https://aahnik.github.io/wappdriver/docs/For_Developers.html)
+Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.]() TODO: 
 
 ### Help
 

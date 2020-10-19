@@ -2,7 +2,9 @@ hello:
 	@echo " options \
 	\n	pypi : upload to PyPI \
 	\n 	test : run all tests   \
-	\n	pdocs : generate docs "
+	\n	pdocs : generate docs \
+	\n 	site : build site
+	"
 
 pypi:
 	@echo uploading to pypi
@@ -14,3 +16,15 @@ test:
 pdocs:
 	@echo generate docs with pdocs
 	pdoc3 --html wappdriver -o docs/dev --force
+
+site:
+	@echo build site
+	git checkout site
+	rm -rf site
+	cp README.md docs/index.md
+	mkdocs build
+	rm docs/index.md
+	git add site
+	git commit -m "site updated"
+	git push
+	
