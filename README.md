@@ -27,7 +27,7 @@ _`wappdriver` enables you to send WhatsApp messages programmatically, using only
 **A python package that helps you automate sending messages through WhatsApp Web 😎**
 
 
-### How to install ??
+### How to install 
 
 ```
 pip install wappdriver
@@ -39,7 +39,7 @@ For Mac and Linux, you may need to use `pip3`.
 
 [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
-### WARNING ⚠️
+### Warning ⚠️
 
 - WhatsApp does not allow you to login into the same account from multiple chrome tabs.
   So **make sure to close any chrome tab which has WhatsApp Web open**. Not doing so will lead to errors.
@@ -57,7 +57,7 @@ I recommend to use the latest stable release of both, for the best performance.
 
 `WappDriver does not support other Browsers. Please use Chrome for a smooth experience`
 
-### Documentation & Why `wappdriver`?
+### Why wappdriver
 
 - fast and reliable
 - whatsapp's website structure may change, the selectors can be updated over internet dynamically, without changing code. 
@@ -76,7 +76,7 @@ I recommend to use the latest stable release of both, for the best performance.
 
 
 
-### Want to contribute ?
+### Contributing
 
 Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-)
 
