@@ -19,12 +19,7 @@ pdocs:
 
 site:
 	@echo build site
-	git checkout site
-	rm -rf site
 	cp README.md docs/index.md
 	mkdocs build
 	rm docs/index.md
-	git add site
-	git commit -m "site updated"
-	git push
 	
