@@ -24,5 +24,10 @@ site: pdocs
 	cp -r  /tmp/wappdriver/* .
 	git add .
 	git commit -m "updated site"
-	git push
+	xdg-open index.html
 	git checkout live
+
+site-release: site
+	git checkout site
+	git push
+
