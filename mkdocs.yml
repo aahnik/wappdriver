@@ -2,4 +2,3 @@ site_name: wappdriver
 theme:
   name: readthedocs
   navigation_depth: 3
-repo_url: https://github.com/aahnik/wappdriver
