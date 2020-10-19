@@ -18,7 +18,7 @@ mkdocs:
 	mkdocs build  -d /tmp/wappdriver/
 	rm docs/index.md
 
-site:
+site: pdocs mkdocs
 	git checkout site
 	rm -rf *
 	cp -r  /tmp/wappdriver/* .
