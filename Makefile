@@ -25,7 +25,6 @@ site: pdocs
 	git add .
 	git commit -m "updated site"
 	xdg-open index.html
-	git checkout live
 
 site-release: site
 	git checkout site
