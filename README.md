@@ -16,7 +16,6 @@ Wondering how to send WhatsApp messages using Python using only few lines of cod
 ---
 
 
-🌟🌟  WappDriver now supports sending **images** , **videos**, **documents** and other file types... _[learn usage](https://aahnik.github.io/wappdriver/docs/Documentation.html)_
 
 ### It's very simple to use
 
