@@ -1,2 +1,4 @@
 site_name: wappdriver
-theme: readthedocs
+theme:
+  name: readthedocs
+  navigation_depth: 3
