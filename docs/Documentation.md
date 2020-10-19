@@ -176,4 +176,4 @@ The string can be:
 
 ---
 
-**If you are a developer and want to contribute code, read [Developer Guide](dev/wappdriver/index.html)**
+**If you are a developer and want to contribute code, read [Developer Guide]()**

@@ -1,10 +1,5 @@
 hello:
-	@echo " options \
-	\n	pypi : upload to PyPI \
-	\n 	test : run all tests   \
-	\n	pdocs : generate docs \
-	\n 	site : build site
-	"
+	@cat Makefile
 
 pypi:
 	@echo uploading to pypi
@@ -15,11 +10,11 @@ test:
 
 pdocs:
 	@echo generate docs with pdocs
-	pdoc3 --html wappdriver -o docs/dev --force
+	pdoc3 --html wappdriver -o /tmp/wappdriver/dev --force
 
 site:
 	@echo build site
 	cp README.md docs/index.md
-	mkdocs build
+	mkdocs build  -d /tmp/wappdriver/
 	rm docs/index.md
 	
