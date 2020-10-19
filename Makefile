@@ -30,4 +30,6 @@ site: pdocs
 site-release: site
 	git checkout site
 	git push
+	git checkout live
+	
 
