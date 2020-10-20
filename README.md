@@ -16,7 +16,6 @@ Wondering how to send WhatsApp messages using Python using only few lines of cod
 ---
 
 
-🌟🌟  WappDriver now supports sending **images** , **videos**, **documents** and other file types... _[learn usage](https://aahnik.github.io/wappdriver/docs/Documentation.html)_
 
 ### It's very simple to use
 
@@ -24,10 +23,11 @@ Wondering how to send WhatsApp messages using Python using only few lines of cod
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only 3 lines of code._
 
+
 **A python package that helps you automate sending messages through WhatsApp Web 😎**
 
 
-### How to install ??
+### How to install 
 
 ```
 pip install wappdriver
@@ -39,7 +39,7 @@ For Mac and Linux, you may need to use `pip3`.
 
 [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
-### WARNING ⚠️
+### Warning ⚠️
 
 - WhatsApp does not allow you to login into the same account from multiple chrome tabs.
   So **make sure to close any chrome tab which has WhatsApp Web open**. Not doing so will lead to errors.
@@ -57,7 +57,7 @@ I recommend to use the latest stable release of both, for the best performance.
 
 `WappDriver does not support other Browsers. Please use Chrome for a smooth experience`
 
-### Documentation & Why `wappdriver`?
+### Why wappdriver
 
 - fast and reliable
 - WhatsApp's website structure may change, the selectors can be updated over the internet dynamically, without changing code.
@@ -76,11 +76,11 @@ I recommend to use the latest stable release of both, for the best performance.
 
 
 
-### Want to contribute ?
+### Contributing
 
 Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-)
 
-Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.](https://aahnik.github.io/wappdriver/docs/For_Developers.html)
+Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.]() TODO: 
 
 ### Help
 
@@ -94,6 +94,7 @@ For furthur assistance you can ask ![image](https://user-images.githubuserconten
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. 
 
 This project is distributed under **MIT License**.
+
 
 ---
 

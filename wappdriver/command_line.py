@@ -11,15 +11,33 @@ except Exception:
 
 
 def main():
+    '''
+    The command line parser for 
+    '''
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
     print(f'''
     wappdriver: {__version__} 
-    Command Line App is not availaible. 
-    Please Update wappdriver
+
+    wappdriver is `wa` on command line
+
+    To know usage : wa --usage
+
+    For help : wa --help
+
     ''')
     f = Figlet(font='big')
     print(f.renderText('wappdriver'))
+
+
+def wa():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('send',
+                        help=''' 
+
+                        '''
+                        )
+    args = parser.parse_args()
 
 
 if __name__ == "__main__":
