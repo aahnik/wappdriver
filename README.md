@@ -60,15 +60,15 @@ I recommend to use the latest stable release of both, for the best performance.
 ### Why wappdriver
 
 - fast and reliable
-- whatsapp's website structure may change, the selectors can be updated over internet dynamically, without changing code. 
-- chrome Driver path setting is hassle free 
+- WhatsApp's website structure may change, the selectors can be updated over the internet dynamically, without changing code.
+- chrome Driver path setting is hassle-free
 - actively maintained
 - fast support, if you need help
-- send messages with **bold**, _italics_, or ~~strike through~~
-- send emojis 😃
-- send images, videos and gifs
+- send messages with bold, italics, or strikethrough
+- send emojis smiley
+- send images, videos, and gifs
 - send documents and files
-- can set custom timeout, so that runs properly in old computers or with slow internet connection
+- can set a custom timeout, so that runs properly on old computers or with a slow internet connection
 - more features to be added
 
 [Read](https://aahnik.github.io/wappdriver/docs/Documentation.html) the full Documentation to know about all the features.
@@ -88,9 +88,13 @@ Read the [Help Page](/docs/help.md)
 
 For furthur assistance you can ask ![image](https://user-images.githubusercontent.com/66209958/95024578-81ac8300-06a1-11eb-8f56-d4a552135bfd.png) a question in **issues**
 
-### Disclaimer
 
-This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk.
+### License 
+
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. 
+
+This project is distributed under **MIT License**.
+
 
 ---
 
