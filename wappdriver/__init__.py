@@ -3,32 +3,23 @@ API for WhatsApp Web Automation
 
 ---
 
-Wondering how to send WhatsApp messages using Python using only few lines of code? **You have come to the right place!**
+Wondering how to send WhatsApp messages using Python using only 3 lines of code? You have come to the right place!
 
-_`wappdriver` enables you to send WhatsApp messages programmatically, using only 3 lines of code._
+Read the [Documentaion](https://aahnik.github.io/wappdriver/)
 
-**A python package that helps you automate sending messages through WhatsApp Web 😎**
-
-[README](https://aahnik.github.io/wappdriver/) for more information about 
-New Features,
-How to install,
-Warning,
-Requirements,
-How to use,
-Contributing and
-Help.
+View on [GitHub](https://github.com/aahnik/wappdriver)
 
 This page is detailed documentation of the internals of wappdriver, automatically generated from docstrings.
 
 This page is intended for developer's who want to contribute code to wappdriver. 
 
-If you wish to just use wappdriver, read the [Usage Guide](https://aahnik.github.io/wappdriver/docs/Documentation.html#usage-documentation)
+If you wish to just use wappdriver, read the [Usage Guide](https://aahnik.github.io/wappdriver/Documentation/)
 
 
 
 '''
 
-__version__ = "0.6.0"
+__version__ = "0.6.1"
 
 # from .context import Wapp
 from .data.local import set_chrome_driver_path, update_vars
