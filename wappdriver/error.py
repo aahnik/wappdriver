@@ -12,9 +12,6 @@ import functools
 from .data import local
 import logging
 
-logging.basicConfig(format='\n########################################\n\n%(asctime)s - %(message)s',
-                    filename=local.log_file)
-
 
 class WappDriverError(Exception):
     '''
@@ -44,6 +41,9 @@ class WappDriverError(Exception):
         self.problem = problem
         self.message = message
         super().__init__(self.message)
+
+        logging.basicConfig(format='\n########################################\n\n%(asctime)s - %(message)s',
+                            filename=local.log_file)
 
         logging.exception(f'''\n{problem}\n\n{internal}''')
 

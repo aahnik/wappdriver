@@ -1,25 +1,9 @@
-# Usage Documentation
+# Usage Guide
 
-[Readme](../README.md) | [Docs](Documentation.md) | [Concepts](concepts.md) | [Developer Guide](For_Developers.md) | [Help](help.md) 
 
 This is a detailed usage documentation for using `wappdriver`. [README](https://aahnik.github.io/wappdriver) for introduction. 
 
 
-- [Usage Documentation](#usage-documentation)
-  - [First time Setup](#first-time-setup)
-  - [Sending Messages](#sending-messages)
-      - [Sending a Simple Message](#sending-a-simple-message)
-      - [Messages with bold, italics and strike-through](#messages-with-bold-italics-and-strike-through)
-      - [Sending Emojis](#sending-emojis)
-      - [Sending to Multiple People](#sending-to-multiple-people)
-  - [Sending files](#sending-files)
-      - [Images, Videos and Documents](#images-videos-and-documents)
-      - [Sending Multiple Files](#sending-multiple-files)
-      - [Messages with Files](#messages-with-files)
-  - [Tired bot](#tired-bot)
-  - [Update Variables](#update-variables)
-  - [Set Chrome Driver Path](#set-chrome-driver-path)
-  - [In Brief](#in-brief)
 
 ## First time Setup
 
@@ -192,4 +176,4 @@ The string can be:
 
 ---
 
-**If you are a developer and want to contribute code, read [Developer Guide](dev/wappdriver/index.html)**
+**If you are a developer and want to contribute code, read [Developer Guide](https://aahnik.github.io/wappdriver/dev/wappdriver/)**
