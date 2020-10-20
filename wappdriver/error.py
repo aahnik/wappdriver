@@ -12,8 +12,6 @@ import functools
 from .data import local
 import logging
 
-
-
 logging.basicConfig(format='\n########################################\n\n%(asctime)s - %(message)s',
                     filename=local.log_file)
 
@@ -63,13 +61,15 @@ class WappDriverError(Exception):
 def handle_errors(problem, message):
     '''
     ### How to use ?
+    -- FOR INTERNAL USE ONLY --
+
     Write the vulnerable code inside a function. And decorate it with `handle_error`. There should be no `return` statement inside the vulnerable function. The intended use case is for a procedural function.
 
     ---
     Example use 
+
     ```python
-    
-    # Note: when displayed, message is prefixed with the words `Make sure to have:` 
+    # when displayed, message is prefixed with the words `Make sure to have:` 
     @handle_errors(problem='this not done',message='that')
     def vulnerable_function(arg):
         print('fishy errors')
@@ -98,7 +98,7 @@ def handle_errors(problem, message):
             '''
             Wrapper Function to wrap vulnerable functions in WappDriver.
             This is internally used by WappDriver. 
-            
+
             Not intended to be used by users of WappDriver
             '''
             try:

@@ -1,12 +1,8 @@
 # Concepts
 
-<div align="center"> 
 
-![image](https://user-images.githubusercontent.com/66209958/95024659-39419500-06a2-11eb-968d-49df41212918.png)
+[Readme](../README.md) | [Docs](Documentation.md) | [Concepts](concepts.md) | [Developer Guide](For_Developers.md) | [Help](help.md) 
 
-[Readme](/README.md) | [Docs](/docs/Documentation.md) | [Concepts](/docs/concepts.md) | [Developer Guide](/docs/For_Developers.md) | [Help](/docs/help.md) 
-
-</div>
 
 
 Here goes a list of concepts I have learned/implemented while building this project. 

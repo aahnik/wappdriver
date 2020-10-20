@@ -1,37 +1,31 @@
-<div align="center">
+# wappdriver
 
-![image](https://user-images.githubusercontent.com/66209958/95024996-2760f180-06a4-11eb-8b98-d62c2d1bb26b.png)
+API for WhatsApp Web Automation
 
- </div>
 
-<h1 align="center">wappdriver</h1>
+Wondering how to send WhatsApp messages using Python using only few lines of code? **You have come to the right place!**
 
-<p align="center">API for WhatsApp Web Automation</p>
-
-<div align="center">
 
 [![Tests](https://img.shields.io/badge/tests-passing-green)](https://aahnik.github.io/wappdriver/docs/Tests.html)
 [![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/aahnik/wappdriver/graphs/commit-activity)
 [![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
 [![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
 
- </div>
+
 
 ---
 
-Wondering how to send WhatsApp messages using Python using only few lines of code? **You have come to the right place!**
+
+🌟🌟  WappDriver now supports sending **images** , **videos**, **documents** and other file types... _[learn usage](https://aahnik.github.io/wappdriver/docs/Documentation.html)_
+
+### It's very simple to use
+
+![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png).
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only 3 lines of code._
 
 **A python package that helps you automate sending messages through WhatsApp Web 😎**
 
-### _🌟🌟 New_
-
-WappDriver now supports sending **images** , **videos**, **documents** and other file types... _[learn usage](https://aahnik.github.io/wappdriver/docs/Documentation.html)_
-
-### It's very simple to use
-
-![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png).
 
 ### How to install ??
 
@@ -63,9 +57,24 @@ I recommend to use the latest stable release of both, for the best performance.
 
 `WappDriver does not support other Browsers. Please use Chrome for a smooth experience`
 
-### Documentation
+### Documentation & Why `wappdriver`?
+
+- fast and reliable
+- WhatsApp's website structure may change, the selectors can be updated over the internet dynamically, without changing code.
+- chrome Driver path setting is hassle-free
+- actively maintained
+- fast support, if you need help
+- send messages with bold, italics, or strikethrough
+- send emojis smiley
+- send images, videos, and gifs
+- send documents and files
+- can set a custom timeout, so that runs properly on old computers or with a slow internet connection
+- more features to be added
 
 [Read](https://aahnik.github.io/wappdriver/docs/Documentation.html) the full Documentation to know about all the features.
+
+
+
 
 ### Want to contribute ?
 
@@ -78,6 +87,13 @@ Please read the explanation of the detailed working of `wappdriver` from the [De
 Read the [Help Page](/docs/help.md)
 
 For furthur assistance you can ask ![image](https://user-images.githubusercontent.com/66209958/95024578-81ac8300-06a1-11eb-8f56-d4a552135bfd.png) a question in **issues**
+
+
+### License 
+
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. 
+
+This project is distributed under **MIT License**.
 
 ---
 

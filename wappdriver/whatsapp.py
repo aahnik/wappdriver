@@ -35,14 +35,14 @@ def category(arg):
 class WhatsApp():
     '''
     Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It's very simple to use. 
-     
+
     You are advised to use the context manager.
 
     Example:
     ```python
     with WhatsApp() as bot:
         bot.send('aahnik',  # name of recipient
-             'hi send by a bot',  # message
+            'hi send by a bot',  # message
                 )
     ```
 
@@ -72,7 +72,7 @@ class WhatsApp():
         - The name of recipient must be saved in your contacts.
         - Each message argument must be a string. 
         - If you want to send a file, pass the absolute path of the file to the function.
-        
+
         ---
 
         Example Use:
@@ -81,19 +81,21 @@ class WhatsApp():
         with WhatsApp() as bot:
             bot.send('aahnik',  # name of recipient
 
-                'hi send by a bot',  # message
+            'hi send by a bot',  # message
 
-                # absolute path of an image on computer
-                '/home/aahnik/image.png',  
+            # absolute path of an image on computer
+            '/home/aahnik/image.png',  
 
-                # absolute path of a video on computer
-                '/home/aahnik/video.mp4',  
+            # absolute path of a video on computer
+            '/home/aahnik/video.mp4',  
 
-                # absolute path of pdf on computer
-                '/home/aahnik/django.pdf'  )
+            # absolute path of pdf on computer
+            '/home/aahnik/django.pdf'  )
 
         ```
+
         Note: 
+
         - In Windows absolute paths looks like: 
             `C:\Users\mathew\img.png`
 
