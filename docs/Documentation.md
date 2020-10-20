@@ -1,4 +1,4 @@
-# Usage Documentation
+# Usage Guide
 
 
 This is a detailed usage documentation for using `wappdriver`. [README](https://aahnik.github.io/wappdriver) for introduction. 
