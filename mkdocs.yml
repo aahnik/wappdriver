@@ -3,3 +3,9 @@ theme:
   name: readthedocs
   navigation_depth: 3
 site_url: https://github.com/aahnik/wappdriver/
+nav:
+  - Intro: "index.md"
+  - Usage: "Documentation.md"
+  - Developers: "For_Developers.md"
+  - Concepts: "concepts.md"
+  - Help: "help.md"

@@ -42,6 +42,8 @@ class WappDriverError(Exception):
         self.message = message
         super().__init__(self.message)
 
+        local.ensure()
+
         logging.basicConfig(format='\n########################################\n\n%(asctime)s - %(message)s',
                             filename=local.log_file)
 

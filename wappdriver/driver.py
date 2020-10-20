@@ -31,7 +31,6 @@ class WappDriver():
     '''
 
     def __init__(self, timeout):
-        ensure()
         self.chrome_driver_path = get_chrome_driver_path()
         self._var = get_local_vars()
         self.timeout = timeout
