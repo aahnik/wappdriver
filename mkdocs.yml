@@ -1,11 +1,30 @@
 site_name: wappdriver
+
 theme:
   name: readthedocs
   navigation_depth: 3
+  custom_dir: rtd
+
 site_url: https://github.com/aahnik/wappdriver/
+
 nav:
   - Intro: "index.md"
   - Usage: "Documentation.md"
   - Developers: "For_Developers.md"
   - Concepts: "concepts.md"
   - Help: "help.md"
+
+repo_url: https://github.com/aahnik/wappdriver
+edit_uri: blob/main/docs/
+
+extra:
+  links:
+    medium: https://medium.com/@aahnikdaw
+    facebook: https://www.facebook.com/aahnik.daw
+    linkedin: https://www.linkedin.com/in/aahnik-daw-067a011b3/
+    telegram: https://t.me/AahniKDaw
+    twitter: https://twitter.com/AahnikD
+    quora: https://www.quora.com/profile/Aahnik-Daw
+    youtube: https://www.youtube.com/channel/UCcEbN0d8iLTB6ZWBE_IDugg
+    stackOverflow: https://stackoverflow.com/users/13523305/aahnik-daw
+    dev: https://dev.to/aahnik

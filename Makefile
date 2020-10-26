@@ -11,6 +11,7 @@ test:
 mkdocs:
 	@echo mkdocs
 	cp README.md docs/index.md
+	cp -r  ~/Projects/py_package/rtd .
 	mkdocs build  -c -d /tmp/wappdriver
 	rm docs/index.md
 

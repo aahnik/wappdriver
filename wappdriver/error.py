@@ -53,7 +53,7 @@ class WappDriverError(Exception):
         ------------------------------------------------------------------------------------
         WappDriver Error  : {self.problem} \n
         Make sure to have : {self.message} \n
-        For Help Visit https://aahnik.github.io/wappdriver/docs/help.html
+        For Help Visit http://bit.ly/wappdriver
         -----------------------------------------------------------------------------------\n
         '''
 
