@@ -80,11 +80,11 @@ I recommend to use the latest stable release of both, for the best performance.
 
 Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-)
 
-Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.]() TODO: 
+Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.](https://aahnik.github.io/wappdriver/For_Developers/)
 
 ### Help
 
-Read the [Help Page](/docs/help.md)
+Read the [Help Page](https://aahnik.github.io/wappdriver/help/)
 
 For furthur assistance you can ask ![image](https://user-images.githubusercontent.com/66209958/95024578-81ac8300-06a1-11eb-8f56-d4a552135bfd.png) a question in **issues**
 
@@ -97,17 +97,3 @@ This project is distributed under **MIT License**.
 
 
 ---
-
-<div align="center">
-
-<a href = "https://medium.com/@aahnikdaw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/medium.png?raw=true" alt = "medium" > </a >
-<a href = "https://www.facebook.com/aahnik.daw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/facebook.png?raw=true" alt = "facebook" > </a >
-<a href = "https://www.linkedin.com/in/aahnik-daw-067a011b3/" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/linkedin.png?raw=true" alt = "linkedin" > </a >
-<a href = "https://t.me/AahniKDaw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/telegram.png?raw=true" alt = "telegram" > </a >
-<a href = "https://twitter.com/AahnikD" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/twitter.png?raw=true" alt = "twitter" > </a >
-<a href = "https://www.quora.com/profile/Aahnik-Daw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/quora.png?raw=true" alt = "quora" > </a >
-<a href = "https://www.youtube.com/channel/UCcEbN0d8iLTB6ZWBE_IDugg" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/youtube.png?raw=true" alt = "youtube" > </a >
-<a href = "https://stackoverflow.com/users/13523305/aahnik-daw" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/stackOverflow.png?raw=true" alt = "stackOverflow" > </a >
-<a href = "https://dev.to/aahnik" > <img src = "https://github.com/aahnik/aahnik/blob/master/social_media_logos/dev.png?raw=true" alt = "dev" > </a >
-
- </div>
