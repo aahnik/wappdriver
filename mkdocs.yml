@@ -3,7 +3,7 @@ site_name: wappdriver
 theme:
   name: readthedocs
   navigation_depth: 3
-  custom_dir: ~/Projects/py_package/rtd
+  custom_dir: rtd
 
 site_url: https://github.com/aahnik/wappdriver/
 
