@@ -86,7 +86,7 @@ Please read the explanation of the detailed working of `wappdriver` from the [De
 
 Read the [Help Page](https://aahnik.github.io/wappdriver/help/)
 
-For furthur assistance you can ask ![image](https://user-images.githubusercontent.com/66209958/95024578-81ac8300-06a1-11eb-8f56-d4a552135bfd.png) a question in **issues**
+For furthur assistance you can [ask a question]() in **issues**
 
 
 ### License 
@@ -94,6 +94,3 @@ For furthur assistance you can ask ![image](https://user-images.githubuserconten
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. 
 
 This project is distributed under **MIT License**.
-
-
----
