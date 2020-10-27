@@ -8,11 +8,12 @@ theme:
 site_url: https://github.com/aahnik/wappdriver/
 
 nav:
-  - Intro: "index.md"
-  - Usage: "Documentation.md"
-  - Developers: "For_Developers.md"
-  - Concepts: "concepts.md"
-  - Help: "help.md"
+  - Intro: index/intro.md
+  - 
+  - 
+  - Developers: For_Developers.md
+  - Concepts: concepts.md
+  - Help: help.md
 
 repo_url: https://github.com/aahnik/wappdriver
 edit_uri: blob/main/docs/
