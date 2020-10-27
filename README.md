@@ -13,7 +13,7 @@ Wondering how to send WhatsApp messages using Python using only three lines of c
 
 
 
----
+-----
 
 
 
@@ -94,3 +94,34 @@ For furthur assistance you can [ask a question]() in **issues**
 This code is in no way affiliated with, authorized, maintained, sponsored, or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. 
 
 This project is distributed under **MIT License**.
+
+-----
+
+<center>
+    
+<a href="https://medium.com/@aahnikdaw/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-53201e9c09f3"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/medium.png?raw=true" alt="medium"> </a>
+        <a href="https://www.facebook.com/aahnik.daw"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/facebook.png?raw=true" alt="facebook">
+        </a>
+        <a href="https://www.linkedin.com/in/aahnik-daw-067a011b3/"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/linkedin.png?raw=true" alt="linkedin">
+        </a>
+        <a href="https://t.me/AahniKDaw"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/telegram.png?raw=true" alt="telegram">
+        </a>
+        <a href="https://twitter.com/AahnikD"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/twitter.png?raw=true" alt="twitter">
+        </a>
+        <a href="https://www.quora.com/profile/Aahnik-Daw"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/quora.png?raw=true" alt="quora"> </a>
+        <a href="https://www.youtube.com/channel/UCcEbN0d8iLTB6ZWBE_IDugg"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/youtube.png?raw=true" alt="youtube">
+        </a>
+        <a href="https://stackoverflow.com/users/13523305/aahnik-daw"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/stackOverflow.png?raw=true"
+                alt="stackOverflow"> </a>
+        <a href="https://dev.to/aahnik/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-hld"> <img
+                src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/dev.png?raw=true" alt="dev"> </a>
+    
+</center>
