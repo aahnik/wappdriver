@@ -14,20 +14,20 @@ Note:
 You can send any file type that WhatsApp supports.
 > WhatsApp does not support files over 16 MB
 
-![sending an image](images/sending_media.png)
+![sending an image](https://github.com/aahnik/wappdriver/blob/main/docs/images/sending_media.png?raw=true)
 
 #### Sending Multiple Files 
 
 You can easily pass as many arguments to `send` method of `WhatsApp` class you wish.
 **Just remember that the first argument must be the name of the recipient.**
 
-![sending multiple files](images/sending_multiple_files.png)
+![sending multiple files](https://github.com/aahnik/wappdriver/blob/main/docs/images/sending_multiple_files.png?raw=true)
 
 
 #### Messages with Files
 
 Hmm! `wappdriver` is extremely smart. It can detect whether a string is a message or a file path. So you can do this as shown below. Dont hesitate to use a multiline line string for a long message. 
 
-![files and messages](images/files_and_messages.png)
+![files and messages](https://github.com/aahnik/wappdriver/blob/main/docs/images/files_and_messages.png?raw=true)
 
 The messages will be send in exactly that order.

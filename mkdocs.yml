@@ -8,10 +8,10 @@ theme:
 site_url: https://github.com/aahnik/wappdriver/
 
 nav:
-  - Getting Started: index/01_into.md
-  - Why: index/01_why.md
-  - Contributing: index/03_contributing.md
-  - Legal: index/04_legal.md
+  - Getting Started: getting_started/01_intro.md
+  - Why: getting_started/02_why.md
+  - Contributing: getting_started/03_contributing.md
+  - Legal: getting_started/04_legal.md
   - Setup: usage/01_first_time_setup.md
   - Sending Messages: usage/02_sending_messages.md
   - Sending Files: usage/03_sending_files.md
