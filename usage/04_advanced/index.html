@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://github.com/aahnik/wappdriver/Documentation/">
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Usage - wappdriver</title>
+  <link rel="canonical" href="https://github.com/aahnik/wappdriver/usage/04_advanced/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Advanced - wappdriver</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Usage";
-    var mkdocs_page_input_path = "Documentation.md";
-    var mkdocs_page_url = "/aahnik/wappdriver/Documentation/";
+    var mkdocs_page_name = "Advanced";
+    var mkdocs_page_input_path = "usage/04_advanced.md";
+    var mkdocs_page_url = "/aahnik/wappdriver/usage/04_advanced/";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
@@ -38,9 +38,9 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> wappdriver</a>
+        <a href="../.." class="icon icon-home"> wappdriver</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -48,36 +48,40 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Intro</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">wappdriver</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/01_intro/">Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/02_why/">Why</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/03_contributing/">Contributing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting_started/04_legal/">Legal</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_first_time_setup/">Setup</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../02_sending_messages/">Sending Messages</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_sending_files/">Sending Files</a>
                     </li>
                 </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Usage</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Advanced</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#first-time-setup">First time Setup</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sending-messages">Sending Messages</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#sending-a-simple-message">Sending a Simple Message</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#messages-with-bold-italics-and-strike-through">Messages with bold, italics and strike-through</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sending-emojis">Sending Emojis</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sending-to-multiple-people">Sending to Multiple People</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sending-files">Sending files</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#images-videos-and-documents">Images, Videos and Documents</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sending-multiple-files">Sending Multiple Files</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#messages-with-files">Messages with Files</a>
-    </li>
-        </ul>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#tired-bot">Tired bot</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#update-variables">Update Variables</a>
@@ -90,15 +94,15 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../For_Developers/">Developers</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../For_Developers/">Developers</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../concepts/">Concepts</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../concepts/">Concepts</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../help/">Help</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../help/">Help</a>
                     </li>
                 </ul>
       </div>
@@ -110,7 +114,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">wappdriver</a>
+        <a href="../..">wappdriver</a>
       </nav>
 
       
@@ -118,14 +122,14 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
     <ul class="wy-breadcrumbs">
-        <li><a href="..">Docs</a> &raquo;</li>
+        <li><a href="../..">Docs</a> &raquo;</li>
         
         
         
-        <li>Usage</li>
+        <li>Advanced</li>
         <li class="wy-breadcrumbs-aside">
             
-                <a href="https://github.com/aahnik/wappdriver/" class="icon icon-github"> View on
+            <a href="https://github.com/aahnik/wappdriver/blob/main/docs/usage/04_advanced.md" class="icon icon-github"> View on
                 GitHub</a>
             
         </li>
@@ -136,65 +140,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="usage-guide">Usage Guide</h1>
-<p>This is a detailed usage documentation for using <code>wappdriver</code>. <a href="https://aahnik.github.io/wappdriver">README</a> for introduction. </p>
-<h2 id="first-time-setup">First time Setup</h2>
-<p>There is no hassle in setting up <code>wappdriver</code>.</p>
-<blockquote>
-<p>Make sure you have matching versions of Chrome and Chrome Driver.
-After you <code>pip install wappdriver</code>, you can directly run your code. 
-- You will be prompted to enter the installation path of Chrome Driver Executable (only once). Just copy and paste the correct path there. 
-- When you load WhatsApp for the first time, you have to scan the QR Code that will be displayed on your computer from your phone, to login into WhatsApp Web</p>
-</blockquote>
-<h2 id="sending-messages">Sending Messages</h2>
-<h4 id="sending-a-simple-message">Sending a Simple Message</h4>
-<p>The code snippet below is enough to show you how.</p>
-<p><img alt="using wappdriver" src="https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png" />.</p>
-<h4 id="messages-with-bold-italics-and-strike-through">Messages with bold, italics and strike-through</h4>
-<p>To send formatted text, use the same techniques you use while typing on your smartphone. 
-Simply enclose the words with special characters as shown</p>
-<pre><code>*bold*
-_italics_
--strike-
-</code></pre>
-<p><img alt="Screenshot from 2020-10-08 21-02-54" src="https://user-images.githubusercontent.com/66209958/95480607-b2463280-09a9-11eb-8bc6-b3fd2a9bbaac.png" /></p>
-<h4 id="sending-emojis">Sending Emojis</h4>
-<p>To send an emoji simply copy it from internet and paste it in your message string.</p>
-<p>Here are some commonly used emojis</p>
-<p>🙄 😂 😫 🤔 🔥  😌 😍 🤣 ❤️ 😭 😂 🙏 💕 💜 👉</p>
-<h4 id="sending-to-multiple-people">Sending to Multiple People</h4>
-<p>You can easily send a message to multiple people</p>
-<pre><code class="language-python">from wappdriver import WhatsApp
-
-recipients = ['friend','mom','dad', 'boss', 'client']
-
-with WhatsApp() as bot:
-    for person in recipients:
-        bot.send(person, f'hi {person} send by a bot')
-</code></pre>
-<h2 id="sending-files">Sending files</h2>
-<h4 id="images-videos-and-documents">Images, Videos and Documents</h4>
-<p>With <code>wappdriver</code> its easy to do all these. Simply pass the path of the image or video or document file to the <code>send</code> method. 
-- You must use absoulte file paths.
-- File path must not have any space </p>
-<p>Note: 
-- In Windows absolute paths looks like: 
-    <code>C:\Users\mathew\img.png</code>
-- While in Linux or Mac they look like:
-    <code>/home/aahnik/img.png</code></p>
-<p>You can send any file type that WhatsApp supports.</p>
-<blockquote>
-<p>WhatsApp does not support files over 16 MB</p>
-</blockquote>
-<p><img alt="sending an image" src="../images/sending_media.png" /></p>
-<h4 id="sending-multiple-files">Sending Multiple Files</h4>
-<p>You can easily pass as many arguments to <code>send</code> method of <code>WhatsApp</code> class you wish.
-<strong>Just remember that the first argument must be the name of the recipient.</strong></p>
-<p><img alt="sending multiple files" src="../images/sending_multiple_files.png" /></p>
-<h4 id="messages-with-files">Messages with Files</h4>
-<p>Hmm! <code>wappdriver</code> is extremely smart. It can detect whether a string is a message or a file path. So you can do this as shown below. Dont hesitate to use a multiline line string for a long message. </p>
-<p><img alt="files and messages" src="../images/files_and_messages.png" /></p>
-<p>The messages will be send in exactly that order.</p>
+                <h1 id="advanced">Advanced</h1>
 <h2 id="tired-bot">Tired bot</h2>
 <p>If your computer or internet is very slow, you may face timeout exceptions, or messages not being sent properly. In this case we call our bot exhausted or tired.</p>
 <p>You can solve this by overriding the default timeout value.This can be done by passing an optional argument to the <code>WhatsApp</code> context manager.</p>
@@ -254,7 +200,7 @@ The string can be:
 - You must use Absolute File Paths</p>
 <p><code>wappdriver</code> will automatically detect whether a string is a message or a file path.</p>
 <hr />
-<p><strong>If you are a developer and want to contribute code, read <a href="https://aahnik.github.io/wappdriver/dev/wappdriver/">Developer Guide</a></strong></p>
+<!-- **If you are a developer and want to contribute code, read [Developer Guide](https://aahnik.github.io/wappdriver/dev/wappdriver/)** -->
               
             </div>
           </div>
@@ -262,11 +208,11 @@ The string can be:
     
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         
-        <a href="../For_Developers/" class="btn btn-neutral float-right"
+        <a href="../../For_Developers/" class="btn btn-neutral float-right"
             title="Developers">Next <span class="icon icon-circle-arrow-right"></span></a>
         
         
-        <a href=".." class="btn btn-neutral" title="Intro"><span
+        <a href="../03_sending_files/" class="btn btn-neutral" title="Sending Files"><span
                 class="icon icon-circle-arrow-left"></span> Previous</a>
         
     </div>
@@ -281,7 +227,7 @@ The string can be:
 
     <center>
     
-        <a href="https://medium.com/@aahnikdaw"> <img
+        <a href="https://medium.com/@aahnikdaw/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-53201e9c09f3"> <img
                 src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/medium.png?raw=true" alt="medium"> </a>
         <a href="https://www.facebook.com/aahnik.daw"> <img
                 src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/facebook.png?raw=true" alt="facebook">
@@ -303,7 +249,7 @@ The string can be:
         <a href="https://stackoverflow.com/users/13523305/aahnik-daw"> <img
                 src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/stackOverflow.png?raw=true"
                 alt="stackOverflow"> </a>
-        <a href="https://dev.to/aahnik"> <img
+        <a href="https://dev.to/aahnik/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-hld"> <img
                 src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/dev.png?raw=true" alt="dev"> </a>
     
     
@@ -324,16 +270,16 @@ The string can be:
           <a href="https://github.com/aahnik/wappdriver/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../03_sending_files/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../For_Developers/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../For_Developers/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
