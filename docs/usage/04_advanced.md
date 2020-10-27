@@ -1,3 +1,5 @@
+# Advanced
+
 ## Tired bot
 
 If your computer or internet is very slow, you may face timeout exceptions, or messages not being sent properly. In this case we call our bot exhausted or tired.

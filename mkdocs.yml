@@ -2,12 +2,13 @@ site_name: wappdriver
 
 theme:
   name: readthedocs
-  navigation_depth: 3
+  navigation_depth: 4
   custom_dir: rtd
 
 site_url: https://github.com/aahnik/wappdriver/
 
 nav:
+  - wappdriver: index.md
   - Getting Started: getting_started/01_intro.md
   - Why: getting_started/02_why.md
   - Contributing: getting_started/03_contributing.md
