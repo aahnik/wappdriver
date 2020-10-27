@@ -10,6 +10,7 @@ test:
 
 mkdocs:
 	@echo mkdocs
+
 	cp -r  ~/Projects/py_package/rtd .
 	rm -rf /tmp/wappdriver
 	mkdocs build  -c -d /tmp/wappdriver
