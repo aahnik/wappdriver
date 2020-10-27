@@ -2,24 +2,33 @@ site_name: wappdriver
 
 theme:
   name: readthedocs
-  navigation_depth: 3
+  navigation_depth: 4
   custom_dir: rtd
 
 site_url: https://github.com/aahnik/wappdriver/
 
 nav:
-  - Intro: "index.md"
-  - Usage: "Documentation.md"
-  - Developers: "For_Developers.md"
-  - Concepts: "concepts.md"
-  - Help: "help.md"
+
+  - wappdriver: index.md
+  - Getting Started: getting_started/01_intro.md
+  - Why: getting_started/02_why.md
+  - Contributing: getting_started/03_contributing.md
+  - Legal: getting_started/04_legal.md
+  - Setup: usage/01_first_time_setup.md
+  - Sending Messages: usage/02_sending_messages.md
+  - Sending Files: usage/03_sending_files.md
+  - Advanced: usage/04_advanced.md
+  - Developers: For_Developers.md
+  - Concepts: concepts.md
+  - Help: help.md
+
 
 repo_url: https://github.com/aahnik/wappdriver
 edit_uri: blob/main/docs/
 
 extra:
   links:
-    medium: https://medium.com/@aahnikdaw
+    medium: https://medium.com/@aahnikdaw/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-53201e9c09f3
     facebook: https://www.facebook.com/aahnik.daw
     linkedin: https://www.linkedin.com/in/aahnik-daw-067a011b3/
     telegram: https://t.me/AahniKDaw
@@ -27,4 +36,4 @@ extra:
     quora: https://www.quora.com/profile/Aahnik-Daw
     youtube: https://www.youtube.com/channel/UCcEbN0d8iLTB6ZWBE_IDugg
     stackOverflow: https://stackoverflow.com/users/13523305/aahnik-daw
-    dev: https://dev.to/aahnik
+    dev: https://dev.to/aahnik/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-hld

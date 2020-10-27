@@ -10,10 +10,10 @@ test:
 
 mkdocs:
 	@echo mkdocs
-	cp README.md docs/index.md
+
 	cp -r  ~/Projects/py_package/rtd .
+	rm -rf /tmp/wappdriver
 	mkdocs build  -c -d /tmp/wappdriver
-	rm docs/index.md
 
 pdocs: mkdocs
 	@echo generate docs with pdocs
