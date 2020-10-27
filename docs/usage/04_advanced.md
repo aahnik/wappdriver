@@ -1,3 +1,43 @@
+## Tired bot
+
+If your computer or internet is very slow, you may face timeout exceptions, or messages not being sent properly. In this case we call our bot exhausted or tired.
+ 
+You can solve this by overriding the default timeout value.This can be done by passing an optional argument to the `WhatsApp` context manager.
+
+```python
+from wappdriver import WhatsApp
+
+with WhatsApp(timeout=100) as bot:
+    bot.send('aahnik',  'Exhausted ?')
+```
+The default value of timeout is 50s ( when you dont pass the argument)
+
+If bot is exhausted, increase timeout.
+
+## Update Variables 
+
+When you run `wappdriver` for the first time, the values of selectors is fetched from the internet.
+
+If you want to update them
+```python
+from wappdriver import update_vars
+update_vars()
+```
+If any new updates are availaible, they will be downloaded.
+
+## Set Chrome Driver Path
+
+When you will use `wappdriver` for the first time, it will ask you to input the path of Chrome Driver Executable in your system.
+
+You can set the path programmatically 
+```python
+from wappdriver import set_chrome_driver_path
+path = '/home/aahnik/Downloads/chrome_driver' 
+set_chrome_driver_path(path)
+```
+
+**Replace the value of variable `path` with the path of chrome driver in your system.**
+
 ## In Brief
 
 Pass name of recipient as first argument and after that you can pass as many message arguments as you wish. 
