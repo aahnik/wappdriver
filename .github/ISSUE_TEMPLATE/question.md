@@ -1,6 +1,6 @@
 ---
 name: Question
-about: Get help with errors or any general questions
+about: Get help with errors or any general questions related to wappdriver
 title: "[QUESTION]"
 labels: question
 assignees: ''
