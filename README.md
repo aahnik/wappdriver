@@ -81,7 +81,7 @@ For furthur assistance you can [ask a question](https://github.com/aahnik/wappdr
 - can set a custom time out  to make wappdriver run properly on old computers or with a slow internet connection
 - more new features will be added soon
 
-[Read](https://aahnik.github.io/wappdriver/docs/Documentation.html) the full Documentation to know about all the features.
+[Read](https://aahnik.github.io/wappdriver/usage/01_first_time_setup/) the full Documentation to know about all the features.
 
 ## Contributing
 
