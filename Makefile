@@ -25,8 +25,11 @@ site: pdocs
 	cp -r  /tmp/wappdriver/* .
 	git add .
 	git commit -m "updated site"
-	xdg-open index.html
 
 site-release: site
 	git checkout site
 	git push
+
+serve:
+	cp -r  ~/Projects/py_package/rtd .
+	mkdocs serve
