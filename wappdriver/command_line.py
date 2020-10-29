@@ -32,7 +32,7 @@ def main():
 
 def wa():
     parser = argparse.ArgumentParser()
-    parser.add_argument('send',
+    parser.add_('send',
                         help=''' 
 
                         '''
