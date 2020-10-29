@@ -58,8 +58,6 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#how-to-install">How to install</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#warning">Warning ⚠️</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#help">Help</a>
@@ -157,9 +155,10 @@ with WhatsApp() as bot:
     bot.send('aahnik',  # name of recipient
              'hi send by a bot')  # message
 </code></pre>
-<blockquote>
-<p>The name of the recipient must be in contacts</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The name of the recipient should be in your contacts</p>
+</div>
 <p><em><code>wappdriver</code> enables you to send WhatsApp messages programmatically, using only three lines of code.</em></p>
 <p>A python package that helps you automate sending messages through WhatsApp Web 😎</p>
 <h2 id="how-to-install">How to install</h2>
@@ -168,13 +167,15 @@ with WhatsApp() as bot:
 <p>For Mac and Linux, you may need to use <code>pip3</code>.</p>
 <p><a href="https://pypi.org/project/wappdriver/">PyPI</a></p>
 <p><a href="/LICENSE"><img alt="MIT LICENSE" src="https://img.shields.io/pypi/l/ansicolortags.svg" /></a></p>
-<h2 id="warning">Warning ⚠️</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <ul>
 <li>WhatsApp does not allow you to log in to the same account from multiple chrome tabs.
-  So <strong>make sure to close any chrome tab having WhatsApp Web open</strong>. Not doing so will lead to errors.</li>
+    So <strong>make sure to close any chrome tab having WhatsApp Web open</strong>. Not doing so will lead to errors.</li>
 <li>Your phone which is having that WhatsApp account must stay connected to the internet for WhatsApp Web to work</li>
 <li>Do not spam others. Use <code>wappdriver</code> for educational purposes only</li>
 </ul>
+</div>
 <h2 id="requirements">Requirements</h2>
 <p><a href="https://www.python.org/"><img alt="made-with-python" src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg" /></a></p>
 <ul>
@@ -186,7 +187,7 @@ I recommend using the latest stable release for both to get the best performance
 <p>WappDriver does not support other Browsers. Please use Chrome for a smooth experience</p>
 <h2 id="help">Help</h2>
 <p>Read the <a href="https://aahnik.github.io/wappdriver/help/">Help Page</a></p>
-<p>For furthur assistance you can <a href="https://github.com/aahnik/wappdriver/issues/new/choose">ask a question</a> in <strong>issues</strong></p>
+<p>For furthur assistance you can <a href="https://github.com/aahnik/wappdriver/issues/new/choose">ask a question</a> the issues section.</p>
               
             </div>
           </div>
