@@ -24,9 +24,9 @@ with WhatsApp() as bot:
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only three lines of code._
 
-**A python package that helps you automate sending messages through WhatsApp Web 😎**
+A python package that helps you automate sending messages through WhatsApp Web 😎
 
-### How to install
+## How to install
 
 ```shell
 pip install wappdriver
@@ -38,7 +38,7 @@ For Mac and Linux, you may need to use `pip3`.
 
 [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
-### Warning ⚠️
+## Warning ⚠️
 
 - WhatsApp does not allow you to log in to the same account from multiple chrome tabs.
   So **make sure to close any chrome tab having WhatsApp Web open**. Not doing so will lead to errors.
@@ -56,6 +56,12 @@ Make sure to have matching versions of the Chrome Browser and Chrome Driver.
 I recommend using the latest stable release for both to get the best performance.
 
 WappDriver does not support other Browsers. Please use Chrome for a smooth experience
+
+## Help
+
+Read the [Help Page](https://aahnik.github.io/wappdriver/help/)
+
+For furthur assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) in **issues**
 
 ## Why wappdriver
 
@@ -79,17 +85,12 @@ Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/maste
 
 Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.](https://aahnik.github.io/wappdriver/For_Developers/)
 
-## Help
-
-Read the [Help Page](https://aahnik.github.io/wappdriver/help/)
-
-For furthur assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) in **issues**
 
 ## Legal
 
 This code is in no way affiliated with, authorized, maintained, sponsored, or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software.
 
-This project is distributed under **MIT License**.
+This project is distributed under [MIT License](https://github.com/aahnik/wappdriver/blob/main/LICENSE).
 
 <center>
 

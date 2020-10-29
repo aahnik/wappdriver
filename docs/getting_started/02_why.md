@@ -1,4 +1,4 @@
-### Why wappdriver
+## Why wappdriver
 
 - fast and reliable
 - WhatsApp's website structure may change, the selectors can be updated over the internet dynamically, without changing code.
