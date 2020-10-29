@@ -20,7 +20,10 @@ with WhatsApp() as bot:
              'hi send by a bot')  # message
 ```
 
-> The name of the recipient must be in contacts
+<!-- !!! note
+      The name of the recipient should be in your contacts -->
+
+![image](https://user-images.githubusercontent.com/66209958/97610084-71868a00-1a3a-11eb-9334-bf5175d0cecc.png)
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only three lines of code._
 
@@ -38,12 +41,13 @@ For Mac and Linux, you may need to use `pip3`.
 
 [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
-## Warning ⚠️
+<!-- !!! warning
+      - WhatsApp does not allow you to log in to the same account from multiple chrome tabs.
+        So **make sure to close any chrome tab having WhatsApp Web open**. Not doing so will lead to errors.
+      - Your phone which is having that WhatsApp account must stay connected to the internet for WhatsApp Web to work
+      - Do not spam others. Use `wappdriver` for educational purposes only -->
 
-- WhatsApp does not allow you to log in to the same account from multiple chrome tabs.
-  So **make sure to close any chrome tab having WhatsApp Web open**. Not doing so will lead to errors.
-- Your phone which is having that WhatsApp account must stay connected to the internet for WhatsApp Web to work
-- Do not spam others. Use `wappdriver` for educational purposes only
+![image](https://user-images.githubusercontent.com/66209958/97610297-b4e0f880-1a3a-11eb-8525-11a7d9b045ad.png)
 
 ## Requirements
 
@@ -61,7 +65,7 @@ WappDriver does not support other Browsers. Please use Chrome for a smooth exper
 
 Read the [Help Page](https://aahnik.github.io/wappdriver/help/)
 
-For furthur assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) in **issues**
+For furthur assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) the issues section.
 
 ## Why wappdriver
 
@@ -85,22 +89,9 @@ Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/maste
 
 Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.](https://aahnik.github.io/wappdriver/For_Developers/)
 
-
 ## Legal
 
 This code is in no way affiliated with, authorized, maintained, sponsored, or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software.
 
-This project is distributed under [MIT License](https://github.com/aahnik/wappdriver/blob/main/LICENSE).
+This project is distributed under [MIT License](https://github.com/aahnik/wappdriver/blob/main/LICENSE)
 
-<center>
-
-<a href="https://medium.com/@aahnikdaw/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-53201e9c09f3"> <img src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/medium.png?raw=true" alt="medium"> </a>
-<a href="https://www.facebook.com/aahnik.daw"> <img src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/facebook.png?raw=true" alt="facebook"> </a>
-<a href="https://www.linkedin.com/in/aahnik-daw-067a011b3/"> <img src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/linkedin.png?raw=true" alt="linkedin"> </a>
- <a href="https://t.me/AahniKDaw"> <img src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/telegram.png?raw=true" alt="telegram"> </a>
-<a href="https://twitter.com/AahnikD"> <img src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/twitter.png?raw=true" alt="twitter"> </a>
-<a href="https://www.quora.com/profile/Aahnik-Daw"> <img src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/quora.png?raw=true" alt="quora"> </a>
-<a href="https://www.youtube.com/channel/UCcEbN0d8iLTB6ZWBE_IDugg"> <img src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/youtube.png?raw=true" alt="youtube"> </a>
-<a href="https://stackoverflow.com/users/13523305/aahnik-daw"> <img src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/stackOverflow.png?raw=true" alt="stackOverflow"> </a> <a href="https://dev.to/aahnik/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-hld"> <img  src="https://github.com/aahnik/aahnik/blob/master/social_media_logos/dev.png?raw=true" alt="dev"> </a>
-
-</center>

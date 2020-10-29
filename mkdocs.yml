@@ -6,7 +6,8 @@ theme:
   custom_dir: rtd
 
 site_url: https://github.com/aahnik/wappdriver/
-
+markdown_extensions:
+  - admonition
 nav:
 
   - wappdriver: index.md

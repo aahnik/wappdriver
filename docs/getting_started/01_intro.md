@@ -20,7 +20,8 @@ with WhatsApp() as bot:
              'hi send by a bot')  # message
 ```
 
-> The name of the recipient must be in contacts
+!!! note
+      The name of the recipient should be in your contacts
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only three lines of code._
 
@@ -38,12 +39,11 @@ For Mac and Linux, you may need to use `pip3`.
 
 [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
-## Warning ⚠️
-
-- WhatsApp does not allow you to log in to the same account from multiple chrome tabs.
-  So **make sure to close any chrome tab having WhatsApp Web open**. Not doing so will lead to errors.
-- Your phone which is having that WhatsApp account must stay connected to the internet for WhatsApp Web to work
-- Do not spam others. Use `wappdriver` for educational purposes only
+!!! warning
+      - WhatsApp does not allow you to log in to the same account from multiple chrome tabs.
+        So **make sure to close any chrome tab having WhatsApp Web open**. Not doing so will lead to errors.
+      - Your phone which is having that WhatsApp account must stay connected to the internet for WhatsApp Web to work
+      - Do not spam others. Use `wappdriver` for educational purposes only
 
 ## Requirements
 
@@ -61,4 +61,4 @@ WappDriver does not support other Browsers. Please use Chrome for a smooth exper
 
 Read the [Help Page](https://aahnik.github.io/wappdriver/help/)
 
-For furthur assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) in **issues**
+For furthur assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) the issues section.
