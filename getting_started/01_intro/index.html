@@ -62,6 +62,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#help">Help</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -140,13 +142,28 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="getting-started">Getting Started</h1>
+                <h1 id="wappdriver">wappdriver</h1>
+<p>API for WhatsApp Web Automation</p>
+<p>Wondering how to send WhatsApp messages using Python using only three lines of code? <strong>You have come to the right place!</strong></p>
+<p><a href="https://aahnik.github.io/wappdriver/docs/Tests.html"><img alt="Tests" src="https://img.shields.io/badge/tests-passing-green" /></a>
+<a href="https://github.com/aahnik/wappdriver/graphs/commit-activity"><img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2020" /></a>
+<a href="https://github.com/aahnik/wappdriver/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/aahnik/wappdriver" /></a>
+<a href="https://www.codefactor.io/repository/github/aahnik/wappdriver"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/aahnik/wappdriver/badge" /></a></p>
 <h2 id="it-is-very-simple-to-use">It is very simple to use</h2>
-<p><img alt="using wappdriver" src="https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png" />.</p>
+<!-- ![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png). -->
+
+<pre><code class="language-python">from wappdriver import WhatsApp
+with WhatsApp() as bot:
+    bot.send('aahnik',  # name of recipient
+             'hi send by a bot')  # message
+</code></pre>
+<blockquote>
+<p>The name of the recipient must be in contacts</p>
+</blockquote>
 <p><em><code>wappdriver</code> enables you to send WhatsApp messages programmatically, using only three lines of code.</em></p>
-<p><strong>A python package that helps you automate sending messages through WhatsApp Web 😎</strong></p>
+<p>A python package that helps you automate sending messages through WhatsApp Web 😎</p>
 <h2 id="how-to-install">How to install</h2>
-<pre><code>pip install wappdriver
+<pre><code class="language-shell">pip install wappdriver
 </code></pre>
 <p>For Mac and Linux, you may need to use <code>pip3</code>.</p>
 <p><a href="https://pypi.org/project/wappdriver/">PyPI</a></p>
@@ -156,6 +173,7 @@
 <li>WhatsApp does not allow you to log in to the same account from multiple chrome tabs.
   So <strong>make sure to close any chrome tab having WhatsApp Web open</strong>. Not doing so will lead to errors.</li>
 <li>Your phone which is having that WhatsApp account must stay connected to the internet for WhatsApp Web to work</li>
+<li>Do not spam others. Use <code>wappdriver</code> for educational purposes only</li>
 </ul>
 <h2 id="requirements">Requirements</h2>
 <p><a href="https://www.python.org/"><img alt="made-with-python" src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg" /></a></p>
@@ -166,9 +184,9 @@
 <p>Make sure to have matching versions of the Chrome Browser and Chrome Driver.
 I recommend using the latest stable release for both to get the best performance.</p>
 <p>WappDriver does not support other Browsers. Please use Chrome for a smooth experience</p>
-<h1 id="help">Help</h1>
+<h2 id="help">Help</h2>
 <p>Read the <a href="https://aahnik.github.io/wappdriver/help/">Help Page</a></p>
-<p>For furthur assistance you can <a href="">ask a question</a> in <strong>issues</strong></p>
+<p>For furthur assistance you can <a href="https://github.com/aahnik/wappdriver/issues/new/choose">ask a question</a> in <strong>issues</strong></p>
               
             </div>
           </div>
