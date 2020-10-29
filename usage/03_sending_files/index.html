@@ -138,29 +138,41 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="sending-files">Sending files</h2>
-<h4 id="images-videos-and-documents">Images, Videos and Documents</h4>
-<p>With <code>wappdriver</code> its easy to do all these. Simply pass the path of the image or video or document file to the <code>send</code> method. 
-- You must use absoulte file paths.
-- File path must not have any space </p>
-<p>Note: 
-- In Windows absolute paths looks like: 
-    <code>C:\Users\mathew\img.png</code>
-- While in Linux or Mac they look like:
-    <code>/home/aahnik/img.png</code></p>
+                <h1 id="sending-files">Sending files</h1>
+<h2 id="images-videos-and-documents">Images, Videos and Documents</h2>
+<p>With <code>wappdriver</code> its easy to do all these. Simply pass the path of the image or video or document file to the <code>send</code> method.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<ul>
+<li>You must use absoulte file paths.</li>
+<li>File path must not have any space.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>In Windows absolute paths looks like:
+    <code>C:\Users\mathew\img.png</code></li>
+<li>While in Linux or Mac they look like:
+    <code>/home/aahnik/img.png</code></li>
+</ul>
+</div>
 <p>You can send any file type that WhatsApp supports.</p>
 <blockquote>
 <p>WhatsApp does not support files over 16 MB</p>
 </blockquote>
 <p><img alt="sending an image" src="https://github.com/aahnik/wappdriver/blob/main/docs/images/sending_media.png?raw=true" /></p>
-<h4 id="sending-multiple-files">Sending Multiple Files</h4>
+<h2 id="sending-multiple-files">Sending Multiple Files</h2>
 <p>You can easily pass as many arguments to <code>send</code> method of <code>WhatsApp</code> class you wish.
 <strong>Just remember that the first argument must be the name of the recipient.</strong></p>
 <p><img alt="sending multiple files" src="https://github.com/aahnik/wappdriver/blob/main/docs/images/sending_multiple_files.png?raw=true" /></p>
-<h4 id="messages-with-files">Messages with Files</h4>
-<p>Hmm! <code>wappdriver</code> is extremely smart. It can detect whether a string is a message or a file path. So you can do this as shown below. Dont hesitate to use a multiline line string for a long message. </p>
+<h2 id="messages-with-files">Messages with Files</h2>
+<p>Hmm! <code>wappdriver</code> is extremely smart. It can detect whether a string is a message or a file path. So you can do this as shown below. Dont hesitate to use a multiline line string for a long message.</p>
 <p><img alt="files and messages" src="https://github.com/aahnik/wappdriver/blob/main/docs/images/files_and_messages.png?raw=true" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The messages will be send in exactly that order.</p>
+</div>
               
             </div>
           </div>

@@ -149,8 +149,10 @@
 with WhatsApp(timeout=100) as bot:
     bot.send('aahnik',  'Exhausted ?')
 </code></pre>
-<p>The default value of timeout is 50s ( when you dont pass the argument)</p>
-<p>If bot is exhausted, increase timeout.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value of timeout is 50s. If bot is exhausted, increase timeout.</p>
+</div>
 <h2 id="update-variables">Update Variables</h2>
 <p>When you run <code>wappdriver</code> for the first time, the values of selectors is fetched from the internet.</p>
 <p>If you want to update them</p>
@@ -160,21 +162,23 @@ update_vars()
 <p>If any new updates are availaible, they will be downloaded.</p>
 <h2 id="set-chrome-driver-path">Set Chrome Driver Path</h2>
 <p>When you will use <code>wappdriver</code> for the first time, it will ask you to input the path of Chrome Driver Executable in your system.</p>
-<p>You can set the path programmatically </p>
+<p>You can set the path programmatically</p>
 <pre><code class="language-python">from wappdriver import set_chrome_driver_path
-path = '/home/aahnik/Downloads/chrome_driver' 
+path = '/home/aahnik/Downloads/chrome_driver'
 set_chrome_driver_path(path)
 </code></pre>
 <p><strong>Replace the value of variable <code>path</code> with the path of chrome driver in your system.</strong></p>
 <h2 id="in-brief">In Brief</h2>
-<p>Pass name of recipient as first argument and after that you can pass as many message arguments as you wish. </p>
+<p>Pass name of recipient as first argument and after that you can pass as many message arguments as you wish.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>The name of recipient must be saved in your contacts.</li>
-<li>Each message argument must be a string. </li>
+<li>Each message argument must be a string.</li>
 <li>If you want to send a file, pass the absolute path of the file to the function.</li>
 </ul>
-<hr />
-<p>Example Use:</p>
+</div>
+<p>Example Use</p>
 <pre><code class="language-python">
 with WhatsApp() as bot:
     bot.send('aahnik',  # name of recipient
@@ -192,12 +196,15 @@ with WhatsApp() as bot:
             )
 </code></pre>
 <p>The first argument you need to pass is the recipient's name which must be saved in your phone.</p>
-<p>After that you can pass as many string arguments you want for message. 
-The string can be:
-- a text message or 
-- the file path if you want to send a image, video, GIF, documents etc.
-- you can send multiple files, just pass them as arguments
-- You must use Absolute File Paths</p>
+<p>After that you can pass as many string arguments you want for message.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>The string can be a text message or the file path if you want to send a image, video, GIF, documents etc.</li>
+<li>You can send multiple files, just pass them as arguments</li>
+<li>You must use Absolute File Paths</li>
+</ul>
+</div>
 <p><code>wappdriver</code> will automatically detect whether a string is a message or a file path.</p>
 <hr />
 <!-- **If you are a developer and want to contribute code, read [Developer Guide](https://aahnik.github.io/wappdriver/dev/wappdriver/)** -->
