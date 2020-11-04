@@ -4,7 +4,7 @@ from wappdriver import WhatsApp
 
 with WhatsApp() as bot:
     bot.send('aahnik',  # name of recipient
-             'hi send by a bot :joy:',  # message
+             'hi send by a bot :-p',  # message
 
              # absolute url of an image that exists on your computer
              '/home/aahnik/Pictures/image_icon.png',  # 115 Kb
