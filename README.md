@@ -73,7 +73,7 @@ WappDriver does not support other Browsers. Please use Chrome for a smooth exper
 
 Read the [Help Page](https://aahnik.github.io/wappdriver/help/)
 
-For furthur assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) the issues section.
+For further assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) the issues section.
 
 ## Why wappdriver
 

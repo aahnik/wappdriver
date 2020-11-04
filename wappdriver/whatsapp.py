@@ -121,7 +121,8 @@ class WhatsApp():
             with tqdm(total=len(args)) as progress:
                 for arg in args:
                     if category(arg) == 'text':
-                        self.wappdriver.send_text(emoji.emojize(arg))
+                        self.wappdriver.send_text(
+                            emoji.emojize(arg, use_aliases=True))
                     else:
                         self.wappdriver.send_file(arg, category(arg))
                         size_mb = os.stat(arg).st_size*1e-6

@@ -49,7 +49,7 @@ class WappDriverError(Exception):
 
     def __str__(self):
         return f'''
-        Please check Internet Connection and always use the latest version of wappdriver.
+        Please check Internet Connection and always use the latest version of wappdriver. ChromeDriver only supports characters in the BMP. So many emojis may be invalid.
         ------------------------------------------------------------------------------------
         WappDriver Error  : {self.problem} \n
         Make sure to have : {self.message} \n
