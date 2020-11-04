@@ -9,6 +9,7 @@ Wondering how to send WhatsApp messages using Python using only three lines of c
 [![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
 [![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
 
+
 ## It is very simple to use
 
 <!-- ![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png). -->
@@ -48,6 +49,13 @@ For Mac and Linux, you may need to use `pip3`.
       - Do not spam others. Use `wappdriver` for educational purposes only -->
 
 ![image](https://user-images.githubusercontent.com/66209958/97610297-b4e0f880-1a3a-11eb-8525-11a7d9b045ad.png)
+
+----
+**Advise**: If you are thinking about making high-quality smooth automations switch to Telegram. WhatsApp is the worst messenger available to humanity. WhatsApp does not provide any Official free API. And to operate with WhatsApp Web you need your phone to be connected to the internet. And the QR code login mechanism makes it even slower. On the other hand, Telegram is cloud-based, and simply just better.
+
+I literally hate WhatsApp. Its my frustration with WhatsApp that forces me to write this message. Switch to Telegram, Enjoy a better life. Checkout my [Telegram Bots](https://github.com/aahnik/lovely-telegram#lovely-telegram).
+
+----
 
 ## Requirements
 
