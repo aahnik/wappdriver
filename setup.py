@@ -19,7 +19,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/aahnik/wappdriver",
-    install_requires=['selenium', 'pyyaml', 'requests', 'pyfiglet', 'tqdm'],
+    install_requires=['selenium', 'pyyaml', 'requests', 'pyfiglet', 'tqdm','emoji'],
     include_package_data=True,
     zip_safe=False,
     entry_points={
