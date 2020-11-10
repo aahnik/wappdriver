@@ -5,13 +5,8 @@ theme:
   navigation_depth: 4
   icon:
     repo: fontawesome/brands/github
-  font:
-    text: sans serif
-    code: roboto
   palette:
-    - scheme: slate
-      primary: teal
-      accent: teal
+    scheme: preference
 
 site_url: https://github.com/aahnik/wappdriver/
 
@@ -53,3 +48,5 @@ extra:
       link: https://stackoverflow.com/users/story/13523305
     - icon: fontawesome/brands/telegram
       link: https://telegram.me/aahnikd
+
+copyright: Copyright &copy; 2020 Aahnik Daw
