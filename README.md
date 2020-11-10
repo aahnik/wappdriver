@@ -16,12 +16,8 @@ from wappdriver import WhatsApp
 with WhatsApp() as bot:
     bot.send('aahnik',  # name of recipient
              'hi send by a bot')  # message
+# The name of the recipient should be in your contacts
 ```
-
-!!! note
-      The name of the recipient should be in your contacts
-
-![image](https://user-images.githubusercontent.com/66209958/97610084-71868a00-1a3a-11eb-9334-bf5175d0cecc.png)
 
 _`wappdriver` enables you to send WhatsApp messages programmatically, using only three lines of code._
 
@@ -39,16 +35,12 @@ For Mac and Linux, you may need to use `pip3`.
 
 [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
-
-
-![image](https://user-images.githubusercontent.com/66209958/97610297-b4e0f880-1a3a-11eb-8525-11a7d9b045ad.png)
-
-----
+<!-- ----
 **Advise**: If you are thinking about making high-quality smooth automations switch to Telegram. WhatsApp is the worst messenger available to humanity. WhatsApp does not provide any Official free API. And to operate with WhatsApp Web you need your phone to be connected to the internet. And the QR code login mechanism makes it even slower. On the other hand, Telegram is cloud-based, and simply just better.
 
 I literally hate WhatsApp. Its my frustration with WhatsApp that forces me to write this message. Switch to Telegram, Enjoy a better life. Checkout my [Telegram Bots](https://github.com/aahnik/lovely-telegram#lovely-telegram).
 
-----
+---- -->
 
 ## Requirements
 
@@ -76,7 +68,7 @@ For further assistance you can [ask a question](https://github.com/aahnik/wappdr
 - actively maintained
 - fast support, if you need help
 - send messages with bold, italics, or strikethrough
-- send emojis smiley
+- send emojis
 - send images, videos, and gifs
 - send documents and files
 - can set a custom time out  to make wappdriver run properly on old computers or with a slow internet connection
@@ -95,4 +87,3 @@ Please read the explanation of the detailed working of `wappdriver` from the [De
 This code is in no way affiliated with, authorized, maintained, sponsored, or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software.
 
 This project is distributed under [MIT License](https://github.com/aahnik/wappdriver/blob/main/LICENSE)
-
