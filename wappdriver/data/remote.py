@@ -9,23 +9,15 @@ def rqst():
     return requests
 
 
-prefix = 'https://raw.githubusercontent.com/aahnik/wappdriver/main/.github/'
+prefix = 'https://raw.githubusercontent.com/aahnik/wappdriver/main/wappdriver/'
 
-version_url = f'{prefix}ver'
-var_url = f'{prefix}var'
+var_url = f'{prefix}selectors.yml'
 
 
-@handle_connection
-def version():
-    '''
-    Returns remote version
-    '''
-    ver = float(rqst().get(url=version_url).text)
-    return ver
 
 
 @handle_connection
-def fetch_vars():
+def fetch_selectors():
     '''
     Returns the content of remote vars as a string
     '''

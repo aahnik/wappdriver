@@ -9,10 +9,7 @@ Wondering how to send WhatsApp messages using Python using only three lines of c
 [![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
 [![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
 
-
 ## It is very simple to use
-
-<!-- ![using wappdriver](https://raw.githubusercontent.com/aahnik/wappdriver/main/docs/images/wappdriver.png). -->
 
 ```python
 from wappdriver import WhatsApp
@@ -21,8 +18,8 @@ with WhatsApp() as bot:
              'hi send by a bot')  # message
 ```
 
-<!-- !!! note
-      The name of the recipient should be in your contacts -->
+!!! note
+      The name of the recipient should be in your contacts
 
 ![image](https://user-images.githubusercontent.com/66209958/97610084-71868a00-1a3a-11eb-9334-bf5175d0cecc.png)
 
@@ -42,11 +39,7 @@ For Mac and Linux, you may need to use `pip3`.
 
 [![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
 
-<!-- !!! warning
-      - WhatsApp does not allow you to log in to the same account from multiple chrome tabs.
-        So **make sure to close any chrome tab having WhatsApp Web open**. Not doing so will lead to errors.
-      - Your phone which is having that WhatsApp account must stay connected to the internet for WhatsApp Web to work
-      - Do not spam others. Use `wappdriver` for educational purposes only -->
+
 
 ![image](https://user-images.githubusercontent.com/66209958/97610297-b4e0f880-1a3a-11eb-8525-11a7d9b045ad.png)
 

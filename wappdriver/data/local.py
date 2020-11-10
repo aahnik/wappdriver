@@ -19,13 +19,12 @@ def yml():
     return yaml
 
 
-wapp_dir = os.path.expanduser('~/wappdriver')
+wapp_dir = os.path.expanduser('~/wappdriver.data')
 
 log_file = os.path.join(wapp_dir, 'log_file.txt')
 cdp_file = os.path.join(wapp_dir, 'cdp.txt')
-var_file = os.path.join(wapp_dir, 'var.yml')
+selectors_file = os.path.join(wapp_dir, 'selectors.yml')
 
-version_file = os.path.join(wapp_dir, 'ver.txt')
 
 sessions_dir = os.path.join(wapp_dir, 'sessions')
 
@@ -76,9 +75,9 @@ def get_chrome_driver_path():
 
 def set_local_vars(in_vars):
     '''
-    Takes a string and writes that into `var.yml` inside `.wappdriver` 
+    Takes a string and writes that into `selectors.yml` in wappdriver data directory
     '''
-    with open(var_file, 'w+') as f:
+    with open(selectors_file, 'w+') as f:
         f.write(in_vars)
 
 
@@ -86,28 +85,14 @@ def get_local_vars():
     ''' 
     Returns the vars dictionary
     '''
-    with open(var_file, 'r') as f:
+    with open(selectors_file, 'r') as f:
         return yml().full_load(f)
 
 
-def set_local_ver(ver):
-    '''
-    Takes a string and writes that into `ver.txt` inside `.wappdriver` 
-    '''
-    with open(version_file, 'w+') as f:
-        f.write(ver)
-
-
-def get_local_ver():
-    ''' 
-    Returns the value of version of `var.yml` inside `.wappdriver`, as a float
-    '''
-    with open(version_file, 'r') as f:
-        return float(f.readline())
 
 
 def update_vars():
-    ''' Checks for updates in var.yml, if availaible, updates the local data
+    ''' Overwrites the local `selectors.yml` file with the value fetched from remote
     Usually takes a few seconds to run, calling this function 
     at the beginning of your script ensures that the values of xpath and css selectors used 
     for automation are up to date with the latest version of WhatsApp Web.
@@ -119,14 +104,10 @@ def update_vars():
 
     '''
 
-    local_version = get_local_ver()
-    remote_version = remote.version()
-
     try:
-        if remote_version > local_version:
-            print('\nFetching data ...\n')
-            set_local_vars(remote.fetch_vars())
-            set_local_ver(str(remote_version))
+        print('\nFetching data ...\n')
+        set_local_vars(remote.fetch_selectors())
+        print('selectors are now up to date with remote')
         return True
 
     except Exception as e:
@@ -143,7 +124,7 @@ def ensure():
     with tqdm(total=6) as progress:
         if not os.path.exists(wapp_dir):
             os.mkdir(wapp_dir)
-            print("\n\n A folder called `wappdriver` has been created in your home directory. \n \t\t # Please DO NOT DELETE it \n\n WappDriver stores your google chrome session cookies, dynamic data and log files in this directory.")
+            print("\n\n A folder called `wappdriver.data` has been created in your home directory. \n \t\t # Please DO NOT DELETE it \n\n WappDriver stores your google chrome session cookies, dynamic data and log files in this directory.")
             input('\n Press [ENTER] to continue ')
 
         progress.update(1)
@@ -165,11 +146,8 @@ def ensure():
 
         progress.update(1)
 
-        if not os.path.exists(version_file):
-            set_local_ver('0')
-
         progress.update(1)
-        if not os.path.exists(var_file):
+        if not os.path.exists(selectors_file):
             update_vars()
 
         progress.update(1)
