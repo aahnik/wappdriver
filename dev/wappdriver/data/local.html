@@ -56,13 +56,12 @@ def yml():
     return yaml
 
 
-wapp_dir = os.path.expanduser(&#39;~/wappdriver&#39;)
+wapp_dir = os.path.expanduser(&#39;~/wappdriver.data&#39;)
 
 log_file = os.path.join(wapp_dir, &#39;log_file.txt&#39;)
 cdp_file = os.path.join(wapp_dir, &#39;cdp.txt&#39;)
-var_file = os.path.join(wapp_dir, &#39;var.yml&#39;)
+selectors_file = os.path.join(wapp_dir, &#39;selectors.yml&#39;)
 
-version_file = os.path.join(wapp_dir, &#39;ver.txt&#39;)
 
 sessions_dir = os.path.join(wapp_dir, &#39;sessions&#39;)
 
@@ -113,9 +112,9 @@ def get_chrome_driver_path():
 
 def set_local_vars(in_vars):
     &#39;&#39;&#39;
-    Takes a string and writes that into `var.yml` inside `.wappdriver` 
+    Takes a string and writes that into `selectors.yml` in wappdriver data directory
     &#39;&#39;&#39;
-    with open(var_file, &#39;w+&#39;) as f:
+    with open(selectors_file, &#39;w+&#39;) as f:
         f.write(in_vars)
 
 
@@ -123,28 +122,14 @@ def get_local_vars():
     &#39;&#39;&#39; 
     Returns the vars dictionary
     &#39;&#39;&#39;
-    with open(var_file, &#39;r&#39;) as f:
+    with open(selectors_file, &#39;r&#39;) as f:
         return yml().full_load(f)
 
 
-def set_local_ver(ver):
-    &#39;&#39;&#39;
-    Takes a string and writes that into `ver.txt` inside `.wappdriver` 
-    &#39;&#39;&#39;
-    with open(version_file, &#39;w+&#39;) as f:
-        f.write(ver)
-
-
-def get_local_ver():
-    &#39;&#39;&#39; 
-    Returns the value of version of `var.yml` inside `.wappdriver`, as a float
-    &#39;&#39;&#39;
-    with open(version_file, &#39;r&#39;) as f:
-        return float(f.readline())
 
 
 def update_vars():
-    &#39;&#39;&#39; Checks for updates in var.yml, if availaible, updates the local data
+    &#39;&#39;&#39; Overwrites the local `selectors.yml` file with the value fetched from remote
     Usually takes a few seconds to run, calling this function 
     at the beginning of your script ensures that the values of xpath and css selectors used 
     for automation are up to date with the latest version of WhatsApp Web.
@@ -156,14 +141,10 @@ def update_vars():
 
     &#39;&#39;&#39;
 
-    local_version = get_local_ver()
-    remote_version = remote.version()
-
     try:
-        if remote_version &gt; local_version:
-            print(&#39;\nFetching data ...\n&#39;)
-            set_local_vars(remote.fetch_vars())
-            set_local_ver(str(remote_version))
+        print(&#39;\nFetching data ...\n&#39;)
+        set_local_vars(remote.fetch_selectors())
+        print(&#39;selectors are now up to date with remote&#39;)
         return True
 
     except Exception as e:
@@ -180,7 +161,7 @@ def ensure():
     with tqdm(total=6) as progress:
         if not os.path.exists(wapp_dir):
             os.mkdir(wapp_dir)
-            print(&#34;\n\n A folder called `wappdriver` has been created in your home directory. \n \t\t # Please DO NOT DELETE it \n\n WappDriver stores your google chrome session cookies, dynamic data and log files in this directory.&#34;)
+            print(&#34;\n\n A folder called `wappdriver.data` has been created in your home directory. \n \t\t # Please DO NOT DELETE it \n\n WappDriver stores your google chrome session cookies, dynamic data and log files in this directory.&#34;)
             input(&#39;\n Press [ENTER] to continue &#39;)
 
         progress.update(1)
@@ -202,11 +183,8 @@ def ensure():
 
         progress.update(1)
 
-        if not os.path.exists(version_file):
-            set_local_ver(&#39;0&#39;)
-
         progress.update(1)
-        if not os.path.exists(var_file):
+        if not os.path.exists(selectors_file):
             update_vars()
 
         progress.update(1)
@@ -244,7 +222,7 @@ If those files do not exist, ensures the creation of them with proper initial va
     with tqdm(total=6) as progress:
         if not os.path.exists(wapp_dir):
             os.mkdir(wapp_dir)
-            print(&#34;\n\n A folder called `wappdriver` has been created in your home directory. \n \t\t # Please DO NOT DELETE it \n\n WappDriver stores your google chrome session cookies, dynamic data and log files in this directory.&#34;)
+            print(&#34;\n\n A folder called `wappdriver.data` has been created in your home directory. \n \t\t # Please DO NOT DELETE it \n\n WappDriver stores your google chrome session cookies, dynamic data and log files in this directory.&#34;)
             input(&#39;\n Press [ENTER] to continue &#39;)
 
         progress.update(1)
@@ -266,11 +244,8 @@ If those files do not exist, ensures the creation of them with proper initial va
 
         progress.update(1)
 
-        if not os.path.exists(version_file):
-            set_local_ver(&#39;0&#39;)
-
         progress.update(1)
-        if not os.path.exists(var_file):
+        if not os.path.exists(selectors_file):
             update_vars()
 
         progress.update(1)
@@ -325,25 +300,8 @@ which exists at the home directory of the user.</p>
     &#39;&#39;&#39; 
     Returns the vars dictionary
     &#39;&#39;&#39;
-    with open(var_file, &#39;r&#39;) as f:
+    with open(selectors_file, &#39;r&#39;) as f:
         return yml().full_load(f)</code></pre>
-</details>
-</dd>
-<dt id="wappdriver.data.local.get_local_ver"><code class="name flex">
-<span>def <span class="ident">get_local_ver</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Returns the value of version of <code>var.yml</code> inside <code>.<a title="wappdriver" href="../index.html">wappdriver</a></code>, as a float</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_local_ver():
-    &#39;&#39;&#39; 
-    Returns the value of version of `var.yml` inside `.wappdriver`, as a float
-    &#39;&#39;&#39;
-    with open(version_file, &#39;r&#39;) as f:
-        return float(f.readline())</code></pre>
 </details>
 </dd>
 <dt id="wappdriver.data.local.set_chrome_driver_path"><code class="name flex">
@@ -396,41 +354,24 @@ are done by <code>test_browser</code> module of the <code>tests</code> package</
 <span>def <span class="ident">set_local_vars</span></span>(<span>in_vars)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Takes a string and writes that into <code>var.yml</code> inside <code>.<a title="wappdriver" href="../index.html">wappdriver</a></code></p></div>
+<div class="desc"><p>Takes a string and writes that into <code>selectors.yml</code> in wappdriver data directory</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def set_local_vars(in_vars):
     &#39;&#39;&#39;
-    Takes a string and writes that into `var.yml` inside `.wappdriver` 
+    Takes a string and writes that into `selectors.yml` in wappdriver data directory
     &#39;&#39;&#39;
-    with open(var_file, &#39;w+&#39;) as f:
+    with open(selectors_file, &#39;w+&#39;) as f:
         f.write(in_vars)</code></pre>
-</details>
-</dd>
-<dt id="wappdriver.data.local.set_local_ver"><code class="name flex">
-<span>def <span class="ident">set_local_ver</span></span>(<span>ver)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Takes a string and writes that into <code>ver.txt</code> inside <code>.<a title="wappdriver" href="../index.html">wappdriver</a></code></p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def set_local_ver(ver):
-    &#39;&#39;&#39;
-    Takes a string and writes that into `ver.txt` inside `.wappdriver` 
-    &#39;&#39;&#39;
-    with open(version_file, &#39;w+&#39;) as f:
-        f.write(ver)</code></pre>
 </details>
 </dd>
 <dt id="wappdriver.data.local.update_vars"><code class="name flex">
 <span>def <span class="ident">update_vars</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Checks for updates in var.yml, if availaible, updates the local data
+<div class="desc"><p>Overwrites the local <code>selectors.yml</code> file with the value fetched from remote
 Usually takes a few seconds to run, calling this function
 at the beginning of your script ensures that the values of xpath and css selectors used
 for automation are up to date with the latest version of WhatsApp Web.</p>
@@ -443,7 +384,7 @@ If failed
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def update_vars():
-    &#39;&#39;&#39; Checks for updates in var.yml, if availaible, updates the local data
+    &#39;&#39;&#39; Overwrites the local `selectors.yml` file with the value fetched from remote
     Usually takes a few seconds to run, calling this function 
     at the beginning of your script ensures that the values of xpath and css selectors used 
     for automation are up to date with the latest version of WhatsApp Web.
@@ -455,14 +396,10 @@ If failed
 
     &#39;&#39;&#39;
 
-    local_version = get_local_ver()
-    remote_version = remote.version()
-
     try:
-        if remote_version &gt; local_version:
-            print(&#39;\nFetching data ...\n&#39;)
-            set_local_vars(remote.fetch_vars())
-            set_local_ver(str(remote_version))
+        print(&#39;\nFetching data ...\n&#39;)
+        set_local_vars(remote.fetch_selectors())
+        print(&#39;selectors are now up to date with remote&#39;)
         return True
 
     except Exception as e:
@@ -493,10 +430,8 @@ If failed
 <li><code><a title="wappdriver.data.local.ensure" href="#wappdriver.data.local.ensure">ensure</a></code></li>
 <li><code><a title="wappdriver.data.local.get_chrome_driver_path" href="#wappdriver.data.local.get_chrome_driver_path">get_chrome_driver_path</a></code></li>
 <li><code><a title="wappdriver.data.local.get_local_vars" href="#wappdriver.data.local.get_local_vars">get_local_vars</a></code></li>
-<li><code><a title="wappdriver.data.local.get_local_ver" href="#wappdriver.data.local.get_local_ver">get_local_ver</a></code></li>
 <li><code><a title="wappdriver.data.local.set_chrome_driver_path" href="#wappdriver.data.local.set_chrome_driver_path">set_chrome_driver_path</a></code></li>
 <li><code><a title="wappdriver.data.local.set_local_vars" href="#wappdriver.data.local.set_local_vars">set_local_vars</a></code></li>
-<li><code><a title="wappdriver.data.local.set_local_ver" href="#wappdriver.data.local.set_local_ver">set_local_ver</a></code></li>
 <li><code><a title="wappdriver.data.local.update_vars" href="#wappdriver.data.local.update_vars">update_vars</a></code></li>
 </ul>
 </li>

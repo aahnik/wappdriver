@@ -35,6 +35,7 @@ from .driver import WappDriver
 import os
 from tqdm import tqdm
 import time
+import emoji
 
 
 def category(arg):
@@ -149,7 +150,8 @@ class WhatsApp():
             with tqdm(total=len(args)) as progress:
                 for arg in args:
                     if category(arg) == &#39;text&#39;:
-                        self.wappdriver.send_text(arg)
+                        self.wappdriver.send_text(
+                            emoji.emojize(arg, use_aliases=True))
                     else:
                         self.wappdriver.send_file(arg, category(arg))
                         size_mb = os.stat(arg).st_size*1e-6
@@ -321,7 +323,8 @@ for path of any other file type</li>
             with tqdm(total=len(args)) as progress:
                 for arg in args:
                     if category(arg) == &#39;text&#39;:
-                        self.wappdriver.send_text(arg)
+                        self.wappdriver.send_text(
+                            emoji.emojize(arg, use_aliases=True))
                     else:
                         self.wappdriver.send_file(arg, category(arg))
                         size_mb = os.stat(arg).st_size*1e-6
@@ -441,7 +444,8 @@ The string can be:
         with tqdm(total=len(args)) as progress:
             for arg in args:
                 if category(arg) == &#39;text&#39;:
-                    self.wappdriver.send_text(arg)
+                    self.wappdriver.send_text(
+                        emoji.emojize(arg, use_aliases=True))
                 else:
                     self.wappdriver.send_file(arg, category(arg))
                     size_mb = os.stat(arg).st_size*1e-6
