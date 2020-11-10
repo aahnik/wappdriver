@@ -1,10 +1,12 @@
-whatsapp_web_url: 'https://web.whatsapp.com/'
-messageBox: '/html/body/div/div/div/div[4]/div/footer/div[1]/div[2]/div/div[2]'
-mainScreenLoaded: '._3FRCZ'
-searchSelector: '.cBxw- > div:nth-child(2)'
-person: '//*[@title="name"]'
-attach: '//span[@data-icon="clip"]'
-send: '//span[@data-icon="send"]'
-media: '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"][@type="file"]'
-file: '//input[@accept="*"]'
+whatsapp_web_url: "https://web.whatsapp.com/"
+messageBox: "//div[@id='main']//footer//div//div//div//div[@contenteditable='true']"
+mainScreenLoaded: "._3FRCZ"
+searchSelector: ".cBxw- > div:nth-child(2)"
+person: "//*[@title='name']"
+attach: "//span[@data-testid='clip']"
+send: "//span[@data-testid='send']"
+media: "//input[@accept='image/*,video/mp4,video/3gpp,video/quicktime'][@type='file']"
+file: "//input[@accept='*']"
+qrCanvas: "//canvas[@aria-label='Scan me!']"
+
 # Aahnik 2020
