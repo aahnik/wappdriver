@@ -2,7 +2,7 @@
 
 Here goes a list of concepts I have learned/implemented while building this project. 
 
-Feel free to **click on any concept to see a code sample** where it is used. 
+Feel free to **click on any concept to see a code sample** where it is used.
 
 > At most, search results can show two fragments from the same file, but there may be more results within the file.
 
@@ -24,15 +24,17 @@ To learn any concept, copy and paste the concept title in Google or YouTube.
    - [Selecting elements](https://github.com/aahnik/wappdriver/search?q=CSS_SELECTOR++XPATH)
    - [Clicking](https://github.com/search?q=click+repo%3Aaahnik%2Fwappdriver+language%3APython&type=Code&ref=advsearch&l=Python&l=) and [sending keys](https://github.com/aahnik/wappdriver/search?q=send_keys)
    - [File upload](https://github.com/aahnik/wappdriver/search?q=input_field)
-9.  Decorators
+   - Concept of Xpath
+   - Using a tool like Selector's Hub
+9. Decorators
     - Closures
-    - First class functions
+    - First-class functions
     - Simple decorators
     - [Decorators with arguments](https://github.com/aahnik/wappdriver/blob/cb31ba40db32383d996d560174650b7a3f2466cc/wappdriver/error.py#L61)
     - Using [functools.wraps](https://github.com/aahnik/wappdriver/search?q=functools.wraps)
 10. [Custom Exception Class](https://github.com/aahnik/wappdriver/search?q=WappDriverError)
 11. [Logging](https://github.com/aahnik/wappdriver/search?q=logging+log+exception)
-12. Docstings and pydoc
+12. Docstings and pdoc3
 13. [Building simple CLI with Argparse](https://github.com/aahnik/wappdriver/search?q=argparse)
 14. [Progress Bars with tqdm](https://github.com/aahnik/wappdriver/search?q=tqdm)
 15. Python Packaging and Distribution
@@ -46,6 +48,6 @@ To learn any concept, copy and paste the concept title in Google or YouTube.
     - Using [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) by Yu Zhang
 17. GitHub Pages
     - [Publishing Project Website](https://aahnik.github.io/wappdriver/)
-    - [Customizing the Dinky theme](https://github.com/aahnik/wappdriver/search?q=%21doctype+html)
-
-
+    - [Customizing the Dinky theme](https://github.com/aahnik/wappdriver/search?q=%21doctype+html) (deprecated)
+18. Using mkdocs with mkdocs-material
+19. Using a `.gitattributes` file to ignore any produced html from language statistics of the repo

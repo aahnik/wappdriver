@@ -10,8 +10,7 @@ test:
 
 mkdocs:
 	@echo mkdocs
-
-	cp -r  ~/Projects/py_package/rtd .
+	cp README.md docs/index.md
 	rm -rf /tmp/wappdriver
 	mkdocs build  -c -d /tmp/wappdriver
 
@@ -31,5 +30,8 @@ site-release: site
 	git push
 
 serve:
-	cp -r  ~/Projects/py_package/rtd .
+	cp README.md docs/index.md
 	mkdocs serve
+
+dev-requires:
+	pip freeze > dev-requires.txt

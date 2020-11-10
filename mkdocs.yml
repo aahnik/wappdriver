@@ -3,12 +3,23 @@ site_name: wappdriver
 theme:
   name: material
   navigation_depth: 4
-  icon: 
+  icon:
     repo: fontawesome/brands/github
+  font:
+    text: sans serif
+    code: roboto
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: teal
 
 site_url: https://github.com/aahnik/wappdriver/
+
 markdown_extensions:
   - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+
 nav:
   - Getting Started: index.md
   - Setup: usage/01_first_time_setup.md
@@ -22,4 +33,23 @@ nav:
 repo_url: https://github.com/aahnik/wappdriver
 edit_uri: ""
 
-
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/AahnikD
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@aahnikdaw/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-53201e9c09f3
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/aahnik.daw
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/aahnik-daw-067a011b3/
+    - icon: fontawesome/brands/dev
+      link: https://dev.to/aahnik/how-to-send-a-whatsapp-message-reliably-in-only-3-lines-of-code-python-hld
+    - icon: fontawesome/brands/quora
+      link: https://www.quora.com/profile/Aahnik-Daw
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCcEbN0d8iLTB6ZWBE_IDugg
+    - icon: fontawesome/brands/stack-overflow
+      link: https://stackoverflow.com/users/story/13523305
+    - icon: fontawesome/brands/telegram
+      link: https://telegram.me/aahnikd
