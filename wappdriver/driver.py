@@ -17,12 +17,9 @@ try:
     from selenium.webdriver.common.by import By
     from selenium.webdriver.support import expected_conditions
     from selenium.webdriver.common.keys import Keys
-
-except Exception:
-    print(f'''Could not find Selenium
-            Run
-                pip install selenium
-        ''')
+except ModuleNotFoundError as e:
+    print('Could not find Selenium\nRun: pip install selenium')
+    raise e
 
 
 class WappDriver():
