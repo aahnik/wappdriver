@@ -8,8 +8,16 @@ Wondering how to send WhatsApp messages using Python using only three lines of c
 [![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/aahnik/wappdriver/graphs/commit-activity)
 [![GitHub Release](https://img.shields.io/github/v/release/aahnik/wappdriver)](https://github.com/aahnik/wappdriver/releases)
 [![CodeFactor](https://www.codefactor.io/repository/github/aahnik/wappdriver/badge)](https://www.codefactor.io/repository/github/aahnik/wappdriver)
+[![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
-## It is very simple to use
+## Usage 😎
+
+wappdriver is a python package that helps you automate sending messages through WhatsApp Web.
+
+_It enables you to send WhatsApp messages programmatically, using only three lines of code._
+
+It is very simple to use
 
 ```python
 from wappdriver import WhatsApp
@@ -19,11 +27,11 @@ with WhatsApp() as bot:
 # The name of the recipient should be in your contacts
 ```
 
-_`wappdriver` enables you to send WhatsApp messages programmatically, using only three lines of code._
+Read **[full documentation 📖](https://aahnik.github.io/wappdriver/usage/02_sending_messages/)** to learn how to send emojis, media and files.
 
-A python package that helps you automate sending messages through WhatsApp Web 😎
+## Installation ⏬
 
-## How to install
+You can easily install wappdriver from the [PyPI](https://pypi.org/project/wappdriver/).
 
 ```shell
 pip install wappdriver
@@ -31,59 +39,42 @@ pip install wappdriver
 
 For Mac and Linux, you may need to use `pip3`.
 
-[PyPI](https://pypi.org/project/wappdriver/)
+## Requirements 🧑‍💻
 
-[![MIT LICENSE](https://img.shields.io/pypi/l/ansicolortags.svg)](/LICENSE)
+You must have the following installed in your system for wappdriver to work.
 
-<!-- ----
-**Advise**: If you are thinking about making high-quality smooth automations switch to Telegram. WhatsApp is the worst messenger available to humanity. WhatsApp does not provide any Official free API. And to operate with WhatsApp Web you need your phone to be connected to the internet. And the QR code login mechanism makes it even slower. On the other hand, Telegram is cloud-based, and simply just better.
-
-I literally hate WhatsApp. Its my frustration with WhatsApp that forces me to write this message. Switch to Telegram, Enjoy a better life. Checkout my [Telegram Bots](https://github.com/aahnik/lovely-telegram#lovely-telegram).
-
----- -->
-
-## Requirements
-
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-
-- **[Chrome Browser](https://www.google.com/chrome/)**
+- [Chrome Browser](https://www.google.com/chrome/)
 - [Chrome Driver](https://chromedriver.chromium.org/)
 
 Make sure to have matching versions of the Chrome Browser and Chrome Driver.
 I recommend using the latest stable release for both to get the best performance.
 
-WappDriver does not support other Browsers. Please use Chrome for a smooth experience
+WappDriver does not support other Browsers. Please use Chrome for a smooth experience.
 
-## Help
+## Setup ⚙️
 
-Read the [Help Page](https://aahnik.github.io/wappdriver/help/)
+After you have installed wappdriver and the requirements stated above, you can start using wappdriver straight away.
 
-For further assistance you can [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) the issues section.
+When you will run your code for the first time, you will be asked for Chrome Driver Path.
+When the WhatsApp web screen loads for the first time, you have to scan the QR code from you smartphone's WhatsApp application, to log into your WhatsApp account. [Learn more](https://aahnik.github.io/wappdriver/usage/01_first_time_setup/).
 
-## Why wappdriver
+<!-- Read more about [first time setup](https://aahnik.github.io/wappdriver/usage/01_first_time_setup/) on the official docs page. -->
 
-- fast and reliable
-- WhatsApp's website structure may change, the selectors can be updated over the internet dynamically, without changing code.
-- chrome Driver path setting is hassle-free
-- actively maintained
-- fast support, if you need help
-- send messages with bold, italics, or strikethrough
-- send emojis
-- send images, videos, and gifs
-- send documents and files
-- can set a custom time out  to make wappdriver run properly on old computers or with a slow internet connection
-- more new features will be added soon
+## Getting Help 💁🏻
 
-[Read](https://aahnik.github.io/wappdriver/usage/01_first_time_setup/) the full Documentation to know about all the features.
+First of all, read the [Help Page](https://aahnik.github.io/wappdriver/help/).
+You may try to search your question in the search bar on the page.
 
-## Contributing
+For further assistance you may [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) the issues section.
 
-Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-)
+## Contributing 🤩
 
-Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.](https://aahnik.github.io/wappdriver/For_Developers/)
+Please look at [Code of Conduct](https://github.com/aahnik/wappdriver/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct) and [Contributing Guidelines](https://github.com/aahnik/wappdriver/blob/master/.github/CONTRIBUTING.md#how-to-contribute-to-wappdriver-).
 
-## Legal
+Please read the explanation of the detailed working of `wappdriver` from the [Developer's Guide.](https://aahnik.github.io/wappdriver/dev/wappdriver/)
+
+## Legal ⚖️
+
+This project is distributed under [MIT License](https://github.com/aahnik/wappdriver/blob/main/LICENSE).
 
 This code is in no way affiliated with, authorized, maintained, sponsored, or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software.
-
-This project is distributed under [MIT License](https://github.com/aahnik/wappdriver/blob/main/LICENSE)

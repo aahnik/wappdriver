@@ -4,6 +4,9 @@ hello:
 pypi:
 	@echo uploading to pypi
 
+dev:
+	@python3 -m venv venv
+	. venv/bin/activate && python3 -m pip install -r requirements.txt
 
 test:
 	@echo run all tests
@@ -33,5 +36,6 @@ serve:
 	cp README.md docs/index.md
 	mkdocs serve
 
-dev-requires:
-	pip freeze > dev-requires.txt
+requirements:
+	pip freeze > requirements.txt
+	

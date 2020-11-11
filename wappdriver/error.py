@@ -1,15 +1,10 @@
 ''' 
 This module error.py defines custom Wappdriver Exception. 
 WappDriver Excpetion helps in abstracting internal exception details from the end user
----
 
-`local` and `remote` modules from `data` subpackage, should not import `error` in order to 
-prevent cyclic import
-
-When you import this module or any function from this module, local is ensured 😊
 '''
 import functools
-from .data import local
+
 import logging
 
 
@@ -41,31 +36,28 @@ class WappDriverError(Exception):
         self.problem = problem
         self.message = message
         super().__init__(self.message)
-
-        logging.basicConfig(format='\n########################################\n\n%(asctime)s - %(message)s',
-                            filename=local.log_file)
-
-        logging.exception(f'''\n{problem}\n\n{internal}''')
+        logging.debug(f'''\n{problem}\n\n{internal}''')
 
     def __str__(self):
         return f'''
-        Please check Internet Connection and always use the latest version of wappdriver. ChromeDriver only supports characters in the BMP. So many emojis may be invalid.
+        Please check Internet Connection and always use the latest version of wappdriver. 
+        You must have matching versions of Chrome and Chromedriver.
         ------------------------------------------------------------------------------------
         WappDriver Error  : {self.problem} \n
-        Make sure to have : {self.message} \n
+        {self.message} \n
         For Help Visit http://bit.ly/wappdriver
         -----------------------------------------------------------------------------------\n
         '''
 
 
-def handle_errors(problem, message):
+def handle_errors(problem, message=None, cure=None):
     '''
-    ### How to use ?
     -- FOR INTERNAL USE ONLY --
 
     Write the vulnerable code inside a function. And decorate it with `handle_error`. There should be no `return` statement inside the vulnerable function. The intended use case is for a procedural function.
 
-    ---
+    If the cure method is provided, it is run after handling errors. Nothing is done if cure raises errors. Make sure to have an error free cure.
+
     Example use 
 
     ```python
@@ -75,15 +67,15 @@ def handle_errors(problem, message):
         print('fishy errors')
         print(1/0)
     ```
-    ---
-    #### After being decorated, the vulnerable function will return `True` or `False` to the caller
+
+    After being decorated, the vulnerable function will return `True` or `False` to the caller
 
     - `True` will be returned in case of no error
     - If an error is caught it will be handled and beautified message will be displayed to user
         - The internal details of the Exception and full traceback will be logged.
         - `False` will be returned to the caller.
 
-    ---
+
     `handle_errors` is a Decorator Factory which is used to create a decorator that takes arguments
     '''
 
@@ -109,7 +101,9 @@ def handle_errors(problem, message):
                     raise WappDriverError(internal, problem, message)
                 except Exception as err:
                     # Beautified Error message is printed and False is returned to caller
-                    print(err)
+                    logging.exception(err)
+                    if cure:
+                        cure()
                     return False
         return wrapper_func
     return decorator_func

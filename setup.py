@@ -1,7 +1,7 @@
 import setuptools
 import re
 
-with open(".github/pypi.md", "r") as f:
+with open("README.md", "r") as f:
     long_description = f.read()
 
 version = re.search(
@@ -19,11 +19,11 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/aahnik/wappdriver",
-    install_requires=['selenium', 'pyyaml', 'requests', 'pyfiglet', 'tqdm'],
+    install_requires=['selenium', 'pyyaml', 'requests', 'pyfiglet', 'verlat'],
     include_package_data=True,
     zip_safe=False,
     entry_points={
-        'console_scripts': ['wappdriver=wappdriver.command_line:main'],
+        'console_scripts': ['wappdriver=wappdriver.cli:main'],
     },
     packages=setuptools.find_packages(),
     classifiers=[

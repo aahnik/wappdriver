@@ -1,6 +1,6 @@
 # Concepts
 
-Here goes a list of concepts I have learned/implemented while building this project. 
+Here goes a list of concepts I have learned/implemented while building this project.
 
 Feel free to **click on any concept to see a code sample** where it is used.
 

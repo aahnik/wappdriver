@@ -1,13 +1,15 @@
+'''
+command line
+'''
+
+
 from . import __version__
 import argparse
+from . import local
 
-try:
-    from pyfiglet import Figlet
-except Exception:
-    print('''Could not find pyfiglet
-            Run 
-                pip install pyfiglet
-        ''')
+
+from pyfiglet import Figlet
+
 
 
 def main():
