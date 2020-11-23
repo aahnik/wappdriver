@@ -24,7 +24,7 @@ If you want to update them
 
 ```python
 from wappdriver import update_vars
-update_vars()
+update_selectors()
 ```
 
 If any new updates are availaible, they will be downloaded.
