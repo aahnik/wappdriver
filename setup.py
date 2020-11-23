@@ -23,7 +23,7 @@ setuptools.setup(
     include_package_data=True,
     zip_safe=False,
     entry_points={
-        'console_scripts': ['wappdriver=wappdriver.command_line:main'],
+        'console_scripts': ['wappdriver=wappdriver.cli:main'],
     },
     packages=setuptools.find_packages(),
     classifiers=[
