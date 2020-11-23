@@ -29,6 +29,8 @@ nav:
       - concepts.md
   - Help:
       - help.md
+  - Internal:
+      - https://aahnik.github.io/wappdriver/dev/wappdriver/
 
 plugins:
   - search
