@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.1" />
-<title>wappdriver.data.remote API documentation</title>
-<meta name="description" content="This module remote.py provides access to remote. It fetches latest data from the internet" />
+<title>wappdriver.tests.test_wa_web API documentation</title>
+<meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -19,40 +19,9 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>wappdriver.data.remote</code></h1>
+<h1 class="title">Module <code>wappdriver.tests.test_wa_web</code></h1>
 </header>
 <section id="section-intro">
-<p>This module remote.py provides access to remote. It fetches latest data from the internet</p>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">&#39;&#39;&#39;This module remote.py provides access to remote. It fetches latest data from the internet&#39;&#39;&#39;
-
-from .data_error import handle_connection, handle_dependancy
-
-
-@handle_dependancy
-def rqst():
-    import requests
-    return requests
-
-
-prefix = &#39;https://raw.githubusercontent.com/aahnik/wappdriver/main/wappdriver/&#39;
-
-var_url = f&#39;{prefix}selectors.yml&#39;
-
-
-
-
-@handle_connection
-def fetch_selectors():
-    &#39;&#39;&#39;
-    Returns the content of remote vars as a string
-    &#39;&#39;&#39;
-    dynamic_vars = rqst().get(url=var_url).text
-    return dynamic_vars</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -71,7 +40,7 @@ def fetch_selectors():
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="wappdriver.data" href="index.html">wappdriver.data</a></code></li>
+<li><code><a title="wappdriver.tests" href="index.html">wappdriver.tests</a></code></li>
 </ul>
 </li>
 </ul>

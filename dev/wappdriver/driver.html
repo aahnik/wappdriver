@@ -36,25 +36,19 @@ sending a text message or media(Image/GIF/Video) or PDF document
 &#39;&#39;&#39;
 
 
+import logging
 from .error import handle_errors
-from .data.local import get_chrome_driver_path, get_local_vars, sessions_dir,ensure
+from .local import chrome_driver_path, get_selectors, sessions_dir, ensure
 
 import time
 import os
 
-try:
-    from selenium import webdriver
-    from selenium.webdriver.chrome.options import Options
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support import expected_conditions
-    from selenium.webdriver.common.keys import Keys
-
-except Exception:
-    print(f&#39;&#39;&#39;Could not find Selenium
-            Run
-                pip install selenium
-        &#39;&#39;&#39;)
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.common.keys import Keys
 
 
 class WappDriver():
@@ -64,46 +58,55 @@ class WappDriver():
 
     def __init__(self, timeout):
         ensure()
-        self.chrome_driver_path = get_chrome_driver_path()
-        self._var = get_local_vars()
+        self._selector = get_selectors()
         self.timeout = timeout
         self.last_person = &#39;&#39;
 
-    @handle_errors(&#39;ChromeDriver not loaded&#39;, &#39;correct version of Chrome and Chrome Driver&#39;)
+    @handle_errors(&#39;ChromeDriver not loaded&#39;, &#39;&#39;)
     def load_chrome_driver(self, session):
-        session_path = os.path.join(sessions_dir, session)
+        logging.info(&#39;loading chrome driver&#39;)
+        if &#39;user&#39; in self._selector.keys():
+            session_path = self._selector[&#39;user&#39;]
+            logging.warning(&#39;You are using a special feature&#39;)
+        else:
+            session_path = os.path.join(sessions_dir, session)
+            logging.warning(f&#39;You are using {session_path}&#39;)
         chrome_options = Options()
         chrome_options.add_argument(f&#39;--user-data-dir={session_path}&#39;)
         self.driver = webdriver.Chrome(
-            options=chrome_options, executable_path=self.chrome_driver_path)
+            options=chrome_options, executable_path=chrome_driver_path())
 
-    @handle_errors(&#39;WhatsApp not loaded&#39;, &#39;correct version of Chrome and Chrome Driver&#39;)
+    @handle_errors(&#39;WhatsApp not loaded&#39;, &#39;&#39;)
     def load_main_screen(self):
-        self.driver.get(self._var[&#39;whatsapp_web_url&#39;])
+        logging.info(&#39;loading whatsapp web&#39;)
+        self.driver.get(self._selector[&#39;whatsapp_web_url&#39;])
         WebDriverWait(self.driver, self.timeout).until(
-            expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self._var[&#39;mainScreenLoaded&#39;])))
+            expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self._selector[&#39;mainScreenLoaded&#39;])))
 
-    @handle_errors(&#39;Person search failed&#39;, &#39;&#39;)
+    @handle_errors(&#39;Person search failed&#39;, &#39;&#39;, quit)
     def search_person(self, name):
-        search_box = self.driver.find_element_by_css_selector(
-            self._var[&#39;searchSelector&#39;])
+        logging.info(f&#39;searching for person {name}&#39;)
+        search_box = self.driver.find_element_by_xpath(
+            self._selector[&#39;searchSelector&#39;])
         search_box.send_keys(Keys.CONTROL+Keys.BACK_SPACE)
         search_box.send_keys(name)
 
-    @handle_errors(problem=&#39;Person not loaded&#39;, message=&#39;person in your contacts&#39;)
+    @handle_errors(problem=&#39;Person not loaded&#39;, message=&#39;May be person in your contacts&#39;)
     def load_person(self, name):
+        logging.info(f&#39;loading person {name}&#39;)
         if name != self.last_person:
             if self.search_person(name):
                 person_button = WebDriverWait(self.driver, self.timeout).until(
                     expected_conditions.presence_of_element_located(
-                        (By.XPATH, self._var[&#39;person&#39;].replace(&#39;name&#39;, name))))
+                        (By.XPATH, self._selector[&#39;person&#39;].replace(&#39;name&#39;, name))))
                 person_button.click()
                 self.last_person = name
 
-    @handle_errors(&#39;Message not sent&#39;, &#39;no invalid emojis&#39;)
+    @handle_errors(&#39;Message not sent&#39;, &#39;ChromeDriver only supports characters in the BMP. So many emojis may be invalid.&#39;)
     def send_text(self, msg):
+        logging.info(f&#39;sending message {msg[:10]}&#39;)
         msg_box = WebDriverWait(self.driver, self.timeout).until(
-            expected_conditions.presence_of_element_located((By.XPATH, self._var[&#39;messageBox&#39;])))
+            expected_conditions.presence_of_element_located((By.XPATH, self._selector[&#39;messageBox&#39;])))
         lines = msg.split(&#39;\n&#39;)
         for line in lines:
             msg_box.send_keys(line)  # write a line
@@ -112,16 +115,18 @@ class WappDriver():
 
     @handle_errors(&#39;Button click failed&#39;, &#39;&#39;)
     def click_button(self, button):
+        logging.info(f&#39;clicking on button {button}&#39;)
         button = WebDriverWait(self.driver, self.timeout).until(
             expected_conditions.presence_of_element_located((
-                By.XPATH, self._var[button])))
+                By.XPATH, self._selector[button])))
         button.click()
 
     @handle_errors(&#39;Could not send file&#39;, &#39;the file you are trying to send, and you must use absolute file path&#39;)
     def send_file(self, path, inp_categ, caption=None):
+        logging.info(f&#39;sending {inp_categ} {path}&#39;)
         if self.click_button(&#39;attach&#39;):
             input_field = WebDriverWait(self.driver, self.timeout).until(
-                expected_conditions.presence_of_element_located((By.XPATH, self._var[inp_categ])))
+                expected_conditions.presence_of_element_located((By.XPATH, self._selector[inp_categ])))
             input_field.send_keys(path)
             self.click_button(&#39;send&#39;)</code></pre>
 </details>
@@ -153,46 +158,55 @@ It interacts with the webdriver to send messages</p></div>
 
     def __init__(self, timeout):
         ensure()
-        self.chrome_driver_path = get_chrome_driver_path()
-        self._var = get_local_vars()
+        self._selector = get_selectors()
         self.timeout = timeout
         self.last_person = &#39;&#39;
 
-    @handle_errors(&#39;ChromeDriver not loaded&#39;, &#39;correct version of Chrome and Chrome Driver&#39;)
+    @handle_errors(&#39;ChromeDriver not loaded&#39;, &#39;&#39;)
     def load_chrome_driver(self, session):
-        session_path = os.path.join(sessions_dir, session)
+        logging.info(&#39;loading chrome driver&#39;)
+        if &#39;user&#39; in self._selector.keys():
+            session_path = self._selector[&#39;user&#39;]
+            logging.warning(&#39;You are using a special feature&#39;)
+        else:
+            session_path = os.path.join(sessions_dir, session)
+            logging.warning(f&#39;You are using {session_path}&#39;)
         chrome_options = Options()
         chrome_options.add_argument(f&#39;--user-data-dir={session_path}&#39;)
         self.driver = webdriver.Chrome(
-            options=chrome_options, executable_path=self.chrome_driver_path)
+            options=chrome_options, executable_path=chrome_driver_path())
 
-    @handle_errors(&#39;WhatsApp not loaded&#39;, &#39;correct version of Chrome and Chrome Driver&#39;)
+    @handle_errors(&#39;WhatsApp not loaded&#39;, &#39;&#39;)
     def load_main_screen(self):
-        self.driver.get(self._var[&#39;whatsapp_web_url&#39;])
+        logging.info(&#39;loading whatsapp web&#39;)
+        self.driver.get(self._selector[&#39;whatsapp_web_url&#39;])
         WebDriverWait(self.driver, self.timeout).until(
-            expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self._var[&#39;mainScreenLoaded&#39;])))
+            expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self._selector[&#39;mainScreenLoaded&#39;])))
 
-    @handle_errors(&#39;Person search failed&#39;, &#39;&#39;)
+    @handle_errors(&#39;Person search failed&#39;, &#39;&#39;, quit)
     def search_person(self, name):
-        search_box = self.driver.find_element_by_css_selector(
-            self._var[&#39;searchSelector&#39;])
+        logging.info(f&#39;searching for person {name}&#39;)
+        search_box = self.driver.find_element_by_xpath(
+            self._selector[&#39;searchSelector&#39;])
         search_box.send_keys(Keys.CONTROL+Keys.BACK_SPACE)
         search_box.send_keys(name)
 
-    @handle_errors(problem=&#39;Person not loaded&#39;, message=&#39;person in your contacts&#39;)
+    @handle_errors(problem=&#39;Person not loaded&#39;, message=&#39;May be person in your contacts&#39;)
     def load_person(self, name):
+        logging.info(f&#39;loading person {name}&#39;)
         if name != self.last_person:
             if self.search_person(name):
                 person_button = WebDriverWait(self.driver, self.timeout).until(
                     expected_conditions.presence_of_element_located(
-                        (By.XPATH, self._var[&#39;person&#39;].replace(&#39;name&#39;, name))))
+                        (By.XPATH, self._selector[&#39;person&#39;].replace(&#39;name&#39;, name))))
                 person_button.click()
                 self.last_person = name
 
-    @handle_errors(&#39;Message not sent&#39;, &#39;no invalid emojis&#39;)
+    @handle_errors(&#39;Message not sent&#39;, &#39;ChromeDriver only supports characters in the BMP. So many emojis may be invalid.&#39;)
     def send_text(self, msg):
+        logging.info(f&#39;sending message {msg[:10]}&#39;)
         msg_box = WebDriverWait(self.driver, self.timeout).until(
-            expected_conditions.presence_of_element_located((By.XPATH, self._var[&#39;messageBox&#39;])))
+            expected_conditions.presence_of_element_located((By.XPATH, self._selector[&#39;messageBox&#39;])))
         lines = msg.split(&#39;\n&#39;)
         for line in lines:
             msg_box.send_keys(line)  # write a line
@@ -201,16 +215,18 @@ It interacts with the webdriver to send messages</p></div>
 
     @handle_errors(&#39;Button click failed&#39;, &#39;&#39;)
     def click_button(self, button):
+        logging.info(f&#39;clicking on button {button}&#39;)
         button = WebDriverWait(self.driver, self.timeout).until(
             expected_conditions.presence_of_element_located((
-                By.XPATH, self._var[button])))
+                By.XPATH, self._selector[button])))
         button.click()
 
     @handle_errors(&#39;Could not send file&#39;, &#39;the file you are trying to send, and you must use absolute file path&#39;)
     def send_file(self, path, inp_categ, caption=None):
+        logging.info(f&#39;sending {inp_categ} {path}&#39;)
         if self.click_button(&#39;attach&#39;):
             input_field = WebDriverWait(self.driver, self.timeout).until(
-                expected_conditions.presence_of_element_located((By.XPATH, self._var[inp_categ])))
+                expected_conditions.presence_of_element_located((By.XPATH, self._selector[inp_categ])))
             input_field.send_keys(path)
             self.click_button(&#39;send&#39;)</code></pre>
 </details>
@@ -227,9 +243,10 @@ It interacts with the webdriver to send messages</p></div>
 </summary>
 <pre><code class="python">@handle_errors(&#39;Button click failed&#39;, &#39;&#39;)
 def click_button(self, button):
+    logging.info(f&#39;clicking on button {button}&#39;)
     button = WebDriverWait(self.driver, self.timeout).until(
         expected_conditions.presence_of_element_located((
-            By.XPATH, self._var[button])))
+            By.XPATH, self._selector[button])))
     button.click()</code></pre>
 </details>
 </dd>
@@ -242,13 +259,19 @@ def click_button(self, button):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">@handle_errors(&#39;ChromeDriver not loaded&#39;, &#39;correct version of Chrome and Chrome Driver&#39;)
+<pre><code class="python">@handle_errors(&#39;ChromeDriver not loaded&#39;, &#39;&#39;)
 def load_chrome_driver(self, session):
-    session_path = os.path.join(sessions_dir, session)
+    logging.info(&#39;loading chrome driver&#39;)
+    if &#39;user&#39; in self._selector.keys():
+        session_path = self._selector[&#39;user&#39;]
+        logging.warning(&#39;You are using a special feature&#39;)
+    else:
+        session_path = os.path.join(sessions_dir, session)
+        logging.warning(f&#39;You are using {session_path}&#39;)
     chrome_options = Options()
     chrome_options.add_argument(f&#39;--user-data-dir={session_path}&#39;)
     self.driver = webdriver.Chrome(
-        options=chrome_options, executable_path=self.chrome_driver_path)</code></pre>
+        options=chrome_options, executable_path=chrome_driver_path())</code></pre>
 </details>
 </dd>
 <dt id="wappdriver.driver.WappDriver.load_main_screen"><code class="name flex">
@@ -260,11 +283,12 @@ def load_chrome_driver(self, session):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">@handle_errors(&#39;WhatsApp not loaded&#39;, &#39;correct version of Chrome and Chrome Driver&#39;)
+<pre><code class="python">@handle_errors(&#39;WhatsApp not loaded&#39;, &#39;&#39;)
 def load_main_screen(self):
-    self.driver.get(self._var[&#39;whatsapp_web_url&#39;])
+    logging.info(&#39;loading whatsapp web&#39;)
+    self.driver.get(self._selector[&#39;whatsapp_web_url&#39;])
     WebDriverWait(self.driver, self.timeout).until(
-        expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self._var[&#39;mainScreenLoaded&#39;])))</code></pre>
+        expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self._selector[&#39;mainScreenLoaded&#39;])))</code></pre>
 </details>
 </dd>
 <dt id="wappdriver.driver.WappDriver.load_person"><code class="name flex">
@@ -276,13 +300,14 @@ def load_main_screen(self):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">@handle_errors(problem=&#39;Person not loaded&#39;, message=&#39;person in your contacts&#39;)
+<pre><code class="python">@handle_errors(problem=&#39;Person not loaded&#39;, message=&#39;May be person in your contacts&#39;)
 def load_person(self, name):
+    logging.info(f&#39;loading person {name}&#39;)
     if name != self.last_person:
         if self.search_person(name):
             person_button = WebDriverWait(self.driver, self.timeout).until(
                 expected_conditions.presence_of_element_located(
-                    (By.XPATH, self._var[&#39;person&#39;].replace(&#39;name&#39;, name))))
+                    (By.XPATH, self._selector[&#39;person&#39;].replace(&#39;name&#39;, name))))
             person_button.click()
             self.last_person = name</code></pre>
 </details>
@@ -296,10 +321,11 @@ def load_person(self, name):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">@handle_errors(&#39;Person search failed&#39;, &#39;&#39;)
+<pre><code class="python">@handle_errors(&#39;Person search failed&#39;, &#39;&#39;, quit)
 def search_person(self, name):
-    search_box = self.driver.find_element_by_css_selector(
-        self._var[&#39;searchSelector&#39;])
+    logging.info(f&#39;searching for person {name}&#39;)
+    search_box = self.driver.find_element_by_xpath(
+        self._selector[&#39;searchSelector&#39;])
     search_box.send_keys(Keys.CONTROL+Keys.BACK_SPACE)
     search_box.send_keys(name)</code></pre>
 </details>
@@ -315,9 +341,10 @@ def search_person(self, name):
 </summary>
 <pre><code class="python">@handle_errors(&#39;Could not send file&#39;, &#39;the file you are trying to send, and you must use absolute file path&#39;)
 def send_file(self, path, inp_categ, caption=None):
+    logging.info(f&#39;sending {inp_categ} {path}&#39;)
     if self.click_button(&#39;attach&#39;):
         input_field = WebDriverWait(self.driver, self.timeout).until(
-            expected_conditions.presence_of_element_located((By.XPATH, self._var[inp_categ])))
+            expected_conditions.presence_of_element_located((By.XPATH, self._selector[inp_categ])))
         input_field.send_keys(path)
         self.click_button(&#39;send&#39;)</code></pre>
 </details>
@@ -331,10 +358,11 @@ def send_file(self, path, inp_categ, caption=None):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">@handle_errors(&#39;Message not sent&#39;, &#39;no invalid emojis&#39;)
+<pre><code class="python">@handle_errors(&#39;Message not sent&#39;, &#39;ChromeDriver only supports characters in the BMP. So many emojis may be invalid.&#39;)
 def send_text(self, msg):
+    logging.info(f&#39;sending message {msg[:10]}&#39;)
     msg_box = WebDriverWait(self.driver, self.timeout).until(
-        expected_conditions.presence_of_element_located((By.XPATH, self._var[&#39;messageBox&#39;])))
+        expected_conditions.presence_of_element_located((By.XPATH, self._selector[&#39;messageBox&#39;])))
     lines = msg.split(&#39;\n&#39;)
     for line in lines:
         msg_box.send_keys(line)  # write a line

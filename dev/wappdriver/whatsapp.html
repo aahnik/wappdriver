@@ -33,7 +33,7 @@ This module contains the context manager for creating a bot ie an instance of Wa
 
 from .driver import WappDriver
 import os
-from tqdm import tqdm
+import logging
 import time
 import emoji
 
@@ -44,7 +44,7 @@ def category(arg):
 
     - `text`   for plain text or url
     - `media`  for path of image or video file path
-    - `file`   for path of any other file type 
+    - `file`   for path of any other file type
 
     &#39;&#39;&#39;
 
@@ -64,7 +64,7 @@ def category(arg):
 
 class WhatsApp():
     &#39;&#39;&#39;
-    Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It&#39;s very simple to use. 
+    Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It&#39;s very simple to use.
 
     You are advised to use the context manager.
 
@@ -85,14 +85,15 @@ class WhatsApp():
         self.session = session
 
     def __enter__(self):
-        with tqdm(total=10) as progress:
-            self.wappdriver = WappDriver(self.timeout)
-            progress.update(3)
-            if self.wappdriver.load_chrome_driver(self.session):
-                progress.update(3)
-                if self.wappdriver.load_main_screen():
-                    progress.update(4)
-                    return self
+
+        self.wappdriver = WappDriver(self.timeout)
+
+        if self.wappdriver.load_chrome_driver(self.session):
+            logging.info(&#39;load_chrome_driver(self.session) returned True&#39;)
+            if self.wappdriver.load_main_screen():
+                logging.info(&#39;load_main_screen() returned True&#39;)
+                return self
+        logging.info(&#39;Some error occured in __enter__(). So quitting&#39;)
         quit()
 
     def send(self, to, *args):
@@ -147,16 +148,15 @@ class WhatsApp():
         &#39;&#39;&#39;
 
         if self.wappdriver.load_person(to):
-            with tqdm(total=len(args)) as progress:
-                for arg in args:
-                    if category(arg) == &#39;text&#39;:
-                        self.wappdriver.send_text(
-                            emoji.emojize(arg, use_aliases=True))
-                    else:
-                        self.wappdriver.send_file(arg, category(arg))
-                        size_mb = os.stat(arg).st_size*1e-6
-                        time.sleep((self.timeout/10)*size_mb)
-                    progress.update(1)
+
+            for arg in args:
+                if category(arg) == &#39;text&#39;:
+                    self.wappdriver.send_text(
+                        emoji.emojize(arg, use_aliases=True))
+                else:
+                    self.wappdriver.send_file(arg, category(arg))
+                    size_mb = os.stat(arg).st_size*1e-6
+                    time.sleep((self.timeout/10)*size_mb)
 
     def __exit__(self, exception_type, exception_value, traceback):
         time.sleep(5)
@@ -194,7 +194,7 @@ for path of any other file type</li>
 
     - `text`   for plain text or url
     - `media`  for path of image or video file path
-    - `file`   for path of any other file type 
+    - `file`   for path of any other file type
 
     &#39;&#39;&#39;
 
@@ -222,7 +222,7 @@ for path of any other file type</li>
 <span>(</span><span>timeout=50, session='default')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It's very simple to use. </p>
+<div class="desc"><p>Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It's very simple to use.</p>
 <p>You are advised to use the context manager.</p>
 <p>Example:</p>
 <pre><code class="language-python">with WhatsApp() as bot:
@@ -237,7 +237,7 @@ for path of any other file type</li>
 </summary>
 <pre><code class="python">class WhatsApp():
     &#39;&#39;&#39;
-    Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It&#39;s very simple to use. 
+    Wappdriver is a python package that helps you automate sending messages through WhatsApp Web. It&#39;s very simple to use.
 
     You are advised to use the context manager.
 
@@ -258,14 +258,15 @@ for path of any other file type</li>
         self.session = session
 
     def __enter__(self):
-        with tqdm(total=10) as progress:
-            self.wappdriver = WappDriver(self.timeout)
-            progress.update(3)
-            if self.wappdriver.load_chrome_driver(self.session):
-                progress.update(3)
-                if self.wappdriver.load_main_screen():
-                    progress.update(4)
-                    return self
+
+        self.wappdriver = WappDriver(self.timeout)
+
+        if self.wappdriver.load_chrome_driver(self.session):
+            logging.info(&#39;load_chrome_driver(self.session) returned True&#39;)
+            if self.wappdriver.load_main_screen():
+                logging.info(&#39;load_main_screen() returned True&#39;)
+                return self
+        logging.info(&#39;Some error occured in __enter__(). So quitting&#39;)
         quit()
 
     def send(self, to, *args):
@@ -320,16 +321,15 @@ for path of any other file type</li>
         &#39;&#39;&#39;
 
         if self.wappdriver.load_person(to):
-            with tqdm(total=len(args)) as progress:
-                for arg in args:
-                    if category(arg) == &#39;text&#39;:
-                        self.wappdriver.send_text(
-                            emoji.emojize(arg, use_aliases=True))
-                    else:
-                        self.wappdriver.send_file(arg, category(arg))
-                        size_mb = os.stat(arg).st_size*1e-6
-                        time.sleep((self.timeout/10)*size_mb)
-                    progress.update(1)
+
+            for arg in args:
+                if category(arg) == &#39;text&#39;:
+                    self.wappdriver.send_text(
+                        emoji.emojize(arg, use_aliases=True))
+                else:
+                    self.wappdriver.send_file(arg, category(arg))
+                    size_mb = os.stat(arg).st_size*1e-6
+                    time.sleep((self.timeout/10)*size_mb)
 
     def __exit__(self, exception_type, exception_value, traceback):
         time.sleep(5)
@@ -441,16 +441,15 @@ The string can be:
     &#39;&#39;&#39;
 
     if self.wappdriver.load_person(to):
-        with tqdm(total=len(args)) as progress:
-            for arg in args:
-                if category(arg) == &#39;text&#39;:
-                    self.wappdriver.send_text(
-                        emoji.emojize(arg, use_aliases=True))
-                else:
-                    self.wappdriver.send_file(arg, category(arg))
-                    size_mb = os.stat(arg).st_size*1e-6
-                    time.sleep((self.timeout/10)*size_mb)
-                progress.update(1)</code></pre>
+
+        for arg in args:
+            if category(arg) == &#39;text&#39;:
+                self.wappdriver.send_text(
+                    emoji.emojize(arg, use_aliases=True))
+            else:
+                self.wappdriver.send_file(arg, category(arg))
+                size_mb = os.stat(arg).st_size*1e-6
+                time.sleep((self.timeout/10)*size_mb)</code></pre>
 </details>
 </dd>
 </dl>

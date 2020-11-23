@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://github.com/aahnik/wappdriver/</loc>
-     <lastmod>2020-11-11</lastmod>
+     <lastmod>2020-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://github.com/aahnik/wappdriver/usage/01_first_time_setup/</loc>
-     <lastmod>2020-11-11</lastmod>
+     <lastmod>2020-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://github.com/aahnik/wappdriver/usage/02_sending_messages/</loc>
-     <lastmod>2020-11-11</lastmod>
+     <lastmod>2020-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://github.com/aahnik/wappdriver/usage/03_sending_files/</loc>
-     <lastmod>2020-11-11</lastmod>
+     <lastmod>2020-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://github.com/aahnik/wappdriver/usage/04_advanced/</loc>
-     <lastmod>2020-11-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://github.com/aahnik/wappdriver/For_Developers/</loc>
-     <lastmod>2020-11-11</lastmod>
+     <lastmod>2020-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://github.com/aahnik/wappdriver/concepts/</loc>
-     <lastmod>2020-11-11</lastmod>
+     <lastmod>2020-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://github.com/aahnik/wappdriver/help/</loc>
-     <lastmod>2020-11-11</lastmod>
+     <lastmod>2020-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

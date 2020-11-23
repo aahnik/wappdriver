@@ -6,8 +6,7 @@
 <meta name="generator" content="pdoc 0.9.1" />
 <title>wappdriver.error API documentation</title>
 <meta name="description" content="This module error.py defines custom Wappdriver Exception.
-WappDriver Excpetion helps in abstracting internal exception details from the end user
---- …" />
+WappDriver Excpetion helps in abstracting internal exception details from the end user" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -25,11 +24,7 @@ WappDriver Excpetion helps in abstracting internal exception details from the en
 </header>
 <section id="section-intro">
 <p>This module error.py defines custom Wappdriver Exception.
-Wappdriver Excpetion Helps In Abstracting Internal Exception Details From The End User</p>
-<hr>
-<p><code>local</code> and <code>remote</code> modules from <code>data</code> subpackage, should not import <code>error</code> in order to
-prevent cyclic import</p>
-<p>When you import this module or any function from this module, local is ensured 😊</p>
+WappDriver Excpetion helps in abstracting internal exception details from the end user</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -37,15 +32,10 @@ prevent cyclic import</p>
 <pre><code class="python">&#39;&#39;&#39; 
 This module error.py defines custom Wappdriver Exception. 
 WappDriver Excpetion helps in abstracting internal exception details from the end user
----
 
-`local` and `remote` modules from `data` subpackage, should not import `error` in order to 
-prevent cyclic import
-
-When you import this module or any function from this module, local is ensured 😊
 &#39;&#39;&#39;
 import functools
-from .data import local
+
 import logging
 
 
@@ -77,31 +67,28 @@ class WappDriverError(Exception):
         self.problem = problem
         self.message = message
         super().__init__(self.message)
-
-        logging.basicConfig(format=&#39;\n########################################\n\n%(asctime)s - %(message)s&#39;,
-                            filename=local.log_file)
-
-        logging.exception(f&#39;&#39;&#39;\n{problem}\n\n{internal}&#39;&#39;&#39;)
+        logging.debug(f&#39;&#39;&#39;\n{problem}\n\n{internal}&#39;&#39;&#39;)
 
     def __str__(self):
         return f&#39;&#39;&#39;
-        Please check Internet Connection and always use the latest version of wappdriver. ChromeDriver only supports characters in the BMP. So many emojis may be invalid.
+        Please check Internet Connection and always use the latest version of wappdriver. 
+        You must have matching versions of Chrome and Chromedriver.
         ------------------------------------------------------------------------------------
         WappDriver Error  : {self.problem} \n
-        Make sure to have : {self.message} \n
+        {self.message} \n
         For Help Visit http://bit.ly/wappdriver
         -----------------------------------------------------------------------------------\n
         &#39;&#39;&#39;
 
 
-def handle_errors(problem, message):
+def handle_errors(problem, message=None, cure=None):
     &#39;&#39;&#39;
-    ### How to use ?
     -- FOR INTERNAL USE ONLY --
 
     Write the vulnerable code inside a function. And decorate it with `handle_error`. There should be no `return` statement inside the vulnerable function. The intended use case is for a procedural function.
 
-    ---
+    If the cure method is provided, it is run after handling errors. Nothing is done if cure raises errors. Make sure to have an error free cure.
+
     Example use 
 
     ```python
@@ -111,15 +98,15 @@ def handle_errors(problem, message):
         print(&#39;fishy errors&#39;)
         print(1/0)
     ```
-    ---
-    #### After being decorated, the vulnerable function will return `True` or `False` to the caller
+
+    After being decorated, the vulnerable function will return `True` or `False` to the caller
 
     - `True` will be returned in case of no error
     - If an error is caught it will be handled and beautified message will be displayed to user
         - The internal details of the Exception and full traceback will be logged.
         - `False` will be returned to the caller.
 
-    ---
+
     `handle_errors` is a Decorator Factory which is used to create a decorator that takes arguments
     &#39;&#39;&#39;
 
@@ -145,7 +132,9 @@ def handle_errors(problem, message):
                     raise WappDriverError(internal, problem, message)
                 except Exception as err:
                     # Beautified Error message is printed and False is returned to caller
-                    print(err)
+                    logging.exception(err)
+                    if cure:
+                        cure()
                     return False
         return wrapper_func
     return decorator_func</code></pre>
@@ -159,13 +148,12 @@ def handle_errors(problem, message):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="wappdriver.error.handle_errors"><code class="name flex">
-<span>def <span class="ident">handle_errors</span></span>(<span>problem, message)</span>
+<span>def <span class="ident">handle_errors</span></span>(<span>problem, message=None, cure=None)</span>
 </code></dt>
 <dd>
-<div class="desc"><h3 id="how-to-use">How to use ?</h3>
-<p>&ndash; FOR INTERNAL USE ONLY &ndash;</p>
+<div class="desc"><p>&ndash; FOR INTERNAL USE ONLY &ndash;</p>
 <p>Write the vulnerable code inside a function. And decorate it with <code>handle_error</code>. There should be no <code>return</code> statement inside the vulnerable function. The intended use case is for a procedural function.</p>
-<hr>
+<p>If the cure method is provided, it is run after handling errors. Nothing is done if cure raises errors. Make sure to have an error free cure.</p>
 <p>Example use </p>
 <pre><code class="language-python"># when displayed, message is prefixed with the words `Make sure to have:` 
 @handle_errors(problem='this not done',message='that')
@@ -173,8 +161,7 @@ def vulnerable_function(arg):
     print('fishy errors')
     print(1/0)
 </code></pre>
-<hr>
-<h4 id="after-being-decorated-the-vulnerable-function-will-return-true-or-false-to-the-caller">After being decorated, the vulnerable function will return <code>True</code> or <code>False</code> to the caller</h4>
+<p>After being decorated, the vulnerable function will return <code>True</code> or <code>False</code> to the caller</p>
 <ul>
 <li><code>True</code> will be returned in case of no error</li>
 <li>If an error is caught it will be handled and beautified message will be displayed to user<ul>
@@ -183,20 +170,19 @@ def vulnerable_function(arg):
 </ul>
 </li>
 </ul>
-<hr>
 <p><code><a title="wappdriver.error.handle_errors" href="#wappdriver.error.handle_errors">handle_errors()</a></code> is a Decorator Factory which is used to create a decorator that takes arguments</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def handle_errors(problem, message):
+<pre><code class="python">def handle_errors(problem, message=None, cure=None):
     &#39;&#39;&#39;
-    ### How to use ?
     -- FOR INTERNAL USE ONLY --
 
     Write the vulnerable code inside a function. And decorate it with `handle_error`. There should be no `return` statement inside the vulnerable function. The intended use case is for a procedural function.
 
-    ---
+    If the cure method is provided, it is run after handling errors. Nothing is done if cure raises errors. Make sure to have an error free cure.
+
     Example use 
 
     ```python
@@ -206,15 +192,15 @@ def vulnerable_function(arg):
         print(&#39;fishy errors&#39;)
         print(1/0)
     ```
-    ---
-    #### After being decorated, the vulnerable function will return `True` or `False` to the caller
+
+    After being decorated, the vulnerable function will return `True` or `False` to the caller
 
     - `True` will be returned in case of no error
     - If an error is caught it will be handled and beautified message will be displayed to user
         - The internal details of the Exception and full traceback will be logged.
         - `False` will be returned to the caller.
 
-    ---
+
     `handle_errors` is a Decorator Factory which is used to create a decorator that takes arguments
     &#39;&#39;&#39;
 
@@ -240,7 +226,9 @@ def vulnerable_function(arg):
                     raise WappDriverError(internal, problem, message)
                 except Exception as err:
                     # Beautified Error message is printed and False is returned to caller
-                    print(err)
+                    logging.exception(err)
+                    if cure:
+                        cure()
                     return False
         return wrapper_func
     return decorator_func</code></pre>
@@ -304,18 +292,15 @@ what could have went wrong according to the developer </p>
         self.problem = problem
         self.message = message
         super().__init__(self.message)
-
-        logging.basicConfig(format=&#39;\n########################################\n\n%(asctime)s - %(message)s&#39;,
-                            filename=local.log_file)
-
-        logging.exception(f&#39;&#39;&#39;\n{problem}\n\n{internal}&#39;&#39;&#39;)
+        logging.debug(f&#39;&#39;&#39;\n{problem}\n\n{internal}&#39;&#39;&#39;)
 
     def __str__(self):
         return f&#39;&#39;&#39;
-        Please check Internet Connection and always use the latest version of wappdriver. ChromeDriver only supports characters in the BMP. So many emojis may be invalid.
+        Please check Internet Connection and always use the latest version of wappdriver. 
+        You must have matching versions of Chrome and Chromedriver.
         ------------------------------------------------------------------------------------
         WappDriver Error  : {self.problem} \n
-        Make sure to have : {self.message} \n
+        {self.message} \n
         For Help Visit http://bit.ly/wappdriver
         -----------------------------------------------------------------------------------\n
         &#39;&#39;&#39;</code></pre>
