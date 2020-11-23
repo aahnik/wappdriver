@@ -25,24 +25,13 @@ nav:
       - Sending Messages: usage/02_sending_messages.md
       - Sending Files: usage/03_sending_files.md
       - Advanced: usage/04_advanced.md
-  - Developers: mkapi/api/wappdriver
-      # - Introduction: For_Developers.md
-      # - whatsapp.py: developers/whatsapp.md
-      # - command_line.py: developers/command_line.md
-      # - driver.py: developers/driver.md
-      # - error.py: developers/error.md
-      # - data: developers/data.md
   - Concepts:
       - concepts.md
   - Help:
       - help.md
 
 plugins:
-  # - mkdocstrings
   - search
-  - mkapi:
-      src_dirs: ['wappdriver']
-
 
 repo_url: https://github.com/aahnik/wappdriver
 edit_uri: ""
