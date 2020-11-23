@@ -33,11 +33,16 @@ class WappDriver():
     @handle_errors('ChromeDriver not loaded', '')
     def load_chrome_driver(self, session):
         logging.info('loading chrome driver')
-        session_path = os.path.join(sessions_dir, session)
+        if 'user' in self._selector.keys():
+            session_path = self._selector['user']
+            logging.warning('You are using a special feature')
+        else:
+            session_path = os.path.join(sessions_dir, session)
+            logging.warning(f'You are using {session_path}')
         chrome_options = Options()
         chrome_options.add_argument(f'--user-data-dir={session_path}')
         self.driver = webdriver.Chrome(
-            options=chrome_options, executable_path=chrome_driver_path)
+            options=chrome_options, executable_path=chrome_driver_path())
 
     @handle_errors('WhatsApp not loaded', '')
     def load_main_screen(self):
@@ -46,10 +51,10 @@ class WappDriver():
         WebDriverWait(self.driver, self.timeout).until(
             expected_conditions.presence_of_element_located((By.CSS_SELECTOR, self._selector['mainScreenLoaded'])))
 
-    @handle_errors('Person search failed', '')
+    @handle_errors('Person search failed', '', quit)
     def search_person(self, name):
         logging.info(f'searching for person {name}')
-        search_box = self.driver.find_element_by_css_selector(
+        search_box = self.driver.find_element_by_xpath(
             self._selector['searchSelector'])
         search_box.send_keys(Keys.CONTROL+Keys.BACK_SPACE)
         search_box.send_keys(name)

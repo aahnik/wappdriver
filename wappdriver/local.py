@@ -10,19 +10,18 @@ import logging
 from . import __version__
 from verlat import latest
 
-logger = logging.getLogger(__name__)
+
 
 wapp_dir = os.path.expanduser('~/wappdriver.data')
 cdp_file = os.path.join(wapp_dir, 'cdp.txt')
 selectors_file = os.path.join(wapp_dir, 'selectors.yml')
 sessions_dir = os.path.join(wapp_dir, 'sessions')
 
-chrome_driver_path = ''
 
 proj = latest('wappdriver')
 latver = proj['version']
 if latver != __version__:
-    logger.critical(f'''You are using an unsupported version. 
+    logging.critical(f'''You are using an unsupported version. \n\n
     Please use latest stable version.
     To upgrade wappdriver please run \n
         pip install wappdriver=={latver}
@@ -43,14 +42,14 @@ def ensure():
         os.mkdir(wapp_dir)
         logging.info(f'{wapp_dir} created')
 
-        if not os.path.exists(cdp_file):
-            set_chrome_driver_path()
+    if not os.path.exists(cdp_file):
+        set_chrome_driver_path()
 
-        if not os.path.exists(selectors_file):
-            update_selectors()
+    if not os.path.exists(selectors_file):
+        update_selectors()
 
-        if not os.path.exists(sessions_dir):
-            os.mkdir(sessions_dir)
+    if not os.path.exists(sessions_dir):
+        os.mkdir(sessions_dir)
 
 
 @handle_errors('could not set chrome driver path', '', ensure)
@@ -72,12 +71,10 @@ def set_chrome_driver_path(path=''):
         f.write(path)
 
 
-@handle_errors('Could not get chrome driver path', '', ensure)
-def get_cdp():
+def chrome_driver_path():
     '''
     Returns the chrome driver path
     '''
-
     with open(cdp_file, 'r') as f:
         return f.readline().strip()
 
@@ -91,16 +88,15 @@ def write_selectors(in_vars):
         f.write(in_vars)
 
 
-@handle_errors('Could not get selectors', '', ensure)
 def get_selectors():
     ''' 
     Returns the dictionary of selectors loaded from selectors.yml
     '''
+
     with open(selectors_file, 'r') as f:
         return yaml.full_load(f)
 
 
-@handle_errors('Could not fetch selectors from internet', 'Do you have proper internet ?')
 def fetch_selectors():
     '''
     Returns the content of remote selector file as a string
@@ -125,5 +121,5 @@ def update_selectors():
 
     '''
 
-    logger.info('fetching data')
+    logging.info('fetching data')
     write_selectors(fetch_selectors())

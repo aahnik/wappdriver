@@ -19,10 +19,10 @@ If you wish to just use wappdriver, read the [Usage Guide](https://aahnik.github
 
 '''
 
-__version__ = "0.6.2"
+__version__ = "0.6.1"
 
 # from .context import Wapp
-from .data.local import set_chrome_driver_path, update_vars
+from .local import set_chrome_driver_path, update_selectors
 # from .error import handle_errors
 # from .driver import WappDriver
 from .whatsapp import category, WhatsApp
