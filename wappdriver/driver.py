@@ -79,7 +79,7 @@ class WappDriver():
         for line in lines:
             msg_box.send_keys(line)  # write a line
             msg_box.send_keys(Keys.SHIFT + Keys.ENTER)  # go to next line
-            msg_box.send_keys(Keys.ENTER)  # send message
+        msg_box.send_keys(Keys.ENTER)  # send message
 
     @handle_errors('Button click failed', '')
     def click_button(self, button):
