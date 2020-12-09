@@ -3,3 +3,6 @@ contact_links:
   - name: Read Documentation
     url: https://aahnik.github.io/wappdriver/
     about: Read the guides and tutorials
+  - name: Ask a Question or Discuss
+    url: https://github.com/aahnik/wappdriver/discussions/new
+    about: You may ask a question, get help about errors or start a discussion.
