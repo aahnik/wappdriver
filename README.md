@@ -65,7 +65,7 @@ When the WhatsApp web screen loads for the first time, you have to scan the QR c
 First of all, read the [Help Page](https://aahnik.github.io/wappdriver/help/).
 You may try to search your question in the search bar on the page.
 
-For further assistance you may [ask a question](https://github.com/aahnik/wappdriver/issues/new/choose) the issues section.
+For further assistance you may [ask a question](https://github.com/aahnik/wappdriver/discussions) in the discussions section.
 
 ## Contributing 🤩
 
