@@ -1,5 +1,8 @@
 # wappdriver
 
+>**UPDATE:**
+> **I WILL BE LEAVING WHATSAPP AFTER AUGUST 2021. THIS SCRIPT WILL NO LONGER BE MAINTAINED. SWITCH TO TELEGRAM FOR A EASIER LIFE AND A FREE OFFICIAL API.**
+
 API for WhatsApp Web Automation
 
 Wondering how to send WhatsApp messages using Python using only three lines of code? **You have come to the right place!**
